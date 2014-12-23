@@ -1,0 +1,19 @@
+#edit-field-service-icon-und {
+	overflow: hidden;
+}
+#edit-field-service-icon-und .form-item-field-service-icon-und {
+	float: left;
+	width: 60px;
+}
+.media-display-thumbnails .media-list-thumbnails {
+	margin: 0;
+	overflow: hidden;
+}
+.media-display-thumbnails .media-list-thumbnails li .media-item a {
+	height: 98px;
+	overflow: hidden;
+}
+.media-display-thumbnails .media-list-thumbnails li .media-item img {
+	border: none;
+	margin: 0;
+}

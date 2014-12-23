@@ -1,0 +1,1 @@
+window.tinyMCEPreInit = {"base":"\/tmp3\/sites\/all\/libraries\/tinymce\/jscripts\/tiny_mce","suffix":"","query":""};

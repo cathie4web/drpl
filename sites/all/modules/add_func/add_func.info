@@ -1,0 +1,7 @@
+name = Additional Functionality
+description = "Adds some custom functionality for theme"
+core = 7.x
+package = Additional Functionality
+version = "7.x-1.0"
+
+stylesheets[all][] = css/admin.css

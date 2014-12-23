@@ -1,0 +1,26 @@
+<?php
+/**
+ * Implement hook_menu().
+ */
+function add_func_menu() {
+	$items = array();
+	$items['admin/add_func'] = array(
+		'title' => t( 'Additional Functionality' ),
+		'page callback' => 'add_func_global_settings',
+		'access arguments' => array( 'administer' ),
+		'type' => MENU_NORMAL_ITEM,
+	);
+	return $items;
+}
+
+function add_func_global_settings() {
+	$result = db_query( "SELECT mlid FROM {menu_links} AS l WHERE l.link_path LIKE 'admin/add_func/%'" );
+
+	$html = '<div class="admin-panel"><ul class="admin-list">';
+	while ( $row = $result->fetchObject() ) {
+		$link = menu_link_load( $row->mlid );
+		$html .= '<h3>' . $link['title'] . '</h3><li>' . l($link['link_title'], $link['link_path']) . '<div class="description">' . $link['description'] . '</div></li>';
+	}
+	$html .= "</ul></div>";
+	return $html;
+}

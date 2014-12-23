@@ -1,0 +1,5 @@
+<?php
+
+function add_func_font_awesome_init() {
+	drupal_add_css(drupal_get_path('module', 'add_func_font_awesome') . '/css/font-awesome.css');
+}

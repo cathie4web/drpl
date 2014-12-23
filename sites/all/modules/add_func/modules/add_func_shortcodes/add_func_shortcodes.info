@@ -1,0 +1,16 @@
+name = Shortcodes Lib
+description = "Provides basic shortcode tags like columns, toggle, tabs, highlight, dropcap, etc."
+core = 7.x
+package = Additional Functionality
+version = "7.x-1.0"
+dependencies[] = add_func
+dependencies[] = filter
+
+scripts[]				= js/jquery.easypiechart.js
+scripts[]				= js/jquery.appear.js
+scripts[]				= js/shortcodes.js
+
+stylesheets[all][]		= css/shortcodes.css
+stylesheets[all][]		= css/grids.css
+
+files[] = add_func_shortcodes.inc

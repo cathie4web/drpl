@@ -1,0 +1,119 @@
+/**
+ * icon style.
+ */
+
+
+@font-face {
+	font-family: 'FontAwesome';
+	font-weight: normal;
+	font-style: normal;
+}
+
+span.add-func-follow-link-wrapper {
+	display: block;
+	float: left;
+	margin-left: 7px;
+}
+
+span.add-func-follow-link-wrapper:first-child {
+	margin-left: 0;
+}
+
+a.add-func-follow-link {
+	display: inline-block;
+}
+
+ a.add-func-follow-link:before {
+	display: inline-block;
+	font-family: FontAwesome;
+	font-style: normal;
+	font-weight: normal;
+	line-height: 1;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	text-decoration: none;
+}
+
+ a.add-func-follow-link:hover {
+	color: inherit;
+}
+
+ .with-label a.add-func-follow-link:before{
+	margin-right: 3px;
+}
+
+a.add-func-follow-link-delicious:before {
+	content: "\f1a5";
+}
+
+a.add-func-follow-link-digg:before {
+	content: "\f1a6";
+}
+
+a.add-func-follow-link-dribbble:before {
+	content: "\f17d";
+}
+
+a.add-func-follow-link-facebook:before {
+	content: "\f09a";
+}
+
+a.add-func-follow-link-flickr:before {
+	content: "\f16e";
+}
+
+a.add-func-follow-link-github:before {
+	content: "\f09b";
+}
+
+a.add-func-follow-link-googleplus:before {
+	content: "\f0d5";
+}
+
+a.add-func-follow-link-instagram:before {
+	content: "\f16d";
+}
+
+a.add-func-follow-link-linkedin:before {
+	content: "\f0e1";
+}
+
+a.add-func-follow-link-pinterest:before {
+	content: "\f0d2";
+}
+
+a.add-func-follow-link-reddit:before {
+	content: "\f1a1";
+}
+
+a.add-func-follow-link-tumblr:before {
+	content: "\f173";
+}
+
+a.add-func-follow-link-twitter:before {
+	content: "\f099";
+}
+
+a.add-func-follow-link-vimeo:before {
+	content: "\f194";
+}
+
+a.add-func-follow-link-weibo:before {
+	content: "\f18a";
+}
+
+a.add-func-follow-link-wordpress:before {
+	content: "\f19a";
+}
+
+a.add-func-follow-link-youtube:before {
+	content: "\f167";
+}
+
+a.add-func-follow-link-xing:before {
+	content: "\f168";
+}
+
+a.add-func-follow-link-rss:before {
+	content: "\f09e";
+}

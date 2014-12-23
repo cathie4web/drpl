@@ -1,0 +1,11 @@
+name = Follow Links
+description = "Add sitewide and per user links to social network profiles"
+core = 7.x
+package = Additional Functionality
+version = "7.x-1.0"
+dependencies[] = add_func
+dependencies[] = add_func_font_awesome
+
+stylesheets[all][] = css/add-func-follow.css
+
+configure = admin/add_func/add_func_follow

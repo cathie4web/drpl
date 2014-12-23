@@ -1,0 +1,125 @@
+<?php
+
+function add_func_animate_init() {
+	drupal_add_css(drupal_get_path('module', 'add_func_animate') . '/css/animate.css');
+	drupal_add_js(drupal_get_path('module', 'add_func_animate') .'/js/wow.js');
+}
+
+function add_func_animate_form_alter( &$form, &$form_state, $form_id ) {
+	$animations = array (
+		'None'					=>	'None',
+		'bounce'				=>	'bounce',
+		'bounceIn'				=>	'bounceIn',
+		'bounceInDown'			=>	'bounceInDown',
+		'bounceInLeft'			=>	'bounceInLeft',
+		'bounceInRight'			=>	'bounceInRight',
+		'bounceInUp'			=>	'bounceInUp',
+		'fadeIn'				=>	'fadeIn',
+		'fadeInDown'			=>	'fadeInDown',
+		'fadeInDownBig'			=>	'fadeInDownBig',
+		'fadeInLeft'			=>	'fadeInLeft',
+		'fadeInLeftBig'			=>	'fadeInLeftBig',
+		'fadeInRight'			=>	'fadeInRight',
+		'fadeInRightBig'		=>	'fadeInRightBig',
+		'fadeInUp'				=>	'fadeInUp',
+		'fadeInUpBig'			=>	'fadeInUpBig',
+		'fadeOut'				=>	'fadeOut',
+		'fadeOutDown'			=>	'fadeOutDown',
+		'fadeOutDownBig'		=>	'fadeOutDownBig',
+		'fadeOutLeft'			=>	'fadeOutLeft',
+		'fadeOutLeftBig'		=>	'fadeOutLeftBig',
+		'fadeOutRight'			=>	'fadeOutRight',
+		'fadeOutRightBig'		=>	'fadeOutRightBig',
+		'fadeOutUp'				=>	'fadeOutUp',
+		'fadeOutUpBig'			=>	'fadeOutUpBig',
+		'flash'					=>	'flash',
+		'flip'					=>	'flip',
+		'flipInX'				=>	'flipInX',
+		'flipInY'				=>	'flipInY',
+		'flipOutX'				=>	'flipOutX',
+		'flipOutY'				=>	'flipOutY',
+		'hinge'					=>	'hinge',
+		'lightSpeedIn'			=>	'lightSpeedIn',
+		'lightSpeedOut'			=>	'lightSpeedOut',
+		'pulse'					=>	'pulse',
+		'rollIn'				=>	'rollIn',
+		'rollOut'				=>	'rollOut',
+		'rotateIn'				=>	'rotateIn',
+		'rotateInDownLeft'		=>	'rotateInDownLeft',
+		'rotateInDownRight'		=>	'rotateInDownRight',
+		'rotateInUpLeft'		=>	'rotateInUpLeft',
+		'rotateInUpRight'		=>	'rotateInUpRight',
+		'rotateOut'				=>	'rotateOut',
+		'rotateOutDownLeft'		=>	'rotateOutDownLeft',
+		'rotateOutDownRight'	=>	'rotateOutDownRight',
+		'rotateOutUpLeft'		=>	'rotateOutUpLeft',
+		'rotateOutUpRight'		=>	'rotateOutUpRight',
+		'rubberBand'			=>	'rubberBand',
+		'shake'					=>	'shake',
+		'swing'					=>	'swing',
+		'tada'					=>	'tada',
+		'wobble'				=>	'wobble',
+		'zoomIn'				=>	'zoomIn',
+		'zoomInDown'			=>	'zoomInDown',
+		'zoomInLeft'			=>	'zoomInLeft',
+		'zoomInRight'			=>	'zoomInRight',
+		'zoomInUp'				=>	'zoomInUp',
+		'zoomOut'				=>	'zoomOut',
+		'zoomOutDown'			=>	'zoomOutDown',
+		'zoomOutLeft'			=>	'zoomOutLeft',
+		'zoomOutRight'			=>	'zoomOutRight',
+		'zoomOutUp'				=>	'zoomOutUp',
+	);
+	
+	if ( user_access( 'administer block classes' ) && ( $form_id == 'block_admin_configure' || $form_id == 'block_add_block_form' ) ) {
+		$block = block_load( $form['module']['#value'], $form['delta']['#value'] );
+
+		$form['settings']['add_func_animate_settings'] = array(
+			'#type' => 'fieldset',
+			'#title' => 'Block animation settings',
+			'#weight' => 1,
+			'#collapsible' => FALSE,
+			'#collapsed' => FALSE,
+		);
+		
+		$form['settings']['add_func_animate_settings']['add_func_animate_type'] = array(
+			'#type' => 'select',
+			'#title' => t( 'Animation:' ),
+			'#options' => $animations,
+			'#description' => 'Select block animation type.',
+			'#default_value' => _add_func_animate_variable_get( $form['module']['#value'], $form['delta']['#value'], 'add_func_animate_type' ),
+		);
+		
+		$form['#submit'][] = 'add_func_animate_form_submit';
+	}
+}
+
+function add_func_animate_form_submit( $form, $form_state ) {
+	$values = $form_state['values'];
+	if ( $values['add_func_animate_type'] ) {
+		_add_func_animate_variable_set( $values['module'], $values['delta'], 'add_func_animate_type', $values['add_func_animate_type'] );
+	} else {
+		_add_func_animate_variable_set( $values['module'], $values['delta'], 'add_func_animate_type', 'None' );
+	}
+}
+
+function add_func_animate_preprocess_block( &$vars ) {
+	$block = $vars['elements']['#block'];
+	$module = $block->module;
+	$delta = $block->delta;
+	$classes = &$vars['classes_array'];
+	
+	$animate_type = _add_func_animate_variable_get( $module, $delta, 'add_func_animate_type' );
+
+	if ( isset( $animate_type ) && ( $animate_type != 'none' ) ) {
+		$classes[] = $animate_type . ' wow';
+	}
+}
+
+function _add_func_animate_variable_set( $module, $delta, $name, $value ) {
+	variable_set( $module . $delta . $name, $value );
+}
+
+function _add_func_animate_variable_get( $module, $delta, $name ) {
+	return variable_get( $module . $delta . $name, NULL );
+}
