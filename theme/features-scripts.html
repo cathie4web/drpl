@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html lang="en-us" class="ie"> <![endif]-->
+<!--[if !(IE)]><!-->
+<html lang="en-us">
+<!--<![endif]-->
+<head>
+	<meta charset="utf-8">
+	<title>Scripts</title>
+	<meta name="viewport" content="width=device-width; initial-scale=1.0">
+	<link rel="stylesheet/less" type="text/css" href="less/style.less">
+	<link rel="icon" href="images/favicon.ico" type="image/x-icon">
+	<link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
+	<script src="js/jquery.min.js"></script>
+	<script src="js/hoverIntent.js"></script>
+	<script src="js/superfish.js"></script>
+	<script src="js/jquery.easing.1.3.js"></script>
+	<script src="js/jquery.flexslider.js"></script>
+	<script src="js/jquery.accordion.js"></script>
+	<script src="js/jquery.kwicks.js"></script>
+	<script src="js/jquery.mixitup.js"></script>
+	<script src="js/jquery.pickmeup.js"></script>
+	<script src="js/effects.js"></script>
+	<script src="js/script.js"></script>
+	<script src="js/less.js"></script>
+	
+	<!--[if lt IE 9]>
+		<div style='clear: both; text-align:center; position: relative;'>
+			<a href="http://windows.microsoft.com/en-US/internet-explorer/products/ie/home?ocid=ie6_countdown_bannercode">
+				<img src="http://storage.ie6countdown.com/assets/100/images/banners/warning_bar_0000_us.jpg" border="0" height="42" width="820" alt="You are using an outdated browser. For a faster, safer browsing experience, upgrade for free today.">
+			</a>
+		</div>
+		<script src="js/html5.js"></script>
+	<![endif]-->
+</head>
+<body>
+	<div class="main">
+		<!--== HEADER ===============================================================================-->
+		<header id="header" >
+			<div class="container-12 clearfix">
+				<!--~~ Logo ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+				<div class="grid-2">
+					<div id="logo">
+						<a href="index.html">Theme.</a>
+					</div>
+				</div>
+				<!--~~ Menu ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+				<nav id="header-nav" class="grid-7">
+					<ul class="sf-menu" id="header-menu">
+						<li>
+							<a href="index.html">Home</a>
+							<ul>
+								<li><a href="home-with-carousel.html">Home v2 (with carousel)</a></li>
+								<li><a href="home-with-gallery.html">Home v3 (with gallery)</a></li>
+								<li><a href="home-with-large-headpicture.html">Home v4 (with large headpicture)</a></li>
+								<li><a href="home-with-small-headpicture.html">Home v5 (with small headpicture)</a></li>
+								<li><a href="home-without-headpicture.html">Home v6 (without headpicture)</a></li>
+							</ul>
+						</li>
+						<li>
+							<a href="about.html">About</a>
+							<ul>
+								<li><a href="faqs.html">FAQs</a></li>
+								<li><a href="testimonials.html">Testimonials</a></li>
+								<li><a href="team.html">Our Team</a></li>
+								<li><a href="services.html">Services</a></li>
+							</ul>
+						</li>
+						<li>
+							<a href="gallery.html">Gallery</a>
+							<ul>
+								<li><a href="gallery-1col.html">Gallery v2 (1 col)</a></li>
+								<li><a href="gallery-1col-with-sidebar.html">Gallery v3 (1 col with sidebar)</a></li>
+								<li><a href="gallery-2col.html">Gallery v4 (2 col)</a></li>
+								<li><a href="gallery-2col-with-sidebar.html">Gallery v5 (2 col width sidebar)</a></li>
+								<li><a href="gallery-4col.html">Gallery v6 (4 col)</a></li>
+							</ul>
+						</li>
+						<li>
+							<a href="blog.html">Blog</a>
+							<ul>
+								<li><a href="blog-fullwidth.html">Blog v2 (fullwidth)</a></li>
+								<li><a href="blog-grid.html">Blog v3 (grid)</a></li>
+								<li><a href="archives.html">Archives</a></li>
+								<li><a href="blog-category.html">Category Page</a></li>
+							</ul>
+						</li>
+						<li>
+							<a href="contects.html">Contacts</a>
+						</li>
+						<li>
+							<a href="features.html">Features</a>
+							<ul>
+								<li><a href="features-grids.html">Columns</a></li>
+								<li><a href="features-formatting.html">Formatting</a></li>
+								<li><a href="features-elements.html">Elements</a></li>
+								<li class="current"><a href="features-scripts.html">Scripts</a></li>
+								<li><a href="features-blocks.html">Blocks</a></li>
+								<li><a href="features-icons.html">Font Icons</a></li>
+								<li>
+									<a>Pages</a>
+									<ul>
+										<li><a href="page-fullwidth.html">Fullwidth Page</a></li>
+										<li><a href="page-with-sidebar.html">Page with sidebar</a></li>
+										<li><a href="login.html">Login Page</a></li>
+										<li><a href="registration.html">Registration Page</a></li>
+										<li><a href="search.html">Search Page</a></li>
+										<li><a href="sitemap.html">Sitemap</a></li>
+										<li><a href="404.html">404 Error Page</a></li>
+										<li><a href="403.html">403 Access denied</a></li>
+									</ul>
+								</li>
+							</ul>
+						</li>
+					</ul>
+				</nav>
+				<!--~~ Search Form ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+				<div class="grid-3 hide-ml">
+					<form id="header-search-form">
+						<fieldset>
+							<input type="text" placeholder="Site Search">
+							<a onClick="document.getElementById('header-search-form').submit()" class="submit icon-search"></a>
+						</fieldset>
+					</form>
+				</div>
+			</div>
+		</header>
+		<!--== CONTENT =============================================================================-->
+		<div id="content">
+			<div class="container-12 clearfix">
+				<div class="grid-12">
+					<ul class="breadcrumbs">
+						<li><a href="index.html">Home</a></li>
+						<li><a href="features.html">Features</a></li>
+						<li>Scripts</li>
+					</ul>
+				</div>
+			</div>
+			<div class="container-12 clearfix" id="typography">
+				<div class="grid-12">
+					<h3>Tabs</h3>
+					<dl class="tabs">
+						<dt><a href="#">Item 1</a></dt>
+						<dd>
+							Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras tincidunt pellentesque lorem, id suscipit dolor rutrum id. Morbi facilisis porta volutpat. Fusce adipiscing, mauris quis congue tincidunt, sapien purus suscipit odio, quis dictum odio tortor in sem. Ut sit amet libero nec orci mattis fringilla. Praesent eu ipsum in sapien tincidunt molestie sed ut magna. Nam accumsan dui at orci rhoncus pharetra tincidunt elit ullamcorper.
+						</dd>
+						<dt><a href="#">Item 2</a></dt>
+						<dd>
+							Ut laoreet augue et neque pretium non sagittis nibh pulvinar. Etiam ornare tincidunt orci quis ultrices. Pellentesque ac sapien ac purus gravida ullamcorper. Duis rhoncus sodales lacus, vitae adipiscing tellus pharetra sed. Praesent bibendum lacus quis metus condimentum ac accumsan orci vulputate. Aenean fringilla massa vitae metus facilisis congue. Morbi placerat eros ac sapien semper pulvinar. Vestibulum facilisis, ligula a molestie venenatis.
+						</dd>
+						<dt><a href="#">Item 3</a></dt>
+						<dd>
+							Donec mattis mauris gravida metus laoreet non rutrum sem viverra. Aenean nibh libero, viverra vel vestibulum in, porttitor ut sapien. Phasellus tempor lorem id justo ornare tincidunt. Nulla faucibus, purus eu placerat fermentum, velit mi iaculis nunc, bibendum tincidunt ipsum justo eu mauris. Nulla facilisi. Vestibulum vel lectus ac purus tempus suscipit nec sit amet eros. Nullam fringilla, enim eu lobortis dapibus, quam magna tincidunt nibh.
+						</dd>
+						<dt><a href="#">Item 4</a></dt>
+						<dd>
+							Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Phasellus dui urna, mollis vel suscipit in, pharetra at ligula. Pellentesque a est vel est fermentum pellentesque sed sit amet dolor. Nunc in dapibus nibh. Aliquam erat volutpat. Phasellus vel dui sed nibh iaculis convallis id sit amet urna. Proin nec tellus quis justo consequat accumsan. Vivamus turpis enim, auctor eget placerat eget, aliquam ut sapien.
+						</dd>
+					</dl>
+					<hr>
+					<div class="clearfix">
+						<div class="grid-8 alpha">
+							<h3>Accordion</h3>
+							<div class="clearfix">
+								<div class="grid-4 alpha">
+									<h6>Horizontal</h6>
+									<div class="wrapper"><ul class="kwicks kwicks-horizontal">
+										<li id="kwick1"></li>
+										<li id="kwick2"></li>
+										<li id="kwick3"></li>
+										<li id="kwick4"></li>
+									</ul></div>
+								</div>
+								<div class="grid-4 omega">
+									<h6>Vertical</h6>
+									<dl id="accordion" class="accordion">
+										<dt><a href="#">Title 1</a></dt>
+										<dd>Suspendisse porta rhoncus lacus, hendrerit ornare velit consectetur varius. Etiam sodales justo nisl, et pulvinar dui bibendum vitae. Nulla eu ante sodales, sodales diam sit amet, tempus mi. Aenean placerat ante vel mattis pulvinar. Integer nec interdum mauris, quis feugiat sem. Phasellus rutrum lectus id tempus vestibulum. Nunc accumsan diam justo, a volutpat sapien auctor porta. Aliquam feugiat nibh vehicula turpis adipiscing, a sollicitudin nibh condimentum. Vivamus sed tellus eu velit hendrerit porttitor a eget nisl. Nulla rutrum nunc massa, ac rutrum ipsum porttitor ac. </dd>
+										<dt><a href="#">Title 2</a></dt>
+										<dd>Fusce tempor blandit sem ut tristique. Aliquam euismod iaculis quam, tempus feugiat nisi placerat sed. In sit amet ante eu neque laoreet molestie sit amet at est. Proin sodales purus et nunc malesuada laoreet. Morbi in purus in odio eleifend viverra. Nam iaculis adipiscing lectus, vel gravida nisl euismod ut. In nec tempus nibh. Donec eget ipsum massa. Vivamus ante ipsum, malesuada vitae euismod ac, hendrerit id metus. Nunc lobortis, quam sed tempus ultrices, felis nisi imperdiet diam, quis lacinia ante turpis id arcu. Nunc quis massa in augue pharetra dignissim sit amet quis nulla. Duis porta lorem eu leo porttitor, vel suscipit purus ornare. </dd>
+										<dt><a href="#">Title 3</a></dt>
+										<dd>Donec quis hendrerit mauris. Phasellus eros nisl, tempus quis sem id, dignissim rutrum dui. In viverra, erat sed suscipit ullamcorper, tortor diam placerat lacus, sed euismod lorem massa vulputate lorem. In in tincidunt felis. In eu turpis in ipsum rhoncus tempor nec sed elit. Morbi ornare purus ligula, eget ornare ante gravida nec. Quisque convallis turpis ornare ante molestie accumsan eget ac purus. Fusce sed sapien nibh. Nam pretium urna non nunc interdum mattis. </dd>
+									</dl>
+								</div>
+							</div>
+						</div>
+						<div class="grid-4 omega">
+							<h3>Toggle</h3>
+							<div class="toggle">
+								<div class="toggle-trigger">Hidden text</div>
+								<div class="toggle-content">
+									Mauris a ipsum vel sapien congue volutpat nec at urna. Fusce molestie tristique elit, eu imperdiet tellus luctus faucibus. Morbi a ultrices orci. Morbi sodales laoreet odio, ultricies pharetra mi. Cras nec nunc vestibulum, varius purus vel, ultrices orci. Donec nulla sapien, bibendum eget facilisis at, auctor non leo. Donec eleifend eget nibh ac consequat. Suspendisse interdum semper nibh, vel euismod enim vehicula sed. Aliquam turpis lacus, fermentum in vestibulum et, semper ac ipsum. Praesent vitae erat id justo varius vehicula sit amet sed nibh. Phasellus nec ipsum tristique, rutrum risus nec, lobortis mauris. Aliquam sed magna convallis, ornare odio ut, egestas purus. 
+								</div>
+							</div>
+						</div>
+					</div>
+					<hr>
+					<h3>Carousel</h3>
+					<div class="flexslider carousel">
+						<ul class="slides">
+							<li><img src="images/img.jpg" alt=""></li>
+							<li><img src="images/img.jpg" alt=""></li>
+							<li><img src="images/img.jpg" alt=""></li>
+							<li><img src="images/img.jpg" alt=""></li>
+							<li><img src="images/img.jpg" alt=""></li>
+							<li><img src="images/img.jpg" alt=""></li>
+						</ul>
+					</div>
+					<hr>
+					<h3>Gallery</h3>
+					<div class="wrapper">
+						<div class="flexslider gallery grid-9 alpha">
+							<ul class="slides">
+								<li><img src="images/img.jpg" alt=""></li>
+								<li><img src="images/img.jpg" alt=""></li>
+								<li><img src="images/img.jpg" alt=""></li>
+								<li><img src="images/img.jpg" alt=""></li>
+							</ul>
+						</div>
+						<div class="flexslider gallery-thumbs grid-3 omega">
+							<ul class="slides">
+								<li><img src="images/img.jpg" alt=""></li>
+								<li><img src="images/img.jpg" alt=""></li>
+								<li><img src="images/img.jpg" alt=""></li>
+								<li><img src="images/img.jpg" alt=""></li>
+							</ul>
+						</div>
+					</div>
+					<hr>
+					<h3>Sortable gallery</h3>
+					<div class="sortable-gallery">
+						<ul class="gallery-filter">
+							<li class="filter" data-filter="all">All</li>
+							<li class="filter" data-filter="category1">Category 1</li>
+							<li class="filter" data-filter="category2">Category 2</li>
+							<li class="filter" data-filter="category3">Category 3</li>
+						</ul>
+						<ul class="gallery-items">
+							<li class="mix category1"><img src="images/img.jpg" alt=""></li>
+							<li class="mix category2"><img src="images/img.jpg" alt=""></li>
+							<li class="mix category3"><img src="images/img.jpg" alt=""></li>
+							<li class="mix category1"><img src="images/img.jpg" alt=""></li>
+							<li class="mix category1"><img src="images/img.jpg" alt=""></li>
+							<li class="mix category2"><img src="images/img.jpg" alt=""></li>
+							<li class="mix category3"><img src="images/img.jpg" alt=""></li>
+							<li class="mix category1"><img src="images/img.jpg" alt=""></li>
+						</ul>
+					</div>
+					<hr>
+					<h3>Calendar</h3>
+					<div class="calendar"></div>
+				</div>
+			</div>
+		</div>
+		<!--== FOOTER SIDEBAR ======================================================================-->
+		<aside id="footer-sidebar">
+			<div class="container-12 clearfix">
+				<div class="grid-3">
+					<h5 class="logo-small">Theme.</h5>
+					It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English.
+				</div>
+				<div class="grid-3">
+					<h5>Categories</h5>
+					<ul>
+						<li><a href="blog-category.html">Cum sociis natoque penatibus</a></li>
+						<li><a href="blog-category.html">Magnis dis parturient montes</a></li>
+						<li><a href="blog-category.html">Nascetur ridiculus mus</a></li>
+						<li><a href="blog-category.html">Integer non orci eros</a></li>
+						<li><a href="blog-category.html">Aliquam erat volutpat</a></li>
+						<li><a href="blog-category.html">Quisque lobortis massa a augue</a></li>
+					</ul>
+				</div>
+				<div class="grid-3">
+					<h5>Our Team</h5>
+					<ul class="thumb-grid">
+						<li><a href="employee-page.html"><img src="images/team-thumbnail-small.jpg" alt=""></a></li>
+						<li><a href="employee-page.html"><img src="images/team-thumbnail-small.jpg" alt=""></a></li>
+						<li><a href="employee-page.html"><img src="images/team-thumbnail-small.jpg" alt=""></a></li>
+						<li><a href="employee-page.html"><img src="images/team-thumbnail-small.jpg" alt=""></a></li>
+						<li><a href="employee-page.html"><img src="images/team-thumbnail-small.jpg" alt=""></a></li>
+						<li><a href="employee-page.html"><img src="images/team-thumbnail-small.jpg" alt=""></a></li>
+					</ul>
+				</div>
+				<div class="grid-3">
+					<h5>Subcribe to Newsletters</h5>
+					<p>Nulla sit amet quam felis. Donec ultrices posuere orci, nec fermentum augue aliquet id. Quisque semper eros ut felis gravida aliquet. Phasellus eu sem eget</p>
+					<form id="subscribe-form">
+						<input type="text" placeholder="Your email address">
+						<input type="submit" value="Submit">
+					</form>
+				</div>
+			</div>
+		</aside>
+		<!--== FOOTER ==============================================================================-->
+		<footer id="footer">
+			<div class="container-12 clearfix">
+				<div class="grid-6">
+					<!--~~ Copyright ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+					<div class="copyright">
+						© Copyright 2013 by <a href="home.html" id="footer-logo">Theme</a>
+					</div>
+				</div>
+				<div class="grid-6">
+					<!--~~ Social Networks ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+					<ul class="social-nets clearfix">
+						<li><a href="http://facebook.com" class="icon-facebook"></a></li>
+						<li><a href="http://twitter.com" class="icon-twitter"></a></li>
+						<li><a href="http://dribbble.com" class="icon-dribbble"></a></li>
+						<li><a href="http://linkedin.com" class="icon-linkedin"></a></li>
+						<li><a href="http://pinterest.com" class="icon-pinterest"></a></li>
+						<li><a href="#" class="icon-chevron-up" id="back-top"></a></li>
+					</ul>
+				</div>
+			</div>
+		</footer>
+	</div>
+</body>
+</html>

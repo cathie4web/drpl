@@ -1,0 +1,349 @@
+/*
+* Responsive Design 
+ */
+
+
+/*== Large 0Screen ================================================================*/
+@media (min-width:1250px) {
+	/*== HEADER =============================================================================*/
+	#header {
+		#header-nav {
+			#header-menu {
+				>li {
+					margin-left:25px;
+					
+					> a {
+						padding:32px 8px 0;
+					}
+				}
+			}
+		}
+	}
+}
+
+
+/*== Tablet (Portrait, 768px) =======================================================*/
+@media (max-width: 1000px) {
+	.pricelist,
+	.pricelist-caption{
+		width:145px;
+		z-index:10;
+	}
+	
+	/*== HEADER =============================================================================*/
+	#header {
+		#header-nav {
+			#header-menu {
+				padding-left:5px;
+				>li {
+					margin-left:13px;
+					
+					> a {
+						padding:32px 0 0;
+					}
+				}
+			}
+		}
+		
+		#header-search-form{
+			fieldset{
+				input[type="text"]{
+					width:115px;
+				}
+			}
+		}
+	}
+	
+	/*== FOOTER SIDEBAR =====================================================================*/
+	#footer-sidebar{
+		.thumb-grid{
+			li{
+				max-width:48%;
+			}
+		}
+	}
+	
+	/*== 404 ================================================================================*/
+	.page404-holder{
+		h2{
+			font-size:210px;
+			line-height:170px;
+		}
+	}
+}
+
+
+/*== Mobile (Landscape, 480px) =======================================================*/
+@media (max-width: 797px) {
+	.pricelist{
+		display:block;
+		margin-bottom:10px;
+		width:auto;
+		
+		&.large{
+			margin-top:0;
+			z-index:100;
+		}
+		
+		&.small{
+			margin-top:0;
+		}
+	}
+
+	/*== HEADER =============================================================================*/
+	#header {
+		#header-nav {
+			margin:0;
+			position:relative;
+			
+			#menu-icon{
+				display:block;
+			}
+			#header-menu {
+				background:lighten(@sidebarBg, 5%);
+				display:none;
+				padding:0;
+				position:absolute;
+				top:102%;
+				width:100%;
+				
+				>li {
+					border-top:1px solid @altBg;
+					float:none;
+					margin:0;
+					
+					&:first-child{
+						border-top:none;
+					}
+					
+					> a {
+						border:none;
+						display:block;
+						padding:10px 20px;
+						
+						&:before{
+							display:none !important;
+						}
+					}
+					&.current > a,
+					&.sfHover > a,
+					> a:hover{}
+		
+					ul {
+						background:@boxBg;
+						border-top:1px solid @altBg;
+						padding:0;
+						position:static;
+						width:auto;
+						
+						li {
+							border-top:1px solid darken(@boxBg, 10%);
+							margin:0;
+							
+							&:first-child{
+								border-top:none;
+							}
+							a {
+								color:@baseTxtColor;
+								display:block;
+								padding:10px 20px;
+							}
+						
+							> a:hover, 
+							&.sfHover > a,
+							&.current > a{
+								color:@accentColor;
+							}
+							
+							&.sfHover > ul {}
+						}
+					}
+					
+					&.sfHover ul {}
+				}
+			}
+		}
+	}
+	
+	
+	/*== CONTENT ============================================================================*/
+	#content {}
+	
+	.code{}
+	
+	
+	/*== FOOTER SIDEBAR =====================================================================*/
+	#footer-sidebar{
+		.logo-small{}
+		
+		ul{
+			li{
+				a{
+					&:hover{}
+				}
+			}
+		}
+		
+		.thumb-grid{
+			li{
+				max-width:13%;
+			}
+		}
+		
+		#subscribe-form{
+			overflow:hidden;
+			
+			input[type="text"]{
+				float:left;
+				margin-right:6px;
+				width:210px;
+			}
+			
+			input[type="submit"]{
+				float:left;
+			}
+		}
+	}
+	
+	/*== FOOTER =============================================================================*/
+	#footer{
+		.social-nets{
+			float:none;
+		}
+	}
+	
+	/*== 404 ================================================================================*/
+	.page404-holder{
+		font-size:45px;
+		line-height:45px;
+		text-align:center;
+		
+		h2{
+			font-size:170px;
+			line-height:150px;
+		}
+	}
+}
+
+
+/*== Mobile (Portrait, 320px) =======================================================*/
+@media (max-width: 479px) {
+	/*== GLOBAL STRUCTURE ====================================================================*/
+	body {}
+	.main {}
+	h1{}
+	h2{}
+	h3{}
+	h4{}
+	h5{}
+	h6{}
+	blockquote{}
+	time{}
+	table{}
+	p{}
+	hr{}
+	
+	/*-- Links ------------------------------------------------------------------------------*/
+	a{}
+	
+	.button,
+	input[type="submit"],
+	input[type="reset"]{}
+	
+	/*-- Lists ------------------------------------------------------------------------------*/
+	ol{}
+	ul{}
+	dl{}
+	
+	/*-- Forms ------------------------------------------------------------------------------*/
+	input{}
+	
+	/*== HEADER =============================================================================*/
+	#header {
+		#logo{}
+		
+		#header-nav {
+			#menu-icon{}
+			#header-menu {
+				>li {
+					> a {}
+					&.current > a,
+					&.sfHover > a,
+					> a:hover{}
+		
+					ul {
+						li {
+							a {}
+						
+							> a:hover, 
+							&.sfHover > a,
+							&.current > a{}
+							
+							&.sfHover > ul {}
+						}
+					}
+					
+					&.sfHover ul {}
+				}
+			}
+		}
+		
+		#header-search-form{
+			fieldset{
+				input[type="text"]{}
+				.submit{}
+			}
+		}
+	}
+	
+	
+	/*== CONTENT ============================================================================*/
+	#content {}
+	
+	.code{}
+	
+	
+	/*== FOOTER SIDEBAR =====================================================================*/
+	#footer-sidebar{
+		.logo-small{}
+		
+		ul{
+			li{
+				a{
+					&:hover{}
+				}
+			}
+		}
+		
+		.thumb-grid{
+			li{}
+		}
+		
+		#subscribe-form{
+			input[type="text"]{}
+			
+			input[type="submit"]{}
+		}
+	}
+	
+	/*== FOOTER =============================================================================*/
+	#footer{
+		.copyright{
+			#footer-logo:hover{}
+		}
+		
+		.social-nets{
+			li{
+				a{}
+			}
+		}
+	
+	}
+}
+
+
+@media (min-width: 798px) {
+	#header #header-nav #header-menu  {
+		display:block !important;
+	}
+}

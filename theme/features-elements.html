@@ -1,0 +1,896 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html lang="en-us" class="ie"> <![endif]-->
+<!--[if !(IE)]><!-->
+<html lang="en-us">
+<!--<![endif]-->
+<head>
+	<meta charset="utf-8">
+	<title>Elements</title>
+	<meta name="viewport" content="width=device-width; initial-scale=1.0">
+	<link rel="stylesheet/less" type="text/css" href="less/style.less">
+	<link rel="icon" href="images/favicon.ico" type="image/x-icon">
+	<link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
+	<script src="js/jquery.min.js"></script>
+	<script src="js/hoverIntent.js"></script>
+	<script src="js/superfish.js"></script>
+	<script src="js/jquery.easing.1.3.js"></script>
+	<script src="js/jquery.flexslider.js"></script>
+	<script src="js/effects.js"></script>
+	<script src="js/script.js"></script>
+	<script src="js/less.js"></script>
+	<!--[if lt IE 9]>
+		<div style='clear: both; text-align:center; position: relative;'>
+			<a href="http://windows.microsoft.com/en-US/internet-explorer/products/ie/home?ocid=ie6_countdown_bannercode">
+				<img src="http://storage.ie6countdown.com/assets/100/images/banners/warning_bar_0000_us.jpg" border="0" height="42" width="820" alt="You are using an outdated browser. For a faster, safer browsing experience, upgrade for free today.">
+			</a>
+		</div>
+		<script src="js/html5.js"></script>
+	<![endif]-->
+</head>
+<body>
+	<div class="main">
+		<!--== HEADER ===============================================================================-->
+		<header id="header" >
+			<div class="container-12 clearfix">
+				<!--~~ Logo ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+				<div class="grid-2">
+					<div id="logo">
+						<a href="index.html">Theme.</a>
+					</div>
+				</div>
+				<!--~~ Menu ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+				<nav id="header-nav" class="grid-7">
+					<ul class="sf-menu" id="header-menu">
+						<li>
+							<a href="index.html">Home</a>
+							<ul>
+								<li><a href="home-with-carousel.html">Home v2 (with carousel)</a></li>
+								<li><a href="home-with-gallery.html">Home v3 (with gallery)</a></li>
+								<li><a href="home-with-large-headpicture.html">Home v4 (with large headpicture)</a></li>
+								<li><a href="home-with-small-headpicture.html">Home v5 (with small headpicture)</a></li>
+								<li><a href="home-without-headpicture.html">Home v6 (without headpicture)</a></li>
+							</ul>
+						</li>
+						<li>
+							<a href="about.html">About</a>
+							<ul>
+								<li><a href="faqs.html">FAQs</a></li>
+								<li><a href="testimonials.html">Testimonials</a></li>
+								<li><a href="team.html">Our Team</a></li>
+								<li><a href="services.html">Services</a></li>
+							</ul>
+						</li>
+						<li>
+							<a href="gallery.html">Gallery</a>
+							<ul>
+								<li><a href="gallery-1col.html">Gallery v2 (1 col)</a></li>
+								<li><a href="gallery-1col-with-sidebar.html">Gallery v3 (1 col with sidebar)</a></li>
+								<li><a href="gallery-2col.html">Gallery v4 (2 col)</a></li>
+								<li><a href="gallery-2col-with-sidebar.html">Gallery v5 (2 col width sidebar)</a></li>
+								<li><a href="gallery-4col.html">Gallery v6 (4 col)</a></li>
+							</ul>
+						</li>
+						<li>
+							<a href="blog.html">Blog</a>
+							<ul>
+								<li><a href="blog-fullwidth.html">Blog v2 (fullwidth)</a></li>
+								<li><a href="blog-grid.html">Blog v3 (grid)</a></li>
+								<li><a href="archives.html">Archives</a></li>
+								<li><a href="blog-category.html">Category Page</a></li>
+							</ul>
+						</li>
+						<li>
+							<a href="contects.html">Contacts</a>
+						</li>
+						<li>
+							<a href="features.html">Features</a>
+							<ul>
+								<li><a href="features-grids.html">Columns</a></li>
+								<li><a href="features-formatting.html">Formatting</a></li>
+								<li class="current"><a href="features-elements.html">Elements</a></li>
+								<li><a href="features-scripts.html">Scripts</a></li>
+								<li><a href="features-blocks.html">Blocks</a></li>
+								<li><a href="features-icons.html">Font Icons</a></li>
+								<li>
+									<a>Pages</a>
+									<ul>
+										<li><a href="page-fullwidth.html">Fullwidth Page</a></li>
+										<li><a href="page-with-sidebar.html">Page with sidebar</a></li>
+										<li><a href="login.html">Login Page</a></li>
+										<li><a href="registration.html">Registration Page</a></li>
+										<li><a href="search.html">Search Page</a></li>
+										<li><a href="sitemap.html">Sitemap</a></li>
+										<li><a href="404.html">404 Error Page</a></li>
+										<li><a href="403.html">403 Access denied</a></li>
+									</ul>
+								</li>
+							</ul>
+						</li>
+					</ul>
+				</nav>
+				<!--~~ Search Form ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+				<div class="grid-3 hide-ml">
+					<form id="header-search-form">
+						<fieldset>
+							<input type="text" placeholder="Site Search">
+							<a onClick="document.getElementById('header-search-form').submit()" class="submit icon-search"></a>
+						</fieldset>
+					</form>
+				</div>
+			</div>
+		</header>
+		<!--== CONTENT =============================================================================-->
+		<div id="content">
+			<div class="container-12 clearfix">
+				<div class="grid-12">
+					<ul class="breadcrumbs">
+						<li><a href="index.html">Home</a></li>
+						<li><a href="features.html">Features</a></li>
+						<li>Elements</li>
+					</ul>
+				</div>
+			</div>
+			<div class="container-12 clearfix" id="elements">
+				<div class="grid-12">
+					<h3>Buttons and Links</h3>
+					<div class="clearfix">
+						<div class="grid-4 alpha">
+							<h6>Simple buttons</h6>
+							<p><a href="#" class="btn small">Read More</a></p>
+							<p><a href="#" class="btn">Read More</a></p>
+							<a href="#" class="btn large">Read More</a>
+						</div>
+						<div class="grid-4">
+							<h6>Buttons with icon</h6>
+							<p><a href="#" class="btn">Download</a></p>
+							<p><a href="#" class="btn icon-before"><span class="icon-download-alt"></span> Download</a></p>
+							<a href="#" class="btn icon-after">Download <span class="icon-download-alt"></span></a>
+						</div>
+						<div class="grid-4 omega">
+							<h6>Links</h6>
+							<p><a href="#">Visit site</a></p>
+							<p><a href="#" class="link icon-after">Visit site <span class="icon-angle-right"></span></a></p>
+							<a href="#" class="link icon-before"><span class="icon-external-link"></span> Visit site</a>
+						</div>
+					</div>
+					<hr>
+					<h3>Lists</h3>
+					<div class="clearfix">
+						<div class="grid-6 alpha clearfix">
+							<div class="dgrid-3 alpha">
+								<h6>Default list</h6>
+								<ul>
+									<li>List item one</li>
+									<li>List item two</li>
+									<li>List item three</li>
+									<li>List item four</li>
+								</ul>
+							</div>
+							<div class="dgrid-3 omega">
+								<h6>Custom list</h6>
+								<ul class="list">
+									<li>List item one</li>
+									<li>List item two</li>
+									<li>List item three</li>
+									<li>List item four</li>
+								</ul>
+							</div>
+						</div>
+						<div class="grid-6 omega clearfix">
+							<div class="dgrid-3 alpha">
+								<h6>Notes list</h6>
+								<ul class="list list-note">
+									<li>List item one</li>
+									<li>List item two</li>
+									<li>List item three</li>
+									<li>List item four</li>
+								</ul>
+							</div>
+							<div class="dgrid-3 omega">
+								<h6>Options list</h6>
+								<ul class="list list-options">
+									<li>List item one</li>
+									<li>List item two</li>
+									<li>List item three</li>
+									<li>List item four</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+					<br>
+					<div class="clearfix">
+						<div class="grid-6 alpha clearfix">
+							<div class="dgrid-3 alpha">
+								<h6>Minus list</h6>
+								<ul class="list list-minus">
+									<li>List item one</li>
+									<li>List item two</li>
+									<li>List item three</li>
+									<li>List item four</li>
+								</ul>
+							</div>
+							<div class="dgrid-3 omega">
+								<h6>Plus list</h6>
+								<ul class="list list-plus">
+									<li>List item one</li>
+									<li>List item two</li>
+									<li>List item three</li>
+									<li>List item four</li>
+								</ul>
+							</div>
+						</div>
+						<div class="grid-6 omega clearfix">
+							<div class="dgrid-3 alpha">
+								<h6>Check list</h6>
+								<ul class="list list-check">
+									<li>List item one</li>
+									<li>List item two</li>
+									<li>List item three</li>
+									<li>List item four</li>
+								</ul>
+							</div>
+							<div class="dgrid-3 omega">
+								<h6>X list</h6>
+								<ul class="list list-x">
+									<li>List item one</li>
+									<li>List item two</li>
+									<li>List item three</li>
+									<li>List item four</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+					<hr>
+					<h3>Cites</h3>
+					<div class="clearfix">
+						<div class="grid-4 alpha">
+							<h6>Simple quote</h6>
+							<blockquote>
+								Maecenas eu nisi et tortor viverra pharetra tincidunt quis velit. Etiam nec risus dui. Sed porta elit eu ligula rhoncus, sed consectetur ligula venenatis. Interdum et malesuada fames ac ante ipsum primis in faucibus. Maecenas venenatis aliquam nunc, nec pulvinar dui cursus ut. Pellentesque vulputate vehicula tellus, et porttitor nunc faucibus nec. Fusce fermentum nec nisi eget dictum. 
+							</blockquote>
+						</div>
+						<div class="grid-4">
+							<h6>Quote with caption</h6>
+							<blockquote>
+								<p>Maecenas eu nisi et tortor viverra pharetra tincidunt quis velit. Etiam nec risus dui. Sed porta elit eu ligula rhoncus, sed consectetur ligula venenatis. Interdum et malesuada fames ac ante ipsum primis in faucibus. Maecenas venenatis aliquam nunc, nec pulvinar dui cursus ut. Pellentesque vulputate vehicula tellus.</p>
+								<cite>Paul Smith</cite>
+							</blockquote>
+						</div>
+						<div class="grid-4 omega">
+							<h6>Quote with complex caption</h6>
+							<blockquote>
+								<p>Maecenas eu nisi et tortor viverra pharetra tincidunt quis velit. Etiam nec risus dui. Sed porta elit eu ligula rhoncus, sed consectetur ligula venenatis. Interdum et malesuada fames ac ante ipsum primis in faucibus.</p>
+								<div class="clearfix">
+									<figure><img src="images/quote-author.jpg" alt=""></figure>
+									<cite>
+										<time datetime="2012-01-01">Oct 10, 2013</time>
+										Samanta Smith,<br>
+										Client
+									</cite>
+								</div>
+							</blockquote>
+						</div>
+					</div>
+					<hr>
+					<h3>Dropcap</h3>
+					<div class="clearfix">
+						<div class="grid-6 clearfix alpha">
+							<span class="dropcap">P</span>ellentesque tincidunt enim sed vulputate vestibulum. Suspendisse ac fringilla neque. Donec hendrerit risus et eleifend fermentum. Morbi a risus sit amet ante viverra blandit vitae eu elit. Nam cursus lorem purus, nec eleifend ligula laoreet et. Aenean rhoncus quis orci vitae laoreet. Nullam sit amet elementum turpis. Donec tincidunt euismod felis et accumsan. Proin ac mi orci. Nunc fermentum lacus turpis, vitae malesuada nisl blandit et. Aenean venenatis velit eget mauris interdum, sed dictum est varius. Integer varius ac lorem ac tincidunt. Donec fermentum sem condimentum hendrerit consequat. Nunc eros erat, molestie et urna ac, mattis dignissim augue. Integer ullamcorper venenatis elit, vitae volutpat sapien luctus eu. Suspendisse condimentum, nulla nec lacinia tincidunt, nunc eros condimentum nibh, eu consectetur orci dui eget nunc.
+						</div>
+						<div class="grid-6 clearfix omega">
+							<span class="dropcap dropcap-block">P</span>ellentesque tincidunt enim sed vulputate vestibulum. Suspendisse ac fringilla neque. Donec hendrerit risus et eleifend fermentum. Morbi a risus sit amet ante viverra blandit vitae eu elit. Nam cursus lorem purus, nec eleifend ligula laoreet et. Aenean rhoncus quis orci vitae laoreet. Nullam sit amet elementum turpis. Donec tincidunt euismod felis et accumsan. Proin ac mi orci. Nunc fermentum lacus turpis, vitae malesuada nisl blandit et. Aenean venenatis velit eget mauris interdum, sed dictum est varius. Integer varius ac lorem ac tincidunt. Donec fermentum sem condimentum hendrerit consequat. Nunc eros erat, molestie et urna ac, mattis dignissim augue. Integer ullamcorper venenatis elit, vitae volutpat sapien luctus eu. Suspendisse condimentum, nulla nec lacinia tincidunt, nunc eros condimentum nibh, eu consectetur orci dui eget nunc.
+						</div>
+					</div>
+					<hr>
+					<h3>Social Networks</h3>
+					<ul class="social-nets clearfix">
+						<li><a href="http://dribbble.com" class="icon-dribbble"></a></li>
+						<li><a href="http://facebook.com" class="icon-facebook"></a></li>
+						<li><a href="http://flickr.com" class="icon-flickr"></a></li>
+						<li><a href="http://instagram.com" class="icon-instagram"></a></li>
+						<li><a href="http://linkedin.com" class="icon-linkedin"></a></li>
+						<li><a href="http://pinterest.com" class="icon-pinterest"></a></li>
+					</ul>
+					<br>
+					<ul class="social-nets clearfix">
+						<li><a href="http://plus.google.com" class="icon-google-plus"></a></li>
+						<li><a href="http://tumblr.com" class="icon-tumblr"></a></li>
+						<li><a href="http://twitter.com" class="icon-twitter"></a></li>
+						<li><a href="http://vk.com" class="icon-vk"></a></li>
+						<li><a href="http://youtube.com" class="icon-youtube"></a></li>
+						<li><a href="#" class="icon-rss"></a></li>
+					</ul>
+					<hr>
+					<h3>Progressbars</h3>
+					<div class="clearfix">
+						<div class="grid-6 alpha">
+							<h6>Progressbar</h6>
+							<div class="progressbar">
+								<div class="progress" style="width: 50%"></div>
+							</div>
+							<br>
+							<h6>Progressbar with caption</h6>
+							<div class="progressbar">
+								<div class="progress" style="width: 70%"><span class="caption">70%</span></div>
+							</div>
+						</div>
+						<div class="grid-6 omega">
+							<h6>Stripped progressbar</h6>
+							<div class="progressbar striped">
+								<div class="progress" style="width: 60%"><span class="stripes"></span></div>
+							</div>
+							<br>
+							<h6>Stripped progressbar with caption</h6>
+							<div class="progressbar striped">
+								<div class="progress" style="width: 80%"><span class="caption">80%</span><span class="stripes"></span></div>
+							</div>
+						</div>
+					</div>
+					<br>
+					<div class="clearfix">
+						<div class="grid-6 alpha omega">
+							<h6>Animated progressbar</h6>
+							<div class="progressbar striped animate">
+								<div class="progress" style="width: 40%"><span class="stripes"></span></div>
+							</div>
+							<br>
+							<h6>Animated progressbar with caption</h6>
+							<div class="progressbar striped animate">
+								<div class="progress" style="width: 90%"><span class="caption">90%</span><span class="stripes"></span></div>
+							</div>
+						</div>
+					</div>
+					<hr>
+					<h3>Message Boxes</h3>
+					<div class="clearfix">
+						<div class="grid-4 alpha">
+							<div class="msg-box msg-error">
+								<h6>Error</h6>
+								Quisque vitae condimentum purus. Praesent lacinia lorem dolor, quis tincidunt felis ultricies eget.
+							</div>
+						</div>
+						<div class="grid-4">
+							<div class="msg-box msg-success">
+								<h6>Sucsess</h6>
+								Quisque vitae condimentum purus. Praesent lacinia lorem dolor, quis tincidunt felis ultricies eget.
+							</div>
+						</div>
+						<div class="grid-4 omega">
+							<div class="msg-box msg-info">
+								<h6>Info</h6>
+								Quisque vitae condimentum purus. Praesent lacinia lorem dolor, quis tincidunt felis ultricies eget.
+							</div>
+						</div>
+					</div>
+					<br>
+					<div class="clearfix">
+						<div class="grid-4 alpha">
+							<div class="msg-box msg-notice">
+								<h6>Notice</h6>
+								Quisque vitae condimentum purus. Praesent lacinia lorem dolor, quis tincidunt felis ultricies eget.
+							</div>
+						</div>
+						<div class="grid-4">
+							<div class="msg-box msg-question">
+								<h6>Question</h6>
+								Quisque vitae condimentum purus. Praesent lacinia lorem dolor, quis tincidunt felis ultricies eget.
+							</div>
+						</div>
+						<div class="grid-4 omega">
+							<div class="msg-box msg-advice">
+								<h6>Advice</h6>
+								Quisque vitae condimentum purus. Praesent lacinia lorem dolor, quis tincidunt felis ultricies eget.
+							</div>
+						</div>
+					</div>
+					<hr>
+					<h3>Google Map</h3>
+					<figure class="google-map">
+						<iframe width="100%" height="300" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com/maps?hl=en&amp;ie=UTF8&amp;ll=40.714353,-74.005973&amp;spn=0.819197,1.223602&amp;t=h&amp;z=10&amp;output=embed"></iframe><br /><small><a href="https://maps.google.com/maps?hl=en&amp;ie=UTF8&amp;ll=40.714353,-74.005973&amp;spn=0.819197,1.223602&amp;t=h&amp;z=10&amp;source=embed" style="color:#0000FF;text-align:left">View Larger Map</a></small>
+					</figure>
+					<hr>
+					<h3>Images</h3>
+					<div class="clearfix">
+						<div class="grid-4 alpha">
+							<h6>Simple image</h6>
+							<figure>
+								<img src="images/img.jpg" alt="">
+							</figure>
+						</div>
+						<div class="grid-4">
+							<h6>Image with shadow</h6>
+							<figure class="box-shadow">
+								<img src="images/img.jpg" alt="">
+							</figure>
+						</div>
+						<div class="grid-4 omega">
+							<h6>Image with border</h6>
+							<figure class="box-border">
+								<img src="images/img.jpg" alt="">
+							</figure>
+						</div>
+					</div>
+					<br>
+					<!--<div class="clearfix">
+						<div class="grid-4 alpha">
+							<h6>Grayscale image</h6>
+							<figure class="grayscale">
+								<img src="images/img.jpg" alt="">
+							</figure>
+						</div>
+						<div class="grid-4">
+							<h6>Sepia image</h6>
+							<figure class="sepia">
+								<img src="images/img.jpg" alt="">
+							</figure>
+						</div>
+						<div class="grid-4 omega">
+							<h6>Inverted image</h6>
+							<figure class="invert">
+								<img src="images/img.jpg" alt="">
+							</figure>
+						</div>
+					</div>
+					<br>
+					<div class="clearfix">
+						<div class="grid-4 alpha">
+							<h6>Blur</h6>
+							<figure class="blur">
+								<img src="images/img.jpg" alt="">
+							</figure>
+						</div>
+						<div class="grid-4">
+							<h6>Brightness</h6>
+							<figure class="brightness">
+								<img src="images/img.jpg" alt="">
+							</figure>
+						</div>
+						<div class="grid-4 omega">
+							<h6>Contrast</h6>
+							<figure class="contrast">
+								<img src="images/img.jpg" alt="">
+							</figure>
+						</div>
+					</div>
+					<br>-->
+					<div class="clearfix">
+						<div class="grid-4 alpha">
+							<h6>Opacity</h6>
+							<figure class="opacity">
+								<img src="images/img.jpg" alt="">
+							</figure>
+						</div>
+						<div class="grid-4 omega">
+							<h6>Image with caption</h6>
+							<figure>
+								<img src="images/img.jpg" alt="">
+								<figcaption>Lorem ipsum dolore</figcaption>
+							</figure>
+						</div>
+					</div>
+					<hr>
+					<h3>Video</h3>
+					<div class="clearfix">
+						<div class="grid-4 alpha">
+							<h6>Video from your site</h6>
+							<video width="100%" height="300" controls poster="video/video.jpg">
+								<source src="video/video.ogv" type='video/ogg; codecs="theora, vorbis"'>
+								<source src="video/video.mp4" type='video/mp4; codecs="avc1.42E01E, mp4a.40.2"'>
+								<source src="video/video.webm" type='video/webm; codecs="vp8, vorbis"'>
+								Video tag is not supported by your browser.
+								<a href="video/duel.mp4">Download video file</a>.
+							</video>
+						</div>
+						<div class="grid-4">
+							<h6>Youtube video</h6>
+							<iframe width="100%" height="300" src="//www.youtube.com/embed/gar9E2tEA1Q" frameborder="0" allowfullscreen></iframe>
+						</div>
+						<div class="grid-4 omega">
+							<h6>Vimeo video</h6>
+							<iframe src="//player.vimeo.com/video/75491258?title=0&amp;byline=0&amp;portrait=0&amp;badge=0" width="100%" height="300" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+						</div>
+					</div>
+					<hr>
+					<h3>Audio</h3>
+					<audio controls>
+						<source src="audio/music.ogg" type="audio/ogg; codecs=vorbis">
+						<source src="audio/music.mp3" type="audio/mpeg">
+						Audio tag is not supported by your browser.
+						<a href="audio/music.mp3">Download audio file</a>.
+					</audio>
+					<hr>
+					<h3>Table</h3>
+					<table>
+						<caption>Table Caption</caption>
+						<thead>
+							<tr>
+								<th>Title&nbsp;1</th>
+								<th>Title&nbsp;2</th>
+								<th>Title&nbsp;3</th>
+							</tr>
+						</thead>
+						<tfoot>
+							<tr>
+								<th>Total</th>
+								<td colspan="2">1301</td>
+							</tr>
+						</tfoot>
+						<tbody>
+							<tr>
+								<th>Subtitle 1.1</th>
+								<td>1</td>
+								<td>Suspendisse elementum luctus lacus a aliquam</td>
+							</tr>
+							<tr>
+								<th>Subtitle 1.2</th>
+								<td>100</td>
+								<td>Quisque lacinia, dui vitae vulputate</td>
+							</tr>
+							<tr>
+								<th>Subtitle 1.3</th>
+								<td>200</td>
+								<td>Donec erat velit, commodo vitae pretium ac, ultricies </td>
+							</tr>
+							<tr>
+								<th>Subtitle 1.4</th>
+								<td>1000</td>
+								<td>Vestibulum tempus lacus non est auctor</td>
+							</tr>
+						</tbody>
+					</table>
+					<hr>
+					<h3>Pricelists</h3>
+					<h6>Pricelists Type 1</h6>
+					<div class="pricelists clearfix">
+						<div class="pricelist">
+							<h2>Free</h2>
+							<div class="price">Free</div>
+							<ul class="options">
+								<li><strong>1</strong> domain</li>
+								<li class="even"><strong>1Gb</strong> storage</li>
+								<li><strong>1</strong> FTP accaunt</li>
+								<li class="even"><strong>1</strong> add-on domain</li>
+							</ul>
+							<div class="btn-wrapper">
+								<a href="#" class="btn large">Sign Up</a>
+							</div>
+						</div>
+						<div class="pricelist even">
+							<h2>Pro</h2>
+							<div class="price">$11</div>
+							<ul class="options">
+								<li><strong>1</strong> domain</li>
+								<li class="even"><strong>1Gb</strong> storage</li>
+								<li><strong>2</strong> FTP accaunts</li>
+								<li class="even"><strong>2</strong> add-on domains</li>
+							</ul>
+							<div class="btn-wrapper">
+								<a href="#" class="btn large">Buy</a>
+							</div>
+						</div>
+						<div class="pricelist">
+							<h2>Buisness</h2>
+							<div class="price">$35</div>
+							<ul class="options">
+								<li><strong>5</strong> domains</li>
+								<li class="even"><strong>5Gb</strong> storage</li>
+								<li><strong>3</strong> FTP accaunts</li>
+								<li class="even"><strong>5</strong> add-on domains</li>
+							</ul>
+							<div class="btn-wrapper">
+								<a href="#" class="btn large">Buy</a>
+							</div>
+						</div>
+					</div>
+					<br>
+					<h6>Pricelists Type 2</h6>
+					<div class="pricelists clearfix">
+						<div class="pricelist-caption hide-ml">
+							<h2>Features \ Plan </h2>
+							<div class="price">Price:</div>
+							<ul class="options">
+								<li>Domains:</li>
+								<li class="even">Storage:</li>
+								<li>FTP accaunts:</li>
+								<li class="even">Add-on domains:</li>
+								<li>Weakly backup:</li>
+							</ul>
+							<div class="btn-wrapper">
+								&nbsp;
+							</div>
+						</div>
+						<div class="pricelist even">
+							<h2>Free</h2>
+							<div class="price">Free</div>
+							<ul class="options">
+								<li><strong>1</strong> domain</li>
+								<li class="even"><strong>1Gb</strong> storage</li>
+								<li><strong>1</strong> FTP accaunt</li>
+								<li class="even"><strong>1</strong> add-on domain</li>
+								<li><span class="icon-remove"></span></li>
+							</ul>
+							<div class="btn-wrapper">
+								<a href="#" class="btn large">Sign Up</a>
+							</div>
+						</div>
+						<div class="pricelist">
+							<h2>Pro</h2>
+							<div class="price">$11</div>
+							<ul class="options">
+								<li><strong>1</strong> domain</li>
+								<li class="even"><strong>1Gb</strong> storage</li>
+								<li><strong>2</strong> FTP accaunts</li>
+								<li class="even"><strong>2</strong> add-on domains</li>
+								<li><span class="icon-remove"></span></li>
+							</ul>
+							<div class="btn-wrapper">
+								<a href="#" class="btn large">Buy</a>
+							</div>
+						</div>
+						<div class="pricelist even">
+							<h2>Buisness</h2>
+							<div class="price">$35</div>
+							<ul class="options">
+								<li><strong>5</strong> domains</li>
+								<li class="even"><strong>5Gb</strong> storage</li>
+								<li><strong>3</strong> FTP accaunts</li>
+								<li class="even"><strong>5</strong> add-on domains</li>
+								<li><span class="icon-ok"></span></li>
+							</ul>
+							<div class="btn-wrapper">
+								<a href="#" class="btn large">Buy</a>
+							</div>
+						</div>
+					</div>
+					<br>
+					<h6>Pricelists Type 3</h6>
+					<div class="pricelists clearfix">
+						<div class="pricelist shadow small">
+							<h2>Free</h2>
+							<div class="price">Free <span class="desc">&nbsp;</span></div>
+							<ul class="options">
+								<li><strong>1</strong> domain</li>
+								<li class="even"><strong>1Gb</strong> storage</li>
+								<li><strong>1</strong> FTP accaunt</li>
+								<li class="even"><strong>1</strong> add-on domain</li>
+							</ul>
+							<div class="btn-wrapper">
+								<a href="#" class="btn large">Sign Up</a>
+							</div>
+						</div>
+						<div class="pricelist shadow even">
+							<h2>Pro</h2>
+							<div class="price">$11 <span class="desc">per month</span></div>
+							<ul class="options">
+								<li><strong>1</strong> domain</li>
+								<li class="even"><strong>1Gb</strong> storage</li>
+								<li><strong>2</strong> FTP accaunts</li>
+								<li class="even"><strong>2</strong> add-on domains</li>
+							</ul>
+							<div class="btn-wrapper">
+								<a href="#" class="btn large">Buy</a>
+							</div>
+						</div>
+						<div class="pricelist shadow large">
+							<h2>Buisness</h2>
+							<div class="price">$35 <span class="desc">per month</span></div>
+							<ul class="options">
+								<li><strong>5</strong> domains</li>
+								<li class="even"><strong>5Gb</strong> storage</li>
+								<li><strong>3</strong> FTP accaunts</li>
+								<li class="even"><strong>5</strong> add-on domains</li>
+							</ul>
+							<div class="btn-wrapper">
+								<a href="#" class="btn large">Buy</a>
+							</div>
+						</div>
+						<div class="pricelist shadow even">
+							<h2>Dev</h2>
+							<div class="price">$75 <span class="desc">per month</span></div>
+							<ul class="options">
+								<li><strong>10</strong> domain</li>
+								<li class="even"><strong>10Gb</strong> storage</li>
+								<li><strong>10</strong> FTP accaunts</li>
+								<li class="even"><strong>10</strong> add-on domains</li>
+							</ul>
+							<div class="btn-wrapper">
+								<a href="#" class="btn large">Buy</a>
+							</div>
+						</div>
+						<div class="pricelist shadow small">
+							<h2>Corporate</h2>
+							<div class="price">$100 <span class="desc">per month</span></div>
+							<ul class="options">
+								<li><strong>Unlimited</strong> domains</li>
+								<li class="even"><strong>15Gb</strong> storage</li>
+								<li><strong>15</strong> FTP accaunt</li>
+								<li class="even"><strong>15</strong> add-on domain</li>
+							</ul>
+							<div class="btn-wrapper">
+								<a href="#" class="btn large">Buy</a>
+							</div>
+						</div>
+					</div>
+					<hr>
+					<div class="clearfix">
+						<div class="grid-4 alpha">
+							<h3>Table of Contents</h3>
+							<ul class="contents">
+								<li>
+									<span class="dt"><a href="#">Exercitationem ullam corpori</a></span>
+									<span class="dd">12</span>
+								</li>
+								<li>
+									<span class="dt"><a href="#">Fusce euismod consequat ante</a></span>
+									<span class="dd">19</span>
+								</li>
+								<li>
+									<span class="dt"><a href="#">Beatae vitae dicta sunt explic</a></span>
+									<span class="dd">28</span>
+								</li>
+								<li>
+									<span class="dt"><a href="#">Error sit voluptatem accusantium</a></span>
+									<span class="dd">32</span>
+								</li>
+								<li>
+									<span class="dt"><a href="#">Numquam eius modi tempora incidun</a></span>
+									<span class="dd">41</span>
+								</li>
+								<li>
+									<span class="dt"><a href="#">Velit esse quam nihil molestiae</a></span>
+									<span class="dd">54</span>
+								</li>
+								<li>
+									<span class="dt"><a href="#">Sed ut perspiciatis unde omnis</a></span>
+									<span class="dd">85</span>
+								</li>
+							</ul>
+						</div>
+						<div class="grid-8 omega">
+							<h3>Box</h3>
+							<div class="box">
+								<h5 class="box-title">Box title</h5>
+								<div class="box-indents">
+									Ut laoreet turpis venenatis est sagittis, vitae aliquet diam accumsan. Proin quis tortor libero. Maecenas sit amet tincidunt dui. Praesent at euismod ligula, et sollicitudin orci. Cras cursus, ligula et posuere dapibus, quam magna aliquet leo, eget viverra mi libero in risus. In convallis, mi nec sodales suscipit, nisi risus mollis lacus, ac lacinia libero magna pharetra velit. Aenean tempus dui vitae odio gravida, eget fringilla purus volutpat. Proin accumsan vestibulum nisl, sit amet volutpat lectus pretium nec. Ut eget aliquet nibh. Aliquam sed dictum turpis, sit amet aliquam odio. Aliquam non dolor ultricies, lobortis orci at, ultricies nisi.
+								</div>
+							</div>
+						</div>
+					</div>
+					<hr>
+					<h3>Forms</h3>
+					<form>
+						<div class="clearfix">
+							<div class="grid-6 alpha">
+								<fieldset>
+									<legend>Input</legend>
+									<p><label for="#text">Label</label></p>
+									<p><input type="text" id="text" placeholder="Name"></p>
+									<p><input type="email" id="text" placeholder="E-mail"></p>
+									<input type="password" placeholder="Password">
+								</fieldset>
+							</div>
+							<div class="grid-6 omega">
+								<fieldset>
+									<legend>Select</legend>
+									<p>
+										<select>
+											<option value="opt1" selected>Option 1</option>
+											<option value="opt2">Option 2</option>
+											<option value="opt3">Option 3</option>
+										</select>
+									</p>
+									<p>
+										<select>
+											<optgroup label="Group 1">
+												<option value="opt1" selected>Option 1</option>
+												<option value="opt2">Option 2</option>
+												<option value="opt3">Option 3</option>
+											</optgroup>
+											<optgroup label="Group 2">
+												<option value="opt4">Option 4</option>
+												<option value="opt5">Option 5</option>
+												<option value="opt6">Option 6</option>
+											</optgroup>
+										</select>
+									</p>
+									<select multiple size="3">
+										<option value="opt1" selected>Option 1</option>
+										<option value="opt2">Option 2</option>
+										<option value="opt3">Option 3</option>
+									</select>
+								</fieldset>
+							</div>
+						</div>
+						<div class="clearfix">
+							<div class="grid-6 alpha">
+								<fieldset>
+									<legend>Radio</legend>
+									<p><input type="radio" name="radio" value="radio1" checked>Option 1</p>
+									<p><input type="radio" name="radio" value="radio2">Option 2<br></p>
+									<input type="radio" name="radio" value="radio3">Option 3
+								</fieldset>
+							</div>
+							<div class="grid-6 omega">
+								<fieldset>
+									<legend>Checkbox</legend>
+									<p><input type="checkbox" value="check1" checked>Option 1</p>
+									<p><input type="checkbox" value="check2">Option 2</p>
+									<input type="checkbox" value="check3">Option 3
+								</fieldset>
+							</div>
+						</div>
+						<fieldset>
+							<legend>Textarea</legend>
+							<textarea placeholder="Input your text here"></textarea>
+						</fieldset>
+						<input type="reset" value="Reset">
+						<input type="submit" value="Submit">
+						<button>Button</button>
+					</form>
+				</div>
+			</div>
+		</div>
+		<!--== FOOTER SIDEBAR ======================================================================-->
+		<aside id="footer-sidebar">
+			<div class="container-12 clearfix">
+				<div class="grid-3">
+					<h5 class="logo-small">Theme.</h5>
+					It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English.
+				</div>
+				<div class="grid-3">
+					<h5>Categories</h5>
+					<ul>
+						<li><a href="blog-category.html">Cum sociis natoque penatibus</a></li>
+						<li><a href="blog-category.html">Magnis dis parturient montes</a></li>
+						<li><a href="blog-category.html">Nascetur ridiculus mus</a></li>
+						<li><a href="blog-category.html">Integer non orci eros</a></li>
+						<li><a href="blog-category.html">Aliquam erat volutpat</a></li>
+						<li><a href="blog-category.html">Quisque lobortis massa a augue</a></li>
+					</ul>
+				</div>
+				<div class="grid-3">
+					<h5>Our Team</h5>
+					<ul class="thumb-grid">
+						<li><a href="employee-page.html"><img src="images/team-thumbnail-small.jpg" alt=""></a></li>
+						<li><a href="employee-page.html"><img src="images/team-thumbnail-small.jpg" alt=""></a></li>
+						<li><a href="employee-page.html"><img src="images/team-thumbnail-small.jpg" alt=""></a></li>
+						<li><a href="employee-page.html"><img src="images/team-thumbnail-small.jpg" alt=""></a></li>
+						<li><a href="employee-page.html"><img src="images/team-thumbnail-small.jpg" alt=""></a></li>
+						<li><a href="employee-page.html"><img src="images/team-thumbnail-small.jpg" alt=""></a></li>
+					</ul>
+				</div>
+				<div class="grid-3">
+					<h5>Subcribe to Newsletters</h5>
+					<p>Nulla sit amet quam felis. Donec ultrices posuere orci, nec fermentum augue aliquet id. Quisque semper eros ut felis gravida aliquet. Phasellus eu sem eget</p>
+					<form id="subscribe-form">
+						<input type="text" placeholder="Your email address">
+						<input type="submit" value="Submit">
+					</form>
+				</div>
+			</div>
+		</aside>
+		<!--== FOOTER ==============================================================================-->
+		<footer id="footer">
+			<div class="container-12 clearfix">
+				<div class="grid-6">
+					<!--~~ Copyright ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+					<div class="copyright">
+						© Copyright 2013 by <a href="home.html" id="footer-logo">Theme</a>
+					</div>
+				</div>
+				<div class="grid-6">
+					<!--~~ Social Networks ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+					<ul class="social-nets clearfix">
+						<li><a href="http://facebook.com" class="icon-facebook"></a></li>
+						<li><a href="http://twitter.com" class="icon-twitter"></a></li>
+						<li><a href="http://dribbble.com" class="icon-dribbble"></a></li>
+						<li><a href="http://linkedin.com" class="icon-linkedin"></a></li>
+						<li><a href="http://pinterest.com" class="icon-pinterest"></a></li>
+						<li><a href="#" class="icon-chevron-up" id="back-top"></a></li>
+					</ul>
+				</div>
+			</div>
+		</footer>
+	</div>
+</body>
+</html>
