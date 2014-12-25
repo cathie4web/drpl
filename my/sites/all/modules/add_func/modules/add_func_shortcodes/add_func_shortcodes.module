@@ -10,18 +10,17 @@
  * Calls the Shortcode_info hook with the list parameter on all module. Returns
  * the all defined and altered Shortcode definitions.
  */
- 
 function add_func_shortcodes_list_all( $reset = FALSE ) {
-	$add_func_shortcodes = &drupal_static( __FUNCTION__ );
+	$shortcodes = &drupal_static( __FUNCTION__ );
 
-	if ( !isset( $add_func_shortcodes ) || $reset ) {
-		$add_func_shortcodes = module_invoke_all( 'add_func_shortcodes_info' );
+	if ( !isset( $shortcodes ) || $reset ) {
+		$shortcodes = module_invoke_all( 'shortcode_info' );
 
 		// Allow alteration of the shortcodes.
-		drupal_alter( 'add_func_shortcodes_info', $add_func_shortcodes );
+		drupal_alter( 'shortcode_info', $shortcodes );
 	}
 
-	return $add_func_shortcodes;
+	return $shortcodes;
 }
 
 /**
@@ -32,43 +31,43 @@ function add_func_shortcodes_list_all_enabled( $format, $reset = FALSE ) {
 		$format = filter_format_load( $format );
 	}
 
-	$add_func_shortcodes_enabled = &drupal_static( __FUNCTION__, array() );
+	$shortcodes_enabled = &drupal_static( __FUNCTION__, array() );
 
-	if ( isset( $add_func_shortcodes_enabled[$format->format] ) && !$reset ) {
-		return $add_func_shortcodes_enabled[$format->format];
+	if ( isset( $shortcodes_enabled[$format->format] ) && !$reset ) {
+		return $shortcodes_enabled[$format->format];
 	}
-	$add_func_shortcodes_enabled[$format->format] = array();
+	$shortcodes_enabled[$format->format] = array();
 
-	$add_func_shortcodes = add_func_shortcodes_list_all( $reset );
+	$shortcodes = add_func_shortcodes_list_all( $reset );
 	$filters = filter_list_format( $format->format );
 
-	if ( empty( $filters['add_func_shortcodes'] ) ) {
+	if ( empty( $filters['shortcode'] ) ) {
 		return array();
 	}
 
 	// Run through all Shortcodes defined.
-	foreach ( $filters['add_func_shortcodes']->settings as $name => $enabled ) {
+	foreach ( $filters['shortcode']->settings as $name => $enabled ) {
 		if ( $enabled ) {
-			$add_func_shortcodes_enabled[$format->format][$name] = $add_func_shortcodes[$name];
+			$shortcodes_enabled[$format->format][$name] = $shortcodes[$name];
 		}
 	}
 
-	return $add_func_shortcodes_enabled[$format->format];
+	return $shortcodes_enabled[$format->format];
 }
 
 /**
  * Implements hook_filter_info().
  */
 function add_func_shortcodes_filter_info() {
-	$filters['add_func_shortcodes'] = array(
-		'title' => t( 'Additional Functionality Shortcodes' ),
-		'description' => t( 'Provides WP like shortcodes to this text format.' ),
+	$filters['shortcode'] = array(
+		'title' => t( 'Shortcodes' ),
+		'description' => t( 'Provides shortcodes to this text format.' ),
 		'process callback' => '_add_func_shortcodes_process',
 		'settings callback' => '_add_func_shortcodes_settings_form',
 		'tips callback' => '_add_func_shortcodes_filter_tips',
 	);
-	$filters['add_func_shortcodes_txt_corr'] = array(
-		'title' => t( 'Additional Functionality Shortcodes - html corrector' ),
+	$filters['shortcode_text_corrector'] = array(
+		'title' => t( 'Shortcodes - html corrector' ),
 		'description' => t( 'Trying to correct the html around shortcodes. Enable only if you using wysiwyg editor.' ),
 		'process callback' => '_add_func_shortcodes_postprocess_text',
 	);
@@ -80,11 +79,11 @@ function add_func_shortcodes_filter_info() {
  * Provides filter tips callback.
  */
 function _add_func_shortcodes_filter_tips( $filter, $format, $long = FALSE ) {
-	$add_func_shortcodes = add_func_shortcodes_list_all_enabled( $format );
+	$shortcodes = add_func_shortcodes_list_all_enabled( $format );
 	$tips = array();
 	foreach ( $filter->settings as $name => $enabled ) {
-		if ( $enabled && !empty( $add_func_shortcodes[$name]['tips callback'] ) && is_string( $add_func_shortcodes[$name]['tips callback'] ) && function_exists( $add_func_shortcodes[$name]['tips callback'] ) ) {
-			$tips[] = call_user_func_array( $add_func_shortcodes[$name]['tips callback'], array( $format, $long ) );
+		if ( $enabled && !empty( $shortcodes[$name]['tips callback'] ) && is_string( $shortcodes[$name]['tips callback'] ) && function_exists( $shortcodes[$name]['tips callback'] ) ) {
+			$tips[] = call_user_func_array( $shortcodes[$name]['tips callback'], array( $format, $long ) );
 		}
 	}
 	return theme( 'item_list',
@@ -102,19 +101,18 @@ function _add_func_shortcodes_filter_tips( $filter, $format, $long = FALSE ) {
 function _add_func_shortcodes_settings_form( $form, &$form_state, $filter, $format, $defaults ) {
 	$settings = array();
 	$filter->settings += $defaults;
-	$add_func_shortcodes = add_func_shortcodes_list_all();
-	foreach ( $add_func_shortcodes as $key => $add_func_shortcode ) {
+	$shortcodes = add_func_shortcodes_list_all();
+	foreach ( $shortcodes as $key => $shortcode ) {
 		$settings[$key] = array(
 			'#type' => 'checkbox',
-			'#title' => t( 'Enable %name shortcode', array( '%name' => $add_func_shortcode['title'] ) ),
+			'#title' => t( 'Enable %name shortcode', array( '%name' => $shortcode['title'] ) ),
 			'#default_value' => NULL,
-			'#description' => isset( $add_func_shortcode['description'] ) ? $add_func_shortcode['description'] : t( 'Enable or disable this shortcode in this input format' ),
+			'#description' => isset( $shortcode['description'] ) ? $shortcode['description'] : t( 'Enable or disable this shortcode in this input format' ),
 		);
 
 		if ( !empty( $filter->settings[$key] ) ) {
 			$settings[$key]['#default_value'] = $filter->settings[$key];
-		}
-		elseif ( !empty( $defaults[$key] ) ) {
+		} elseif ( !empty( $defaults[$key] ) ) {
 			$settings[$key]['#default_value'] = $defaults[$key];
 		}
 	}
@@ -126,13 +124,14 @@ function _add_func_shortcodes_settings_form( $form, &$form_state, $filter, $form
  * Implements small tags cache.
  */
 function _add_func_shortcodes_tags( $tags = NULL ) {
-	$add_func_shortcodes = &drupal_static( __FUNCTION__, array() );
+	$shortcodes = &drupal_static( __FUNCTION__, array() );
+
 	if ( $tags ) {
-		$add_func_shortcodes = $tags;
+		$shortcodes = $tags;
 		return TRUE;
 	}
 
-	return $add_func_shortcodes;
+	return $shortcodes;
 }
 
 /**
@@ -158,23 +157,23 @@ function add_func_shortcodes_is_tag( $tag ) {
  * Processes the Shortcodes according to the text and the text format.
  */
 function _add_func_shortcodes_process( $text, $filter ) {
-	$add_func_shortcodes = add_func_shortcodes_list_all();
-	$add_func_shortcodes_enabled = array();
+	$shortcodes = add_func_shortcodes_list_all();
+	$shortcodes_enabled = array();
 
 	foreach ( $filter->settings as $name => $value ) {
-		if ( $value && !empty( $add_func_shortcodes[$name]['process callback'] ) ) {
-			$add_func_shortcodes_enabled[$name] = array(
-				'function' => $add_func_shortcodes[$name]['process callback'],
+		if ( $value && !empty( $shortcodes[$name]['process callback'] ) ) {
+			$shortcodes_enabled[$name] = array(
+				'function' => $shortcodes[$name]['process callback'],
 			);
 		}
 	}
 
-	if ( empty( $add_func_shortcodes_enabled ) ) {
+	if ( empty( $shortcodes_enabled ) ) {
 		return $text;
 	}
 
 	// Save the Shortcodes in the local cache.
-	_add_func_shortcodes_tags( $add_func_shortcodes_enabled );
+	_add_func_shortcodes_tags( $shortcodes_enabled );
 
 	// Processing recursively, now embeding tags within other tags is supported!
 	$chunks = preg_split( '!(\[{1,2}.*?\]{1,2})!', $text, -1, PREG_SPLIT_DELIM_CAPTURE );
@@ -278,16 +277,13 @@ function _add_func_shortcodes_process( $text, $filter ) {
 						array_unshift( $heap_index, $val );
 					}
 				}
-
-			}
-			else {
+			} else {
 				// This is a starting tag. Put it to the heap.
 				array_unshift( $heap_index, $tag );
 				array_unshift( $heap, implode( ' ', $ts ) );
 			}
 			// If escaped or not a Shortcode.
-		}
-		else {
+		} else {
 			// Maybe not found a pair?
 			array_unshift( $heap_index, '_string_' );
 			array_unshift( $heap, $c );
@@ -330,11 +326,11 @@ function _add_func_shortcodes_postprocess_text( $text, $filter ) {
  */
 function _add_func_shortcodes_process_tag( $m ) {
 	// Get tags from the static cache.
-	$add_func_shortcodes = _add_func_shortcodes_tags();
+	$shortcodes = _add_func_shortcodes_tags();
 
 	$tag = $m[2];
 
-	if ( !empty( $add_func_shortcodes[$tag] ) ) {
+	if ( !empty( $shortcodes[$tag] ) ) {
 		// Process if tag exists (enabled).
 		$attr = _add_func_shortcodes_parse_attrs( $m[3] );
 		/*
@@ -347,15 +343,15 @@ function _add_func_shortcodes_process_tag( $m ) {
 
 		if ( !is_null( $m[4] ) ) {
 			// This is an enclosing tag, means extra parameter is present.
-			if ( is_string( $add_func_shortcodes[$tag]['function'] ) && function_exists( $add_func_shortcodes[$tag]['function'] ) ) {
-				return $m[1] . call_user_func( $add_func_shortcodes[$tag]['function'], $attr, $m[4], $m[2] ) . $m[5];
+			if ( is_string( $shortcodes[$tag]['function'] ) && function_exists( $shortcodes[$tag]['function'] ) ) {
+				return $m[1] . call_user_func( $shortcodes[$tag]['function'], $attr, $m[4], $m[2] ) . $m[5];
 			}
 			return $m[1] . $m[5];
 		}
 		else {
 			// This is a self-closing tag.
-			if ( is_string( $add_func_shortcodes[$tag]['function'] ) && function_exists( $add_func_shortcodes[$tag]['function'] ) ) {
-				return $m[1] . call_user_func( $add_func_shortcodes[$tag]['function'], $attr, NULL, $m[2] ) . $m[5];
+			if ( is_string( $shortcodes[$tag]['function'] ) && function_exists( $shortcodes[$tag]['function'] ) ) {
+				return $m[1] . call_user_func( $shortcodes[$tag]['function'], $attr, NULL, $m[2] ) . $m[5];
 			}
 			return $m[1] . $m[5];
 		}
@@ -429,10 +425,10 @@ function _add_func_shortcodes_parse_attrs( $text ) {
  * @return string
  *	 The Shortcode search regular expression
  */
-function _add_func_shortcodes_get_shortcode_regex( $names ) {
+function _shortcode_get_shortcode_regex( $names ) {
 	$tagregexp = implode( '|', array_map( 'preg_quote', $names ) );
 
-	// WARNING! Do not change this regex without changing do_add_func_shortcodes_tag()
+	// WARNING! Do not change this regex without changing do_shortcode_tag()
 	// and strip_shortcodes().
 	return '(.?)\[(' . $tagregexp . ')\b(.*?)(?:(\/))?\](?:(.+?)\[\/\2\])?(.?)';
 }
@@ -456,7 +452,7 @@ function _add_func_shortcodes_get_shortcode_regex( $names ) {
  * @return array
  *	 Combined and filtered attribute list.
  */
-function add_func_shortcodes_attrs( $pairs, $attrs ) {
+function shortcode_attrs( $pairs, $attrs ) {
 	$attrs = (array) $attrs;
 	$out = array();
 	foreach ( $pairs as $name => $default ) {
@@ -479,7 +475,7 @@ function add_func_shortcodes_attrs( $pairs, $attrs ) {
  * @return bool
  *	 The checking result.
  */
-function add_func_shortcodes_bool( $var ) {
+function shortcode_bool( $var ) {
 	switch ( strtolower( $var ) ) {
 		case FALSE:
 		case 'false':
@@ -508,16 +504,18 @@ function add_func_shortcodes_bool( $var ) {
  * @return string
  *	 The proper classes string.
  */
-function add_func_shortcodes_add_class( $class = '', $default = '' ) {
+function shortcode_add_class( $class = '', $default = '' ) {
 	if ( $class ) {
 		if ( !is_array( $class ) ) {
 			$class = explode( ' ', $class );
 		}
 		array_unshift( $class, $default );
 		$class = array_unique( $class );
-	}
-	else {
+	} else {
 		$class[] = $default;
 	}
 	return implode( ' ', $class );
 }
+
+
+require_once 'add_func_shortcodes.inc';

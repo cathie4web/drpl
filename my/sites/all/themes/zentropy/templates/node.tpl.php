@@ -78,7 +78,7 @@
 ?>
 <div id="node-<?php print $node->nid; ?>" class="<?php print $classes; ?> clearfix node-<?php print $node->nid; ?>" role="article"<?php print $attributes; ?>>
 	<?php $hitcount = statistics_get( $node->nid );
-	unset($content['links']['statistics']);
+	unset( $content['links']['statistics'] );
 	
 	if ( $title || $user_picture || $display_submitted ) : ?>
 		<header class="node-header clearfix">
@@ -130,7 +130,15 @@
 		hide( $content['field_tags'] ); ?>
 
 		<!-- Node content -->
-		<?php print render( $content ); ?>
+		<?php if ($view_mode == 'full'): ?>
+			<!-- <div class="teaser">
+				<?php $body = field_get_items('node', $node, 'body');
+				$teaser = $body[0]['safe_summary'];
+				print $teaser; ?>
+			</div> -->
+		<?php endif;
+
+		print render( $content ); ?>
 	</div>
 
 	<?php if ( !empty( $content['field_tags'] ) || !empty( $content['links'] ) ) : ?>
@@ -145,7 +153,20 @@
 				</div>
 			<?php endif; ?>
 		</footer>
-	<?php endif;
+	<?php endif; ?>
 
-	print render( $content['comments'] ); ?>
+	<!--<div class="node-author-info">
+		<h2><?php /*print t( "Written by " ) . $submitted; ?></h2>
+		<?php print $user_picture;
+		$node_author = user_load($node->uid);
+  print ($node_author->roles[3]);
+  print ($node_author->field_bio['und'][0]['value']);
+		*/ ?>
+	</div> -->
+	
+	<?php if ( $page['node_bottom'] ) :
+		print render( $page['node_bottom'] );
+	endif; ?>
+
+	<?php print render( $content['comments'] ); ?>
 </div>

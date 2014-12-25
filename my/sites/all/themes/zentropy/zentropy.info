@@ -53,6 +53,7 @@ regions[content_top]	= Content Top
 regions[highlighted]	= Highlighted
 regions[help]			= Help
 regions[content]		= Content
+regions[node_bottom]	= Node Bottom
 regions[content_bottom]	= Content Bottom
 
 regions[sidebar_first]	= Sidebar Left

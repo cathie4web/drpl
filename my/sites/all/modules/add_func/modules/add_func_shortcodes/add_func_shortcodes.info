@@ -12,5 +12,3 @@ scripts[]				= js/shortcodes.js
 
 stylesheets[all][]		= css/shortcodes.css
 stylesheets[all][]		= css/grids.css
-
-files[] = add_func_shortcodes.inc

@@ -17,6 +17,13 @@ function add_func_shortcodes_init() {
 function add_func_shortcodes_shortcode_info() {
 	$shortcodes = array();
 
+	$shortcodes['clear'] = array(
+		'title' => t( 'Clear' ),
+		'description' => t( 'Insert a float-clearing div for a proper layout.' ),
+		'process callback' => 'add_func_shortcodes_clear',
+		'tips callback' => 'add_func_shortcodes_clear_tips',
+	);
+
 	$shortcodes['col'] = array(
 		'title' => t( 'Columns' ),
 		'description' => t( 'Simple columns in content' ),
@@ -197,6 +204,42 @@ function add_func_shortcodes_shortcode_info() {
  * Shortcode defenitions
  */
 
+
+/*============================================================================================*/
+/* Clear
+/*============================================================================================*/
+
+function add_func_shortcodes_clear( $attrs, $content = null ) {
+	extract( shortcode_attrs( array(
+		'class' => '',
+		'style' => '',
+		'id' => '',
+		'type' => 'div',
+	), $attrs ) );
+
+	switch ( $attrs['type'] ) {
+		case 'span':
+			$type = 'span';
+			break;
+		default:
+			$type = 'div';
+			break;
+	}
+	
+	$classes = 'clearfix';
+	if ( $class ) {
+		$classes .= ' ' . $class;
+	}
+	$output = '<' . $type . ' class="' . $classes . '">' . $content . '</' . $type . '>';
+	
+	return $output;
+}
+
+function add_func_shortcodes_clear_tips( $format, $long ) {
+	$output = '[clear class="custom-class" type="div|span"]Content[/clear]';
+	return $output;
+}
+
 /*============================================================================================*/
 /* Columns
 /*============================================================================================*/
@@ -359,7 +402,7 @@ function add_func_shortcodes_gmap( $attrs, $content = null ) {
 }
 
 function add_func_shortcodes_gmap_tips( $format, $long ) {
-	$output = '[gmap lat_coord="41.850033" lng_coord="-87.6500523" zoom_value="15" zoom_wheel="no" class="custom-class"][/gmap]';
+	$output = '[gmap lat_coord="41.850033" lng_coord="-87.6500523" zoom_value="15" zoom_wheel="no" hue="#ffffff" saturation ="-100|..|0|..|100" gamma="0.01|..|1.0|..|10" marker="http://example.com/img.png" class="custom-class"][/gmap]';
 	return $output;
 }
 
