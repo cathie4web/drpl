@@ -747,7 +747,7 @@ img::-moz-selection {
 	}
 }
 
-#flexslider-1 {
+.view-slider {
 	.slides li {
 		-moz-user-select: none;
 		-khtml-user-select: none;
@@ -765,8 +765,12 @@ img::-moz-selection {
 		line-height: 0;
 		z-index: 20;
 
-		li a {
-			box-shadow: none;
+		li {
+			margin: 0 4px;
+			
+			a {
+				box-shadow: none;
+			}
 		}
 	}
 
@@ -852,6 +856,13 @@ img::-moz-selection {
 	&.last {
 		margin-bottom: 0;
 	}
+}
+
+.panels-flexible-region-inside,
+.panels-flexible-column-inside {
+	padding-left: 0 !important;
+	padding-right: 0 !important;
+	.clearfix;
 }
 
 
@@ -1136,38 +1147,40 @@ div.messages {
 	.views-field-field-portfolio-image {
 		background: url(../images/ajax-loader.gif) center center no-repeat #fff;
 		margin-bottom: 25px;
-
-		a {
-			background: #fff;
-			display: block;
-			overflow: hidden;
-			position: relative;
-			text-decoration: none;
-
-			&:after {
-				background: none;
-				color: #000;
-				content: "\f00e";
-				font: 37px/37px FontAwesome;
-				left: 50%;
-				margin: -19px 0 0 -18px;
-				position: absolute;
-				top: -100%;
-				z-index: 999;
-			}
-
-			&:hover:after {
-				top: 50%;
-			}
-		}
-
-		img {
-			width: 100%;
-		}
 	}
 
 	.views-field-body {
 		margin-bottom: 25px;
+	}
+}
+
+.isotope-element .views-field-field-portfolio-image {
+	a {
+		background: @white;
+		display: block;
+		overflow: hidden;
+		position: relative;
+		text-decoration: none;
+
+		&:after {
+			background: none;
+			color: #000;
+			content: "\f00e";
+			font: 37px/37px FontAwesome;
+			left: 50%;
+			margin: -19px 0 0 -18px;
+			position: absolute;
+			top: -100%;
+			z-index: 999;
+		}
+
+		&:hover:after {
+			top: 50%;
+		}
+	}
+
+	img {
+		width: 100%;
 	}
 }
 
@@ -2466,13 +2479,4 @@ table .mini-day-on a {
 	&:hover {
 		text-decoration: underline;
 	}
-}
-
-.panels-flexible-region-13-center {
-	width: 100%;
-}
-
-
-.parallax {
-	background: url(../images/parallax.jpg) center top no-repeat;
 }

@@ -132,13 +132,11 @@ endif; ?>
 			</div>
 
 			<!-- Region Header -->
-			<?php if ( $page['header'] ) : ?>
-				<div class="container-12">
-					<div class="grid-12">
-						<?php print render( $page['header'] ); ?>
-					</div>
-				</div>
-			<?php endif; ?>
+			<?php if ( $page['header'] ) : 
+				zentropy_region_preffix ( 'header' );
+					print render( $page['header'] );
+				zentropy_region_suffix ( 'header' );
+			endif; ?>
 
 			<!-- Region Header bottom -->
 			<?php if ( $page['header_bottom'] ) : 

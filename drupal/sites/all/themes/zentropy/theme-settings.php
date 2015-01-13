@@ -22,7 +22,7 @@ function zentropy_form_system_theme_settings_alter( &$form, &$form_state ) {
 			$note = '';
 			$disabled = FALSE;
 		} else {
-			$note = t( '<span style="color: #f00">You should enable TM Block Background Module to use this field!<span>' );
+			$note = t( '<span style="color: #f00">You should enable TM Block Background Module to use this field!</span>' );
 			$disabled = TRUE;
 		}
 
@@ -119,7 +119,97 @@ function zentropy_form_system_theme_settings_alter( &$form, &$form_state ) {
 			'#type'				=> 'fieldset',
 		);
 		
-
+		// Header
+		$form['zentropy_settings']['zentropy_regions']['zentropy_header_opt'] = array(
+			'#title'			=> t( 'Header' ),
+			'#type'				=> 'fieldset',
+		);
+		$form['zentropy_settings']['zentropy_regions']['zentropy_header_opt']['zentropy_header_bg_type'] = array(
+			'#default_value' => theme_get_setting( 'zentropy_header_bg_type' ),
+			'#options' => array(
+				'none' => 'None',
+				'image' => 'Image',
+				'video' => 'Video',
+			),
+			'#title' => t( 'Background type:' ),
+			'#type' => 'select',
+		);
+		$form['zentropy_settings']['zentropy_regions']['zentropy_header_opt']['zentropy_header_bg_img'] = array(
+			'#default_value'	=> theme_get_setting( 'zentropy_header_bg_img' ),
+			'#description'		=> t( 'Choose block background image.' ),
+			'#media_options' => array(
+				'global' => array(
+					'types' => array(
+						'image' => 'image',
+					),
+					'schemes' => array(
+						'public' => 'public',
+					),
+					'file_extensions' => 'png gif jpg jpeg',
+					'max_filesize' => '1 MB',
+					'uri_scheme' => 'public',
+				),
+			),
+			'#states'			=> array(
+				'visible'		=> array(
+					'select[name="zentropy_header_bg_type"]' => array(
+						'value'	=> 'image'
+					),
+				),
+			),
+			'#title'			=> t( 'Background image URL' ),
+			'#tree'				=> TRUE,
+			'#type'				=> 'media',
+		);
+		$form['zentropy_settings']['zentropy_regions']['zentropy_header_opt']['zentropy_header_bg_parallax'] = array(
+			'#default_value' =>  theme_get_setting( 'zentropy_header_bg_parallax' ),
+			'#states'			=> array(
+				'visible'		=> array(
+					'select[name="zentropy_header_bg_type"]' => array(
+						'value'	=> 'image'
+					),
+				),
+			),
+			'#title' => t( 'Use parallax' ),
+			'#type' => 'checkbox',
+		);
+		$form['zentropy_settings']['zentropy_regions']['zentropy_header_opt']['zentropy_header_bg_video'] = array(
+			'#default_value'	=> theme_get_setting( 'zentropy_header_bg_video' ),
+			'#description'		=> t( 'Enter video URL. Supports youtube video. ' ) . $note,
+			'#disabled'			=> $disabled,
+			'#size'				=> 60,
+			'#states'			=> array(
+				'visible'		=> array(
+					'select[name="zentropy_header_bg_type"]' => array(
+						'value'	=> 'video'
+					),
+				),
+			),
+			'#title'			=> t( 'Background Video URL' ),
+			'#type'				=> 'textfield',
+		);
+		$form['zentropy_settings']['zentropy_regions']['zentropy_header_opt']['zentropy_header_bg_video_start'] = array(
+			'#default_value'	=> theme_get_setting( 'zentropy_header_bg_video_start' ),
+			'#description'		=> t( 'Enter time in seconds. ' ) . $note,
+			'#disabled'			=> $disabled,
+			'#size'				=> 8,
+			'#states'			=> array(
+				'visible'		=> array(
+					'select[name="zentropy_header_bg_type"]' => array(
+						'value'	=> 'video'
+					),
+				),
+			),
+			'#title'			=> t( 'Start video at' ),
+			'#type'				=> 'textfield',
+		);
+		$form['zentropy_settings']['zentropy_regions']['zentropy_header_opt']['zentropy_header_fullwidth'] = array(
+			'#default_value'	=> theme_get_setting( 'zentropy_header_fullwidth' ),
+			'#description'		=> t( "Check this option to make this region fullwidth (e.g. remove grids)." ),
+			'#title'			=> t( 'Fullwidth' ),
+			'#type'				=> 'checkbox',
+		);
+		
 		// Header bottom
 		$form['zentropy_settings']['zentropy_regions']['zentropy_header_bottom_opt'] = array(
 			'#title'			=> t( 'Header bottom' ),

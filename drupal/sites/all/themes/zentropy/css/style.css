@@ -397,36 +397,37 @@ img::selection, img::-moz-selection { background:transparent; }
 	-khtml-user-select:none;
 	user-select:none;
 }
-#flexslider-1 .slides li {
+.view-slider .slides li {
 	-moz-user-select:none;
 	-khtml-user-select:none;
 	user-select:none;
 	padding:0;
 }
-#flexslider-1 .slides li img { width:100%; }
-#flexslider-1 .flex-control-nav {
+.view-slider .slides li img { width:100%; }
+.view-slider .flex-control-nav {
 	bottom:20px;
 	font-size:0;
 	line-height:0;
 	z-index:20;
 }
-#flexslider-1 .flex-control-nav li a { box-shadow:none; }
-#flexslider-1 .flex-control-thumbs li {
+.view-slider .flex-control-nav li { margin:0 4px; }
+.view-slider .flex-control-nav li a { box-shadow:none; }
+.view-slider .flex-control-thumbs li {
 	-moz-user-select:none;
 	-khtml-user-select:none;
 	user-select:none;
 	width:20%;
 }
-#flexslider-1 .flex-direction-nav a:before { line-height:40px; }
-#flexslider-1:hover .flex-next {
+.view-slider .flex-direction-nav a:before { line-height:40px; }
+.view-slider:hover .flex-next {
 	opacity:1;
 	right:0;
 }
-#flexslider-1:hover .flex-prev {
+.view-slider:hover .flex-prev {
 	opacity:1;
 	left:0;
 }
-#flexslider-1 .flex-caption {
+.view-slider .flex-caption {
 	bottom:191px;
 	left:134px;
 	position:absolute;
@@ -439,6 +440,20 @@ img::selection, img::-moz-selection { background:transparent; }
 .region-content { padding:0; }
 .views-row { margin-bottom:30px; }
 .views-row.last { margin-bottom:0; }
+.panels-flexible-region-inside, .panels-flexible-column-inside {
+	padding-left:0 !important;
+	padding-right:0 !important;
+	position:relative;
+}
+.panels-flexible-region-inside:after, .panels-flexible-column-inside:after {
+	clear:both;
+	content:'\0020';
+	display:block;
+	height:0;
+	overflow:hidden;
+	visibility:hidden;
+	width:0;
+}
 div.messages {
 	margin-bottom:30px;
 	padding-right:30px;
@@ -630,6 +645,7 @@ div.messages .dismiss:hover {
 	background:url(../images/ajax-loader.gif) center center no-repeat #fff;
 	margin-bottom:25px;
 }
+.isotope-element .views-field-body { margin-bottom:25px; }
 .isotope-element .views-field-field-portfolio-image a {
 	background:#fff;
 	display:block;
@@ -650,7 +666,6 @@ div.messages .dismiss:hover {
 }
 .isotope-element .views-field-field-portfolio-image a:hover:after { top:50%; }
 .isotope-element .views-field-field-portfolio-image img { width:100%; }
-.isotope-element .views-field-body { margin-bottom:25px; }
 #isotope-options { background:none; }
 #isotope-options #filters {
 	margin-bottom:20px;
@@ -1319,5 +1334,3 @@ table .mini-day-on a:hover { text-decoration:underline; }
 	font-size:11px;
 }
 .switcher:hover { text-decoration:underline; }
-.panels-flexible-region-13-center { width:100%; }
-.parallax { background:url(../images/parallax.jpg) center top no-repeat; }
