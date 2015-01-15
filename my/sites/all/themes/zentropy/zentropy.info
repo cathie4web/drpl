@@ -91,33 +91,31 @@ settings[zentropy_breadcrumb_separator]				= " &#187; "
 
 ; Regions settings
 settings[zentropy_header_bottom_bg_type]			= 'none'
-settings[zentropy_content_top_bg_type]				= 'none'
-settings[zentropy_content_bottom_bg_type]			= 'none'
-settings[zentropy_footer_top_bg_type]				= 'none'
-
 settings[zentropy_header_bottom_bg_img][fid]		= 8
-settings[zentropy_content_top_bg_img][fid]			= 8
-settings[zentropy_content_bottom_bg_img][fid]		= 8
-settings[zentropy_footer_top_bg_img][fid]			= 8
-
 settings[zentropy_header_bottom_bg_parallax]		= 0
-settings[zentropy_content_top_bg_parallax]			= 0
-settings[zentropy_content_bottom_bg_parallax]		= 0
-settings[zentropy_footer_top_bg_parallax]			= 0
-
 settings[zentropy_header_bottom_bg_video]			= "http://youtu.be/2kodXWejuy0"
-settings[zentropy_content_top_bg_video]				= "http://youtu.be/2kodXWejuy0"
-settings[zentropy_content_bottom_bg_video]			= "http://youtu.be/2kodXWejuy0"
-settings[zentropy_footer_top_bg_video]				= "http://youtu.be/2kodXWejuy0"
-
 settings[zentropy_header_bottom_bg_video_start]		= 0
-settings[zentropy_content_top_bg_video_start]		= 0
-settings[zentropy_content_bottom_bg_video_start]	= 0
-settings[zentropy_footer_top_bg_video_start]		= 0
-
 settings[zentropy_header_bottom_fullwidth]			= 0
+
+settings[zentropy_content_top_bg_type]				= 'none'
+settings[zentropy_content_top_bg_img][fid]			= 8
+settings[zentropy_content_top_bg_parallax]			= 0
+settings[zentropy_content_top_bg_video]				= "http://youtu.be/2kodXWejuy0"
+settings[zentropy_content_top_bg_video_start]		= 0
 settings[zentropy_content_top_fullwidth]			= 0
+
+settings[zentropy_content_bottom_bg_type]			= 'none'
+settings[zentropy_content_bottom_bg_img][fid]		= 8
+settings[zentropy_content_bottom_bg_parallax]		= 0
+settings[zentropy_content_bottom_bg_video]			= "http://youtu.be/2kodXWejuy0"
+settings[zentropy_content_bottom_bg_video_start]	= 0
 settings[zentropy_content_bottom_fullwidth]			= 0
+
+settings[zentropy_footer_top_bg_type]				= 'image'
+settings[zentropy_footer_top_bg_img][fid]			= 8
+settings[zentropy_footer_top_bg_parallax]			= 0
+settings[zentropy_footer_top_bg_video]				= "http://youtu.be/2kodXWejuy0"
+settings[zentropy_footer_top_bg_video_start]		= 0
 settings[zentropy_footer_top_fullwidth]				= 0
 
 ; Blog settings
@@ -125,11 +123,3 @@ settings[zentropy_blog_title]						= ""
 
 ; Custom CSS
 settings[zentropy_custom_css]						= ""
-
-
-; Information added on 2014-05-08 --------------------------------------------
-
-version = "7.x-1.0"
-core = "7.x"
-project = "zentropy"
-datestamp = "1408542496"

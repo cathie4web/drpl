@@ -35,10 +35,6 @@ body {
 	-webkit-text-size-adjust: none;
 }
 
-iframe {
-	background: #fff !important;
-}
-
 audio,
 canvas,
 video {
