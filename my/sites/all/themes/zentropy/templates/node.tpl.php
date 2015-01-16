@@ -164,8 +164,8 @@
 		*/ ?>
 	</div> -->
 	
-	<?php if ( $page['node_bottom'] ) :
-		print render( $page['node_bottom'] );
+	<?php if ( $node_bottom ) :
+		print render( $node_bottom );
 	endif; ?>
 
 	<?php print render( $content['comments'] ); ?>

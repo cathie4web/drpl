@@ -228,6 +228,8 @@ function zentropy_preprocess_node( &$vars ) {
 	if ( $vars['view_mode'] == 'full' && node_is_page( $vars['node'] ) ) {
 		$vars['classes_array'][] = 'node-full';
 	}
+	
+	$vars['node_bottom'] = block_get_blocks_by_region( 'node_bottom' );
 }
 
 /**
