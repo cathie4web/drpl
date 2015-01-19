@@ -476,7 +476,7 @@ img::selection, img::-moz-selection { background:transparent; }
 #main-wrapper { padding:46px 0 34px; }
 .region-content { padding:0; }
 .views-row { margin-bottom:30px; }
-.views-row.last { margin-bottom:0; }
+.views-row.last, .views-row:last-child { margin-bottom:0; }
 div.messages {
 	margin-bottom:30px;
 	padding-right:30px;
@@ -1075,8 +1075,9 @@ div.messages .dismiss:hover {
 }
 .not-logged-in .contextual-links { display:none !important; }
 .contextual-links li {
-	padding:0;
-	background:none;
+	color:#333333 !important;
+	font-size:12px !important;
+	line-height:19px !important;
 }
 .calendar-calendar table, .calendar-calendar table td, .calendar-calendar table th, .calendar-calendar .month-view .full th.days { border:1px solid #d3d3d3; }
 .calendar-calendar td.calendar-agenda-items, .calendar-calendar .month-view .full td.single-day .calendar-empty, .calendar-calendar .month-view .full td.single-day.empty, .calendar-calendar .month-view .full td.date-box.empty { border-color:#d3d3d3; }

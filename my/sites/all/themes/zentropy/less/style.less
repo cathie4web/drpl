@@ -911,7 +911,8 @@ img::-moz-selection {
 .views-row {
 	margin-bottom: 30px;
 
-	&.last {
+	&.last,
+	&:last-child {
 		margin-bottom: 0;
 	}
 }
@@ -1967,8 +1968,9 @@ div.messages {
 }
 
 .contextual-links li {
-	padding: 0;
-	background: none;
+	color: @textColor !important;
+	font-size: @baseFontSize !important;
+	line-height: @baseLineHeight !important;
 }
 
 
