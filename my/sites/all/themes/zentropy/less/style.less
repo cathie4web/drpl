@@ -4,36 +4,37 @@
 @import url('mixins.less');
 
 
-/* Table of Contents:
-   1. General
-   2. Header top
-   3. Header
-   4. Header bottom
-   5. Content top
-   6. Content
-   7. Content bottom
-   8. Pages
-   9. Sidebar and blocks
-   10. Shortcodes
-   11. Footer top
-   12. Footer
-*/
+/*==========================================================================
+0. TABLE OF CONTENTS
+===========================================================================*/
+
+/*  1. General
+	2. Header top
+	3. Header
+	4. Header bottom
+	5. Content top
+	6. Content
+	7. Content bottom
+	8. Pages
+	9. Sidebar and blocks
+	10. Shortcodes
+	11. Footer top
+	12. Footer */
+
+/*  1. General
+	2. Classes
+	3. Header
+	4. Content
+	5. Pages
+	6. Sidebar
+	7. Shortcodes
+	8. Footer */
 
 
 
 /*==========================================================================
 1. GENERAL
 ===========================================================================*/
-
-body {
-	background: @generalBg;;
-	color: @baseTxtColor;
-	font-family: @baseFontFamily;
-	font-size: @baseFontSize;
-	line-height: @baseLineHeight;
-	min-width: 1250px;
-	position: relative;
-}
 
 #page-wrapper {
 	background: @contentBg;
@@ -44,27 +45,6 @@ body {
 /* Titles
 ===========================================================================*/
 
-h1 {
-	color: @titleColor;
-	font: 700 30px/36px @titleFontFamily;
-	margin-bottom: 20px;
-}
-
-h2 {
-	color: @titleColor;
-	font: 700 27px/33px @titleFontFamily;
-	margin-bottom: 20px;
-}
-
-h3,
-#block-tm-follow-user h2/*,
-#block-forum-active h2,
-#block-forum-new h2*/ {
-	color: @titleColor;
-	font: 700 23px/28px @titleFontFamily;
-	margin-bottom: 15px;
-}
-
 .profile h3,
 #block-tm-follow-user h2 {
 	border-bottom: 1px solid @borderColor;
@@ -72,85 +52,9 @@ h3,
 	padding-bottom: 5px;
 }
 
-h4 {
-	color: @titleColor;
-	font: 700 20px/24px @titleFontFamily;
-	margin-bottom: 15px;
-}
-
-h5 {
-	color: @titleColor;
-	font: 700 16px/21px @titleFontFamily;
-	margin-bottom: 10px;
-}
-
-h6 {
-	color: @titleColor;
-	font: bold 13px/21px @baseFontFamily;
-	margin-bottom: 0;
-}
-
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-	a {
-		color: inherit;
-		text-decoration: none;
-
-		&:hover {
-			color: @linkColor;
-			text-decoration: none;
-		}
-	}
-}
-
 
 /* Forms
 ===========================================================================*/
-
-input[type="text"],
-input[type="color"],
-input[type="date"],
-input[type="datetime"],
-input[type="datetime-local"],
-input[type="email"],
-input[type="number"],
-input[type="month"],
-input[type="password"],
-input[type="search"],
-input[type="tel"],
-input[type="time"],
-input[type="url"],
-input[type="week"],
-textarea,
-select {
-	background: @white;
-	border: 1px solid @borderColor;
-	.box-sizing(border-box);
-	color: @baseTxtColor !important;
-	font: @baseFontSize @baseFontFamily;
-	max-width: 100%;
-	padding: 5px 10px;
-}
-
-fieldset {
-	border-color: @borderColor;
-}
-
-legend {
-	color: @titeColor;
-	font-family: @titleFontFamily;
-	font-weight: 700;
-	padding: 0 10px;
-	text-transform: uppercase;
-}
-
-label {
-	display: inline-block;
-}
 
 #search-form .form-item {
 	display: block;
@@ -171,15 +75,6 @@ label {
 
 /* Links
 ===========================================================================*/
-
-a {
-	color: @linkColor;
-	text-decoration: none;
-
-	&:hover {
-		text-decoration: underline;
-	}
-}
 
 .btn a,
 .more-link a,
@@ -225,11 +120,6 @@ input[type="reset"],
 		text-decoration: none;
 	}
 
-input[type="submit"],
-input[type="reset"] {
-	padding: 7px 20px;
-}
-
 .more-link {
 	padding-top: 20px;
 	text-align: left;
@@ -239,7 +129,6 @@ input[type="reset"] {
 /* Lists
 ===========================================================================*/
 
-ul,
 .item-list ul,
 ul.menu {
 	margin: 0 0 @baseLineHeight;
@@ -309,7 +198,7 @@ ul.pager,
 }
 
 #admin-menu,
-#admin-menu .dropdown{
+#admin-menu .dropdown {
 	z-index: 10000;
 }
 
@@ -322,11 +211,6 @@ ul.pager,
 ===========================================================================*/
 
 img {
-	.box-sizing(border-box);
-	height: auto;
-	max-width: 100%;
-	width: auto;
-	
 	&.lazyloader-icon {
 		width: auto !important;
 	}
@@ -348,7 +232,7 @@ img {
 	position: relative;
 }
 
-.field-name-field-banner-image{
+.field-name-field-banner-image {
 	width: 250px;
 }
 
@@ -366,21 +250,10 @@ img {
 }
 
 
-/* Paragraph
-===========================================================================*/
-
-p {
-	margin-bottom: @baseLineHeight;
-}
-
-
 /* Tables
 ===========================================================================*/
 
 table {
-	border: 1px solid @borderColor;
-	margin-bottom: 0;
-
 	tr.odd,
 	tr.even {
 		border: none;
@@ -395,12 +268,6 @@ table {
 	}
 
 	th {
-		background: @altBg;
-		border: 1px solid @borderColor;
-		color: @linkColor;
-		font-size: 14px;
-		padding: 5px 9px;
-		
 		&.active {
 			background: darken(@altBg, 5%);
 		}
@@ -408,28 +275,6 @@ table {
 		&.select-all {
 			width: 15px;
 		}
-
-		a {
-			color: inherit;
-			display: block;
-			position: relative;
-			
-			&:hover{
-				color: @linkColor;
-				text-decoration: none;
-			}
-			
-			img {
-				position: absolute;
-				right: 3px;
-				top: 3px;
-			}
-		}
-	}
-
-	td {
-		padding: 5px 10px;
-		vertical-align: middle;
 	}
 	
 	.item-list ul {
@@ -441,6 +286,55 @@ table {
 /* Classes
 ===========================================================================*/
 
+/* for image replacement */
+.ir {
+	background-color: transparent;
+	background-repeat: no-repeat;
+	border: 0;
+	direction: ltr;
+	display: block;
+	overflow: hidden;
+	text-align: left;
+	text-indent: -999em;
+
+	br {
+		display: none;
+	}
+}
+
+/* Hide from both screenreaders and browsers:h5bp.com/u */
+.hidden {
+	display: none !important;
+	visibility: hidden;
+}
+
+/* Hide only visually, but have it available for screenreaders:h5bp.com/v */
+.visuallyhidden {
+	border: 0;
+	clip: rect(0 0 0 0);
+	height: 1px;
+	margin: -1px;
+	overflow: hidden;
+	padding: 0;
+	position: absolute;
+	width: 1px;
+
+	/* Extends the .visuallyhidden class to allow the element to be focusable when navigated to via the keyboard:h5bp.com/p */
+	&.focusable:active,
+	&.focusable:focus {
+		clip: auto;
+		height: auto;
+		margin: 0;
+		overflow: visible;
+		position: static;
+		width: auto;
+	}
+}
+
+/* Hide visually and from screenreaders, but maintain layout */
+.invisible {
+	visibility: hidden;
+}
 
 .extra-wrap {
 	overflow: hidden;
@@ -593,12 +487,12 @@ img::-moz-selection {
 	width: 100%;
 }
 
-.stickup{
+.stickup {
 	.transition(all 0.4s ease);
 	z-index: 9999;
 }
 
-.isStuck{
+.isStuck {
 	background: @white;
 	box-shadow: 0 2px 3px 0 rgba(0, 0, 0, 0.2);
 	left: 0;
@@ -752,7 +646,7 @@ img::-moz-selection {
 			vertical-align: top;
 			white-space: nowrap;
 			
-			> li{
+			> li {
 				display: inline-block;
 				margin: 0 0 0 15px;
 				padding: 0;
@@ -849,7 +743,7 @@ img::-moz-selection {
 			&.flex-next {}
 			&:hover {}
 			
-			&:before{
+			&:before {
 				line-height: 40px;
 			}
 		}
@@ -1262,10 +1156,10 @@ div.messages {
 /* Blog
 ===========================================================================*/
 
-.page-blog .content-header ul{
+.page-blog .content-header ul {
 	margin-bottom: 0;
 	
-	li{
+	li {
 		background: none;
 		padding: 0;
 	}
@@ -1296,7 +1190,7 @@ div.messages {
 		a {
 			color: inherit;
 			
-			&:hover{
+			&:hover {
 				color: @linkColor;
 				text-decoration: none;
 			}
@@ -1322,14 +1216,14 @@ div.messages {
 }
 
 /* Blog video */
-.media-vimeo-video{
+.media-vimeo-video {
 	padding-bottom: 50.2%;
 	
 	.node-teaser &{
 		padding-bottom: 63.2%;
 	}
 }
-.media-youtube-video{
+.media-youtube-video {
 	padding-bottom: 50.2%;
 	
 	.node-teaser &{
@@ -1350,6 +1244,10 @@ div.messages {
 		top: 0;
 		width: 100%;
 	}
+}
+
+.node-teaser  p:last-child {
+	margin-bottom: 0;
 }
 
 /*Blog links */
@@ -1573,7 +1471,7 @@ div.messages {
 /* Contacts
 ===========================================================================*/
 
-.panels-flexible-region-11-contacts{
+.panels-flexible-region-11-contacts {
 	float: none;
 	width: 100%;
 }
@@ -1767,7 +1665,7 @@ div.messages {
 			}
 		}
 
-		.views-field-field-testi-image{
+		.views-field-field-testi-image {
 			float: left;
 			margin: 0 20px 0 0;
 			max-width: 45%;
@@ -1784,7 +1682,7 @@ div.messages {
 			a {
 				color: inherit;
 				
-				&:hover{
+				&:hover {
 					color: @linkColor;
 					text-decoration: none;
 				}
@@ -1792,7 +1690,7 @@ div.messages {
 		}
 		
 		.views-field-title,
-		.views-field-field-testi-author-info{
+		.views-field-field-testi-author-info {
 			text-align: right;
 		}
 	}
@@ -1897,7 +1795,7 @@ div.messages {
 	margin-bottom: 5px;
 }
 
-.field-name-field-employee-facebook{
+.field-name-field-employee-facebook {
 	margin-left: 0;
 }
 
@@ -2201,7 +2099,7 @@ table .mini-day-on a {
 	.views-field-subject a {
 		color: inherit;
 		
-		&:hover{
+		&:hover {
 			color: @linkColor;
 			text-decoration: none;
 		}
@@ -2215,7 +2113,7 @@ table .mini-day-on a {
 .contextual-links-region .node-title a {
 	color: inherit;
 	
-	&:hover{
+	&:hover {
 		color: @linkColor;
 		text-decoration: none;
 	}
@@ -2259,7 +2157,7 @@ table .mini-day-on a {
 		width: 100%;
 	}
 	
-	.form-item-search-block-form{
+	.form-item-search-block-form {
 		display: block;
 		margin: 0 30px 0 0;
 	}
@@ -2328,7 +2226,7 @@ table .mini-day-on a {
 ===========================================================================*/
 
 .progressbar {
-	.progressbar-wrap{
+	.progressbar-wrap {
 		background: @borderColor;
 	}
 	.progressbar-background {
@@ -2364,26 +2262,26 @@ table .mini-day-on a {
 /* Footer menu
 ===========================================================================*/
 
-.footer-menu .content ul{
+.footer-menu .content ul {
 	margin: 0;
 	overflow: hidden;
 	
-	li{
+	li {
 		background: none;
 		float: left;
 		margin: 0 0 0 10px;
 		padding: 0;
 		
-		&:first-child{
+		&:first-child {
 			margin-left: 0;
 		}
 		
-		a{
+		a {
 			color: inherit;
 			text-decoration: none;
 			
 			&:hover,
-			&.active{
+			&.active {
 				color: @linkColor;
 				text-decoration: none;
 			}
@@ -2399,7 +2297,7 @@ table .mini-day-on a {
 	a {
 		color: inherit;
 		
-		&:hover{
+		&:hover {
 			color: @linkColor;
 			text-decoration: none;
 		}
@@ -2426,7 +2324,7 @@ table .mini-day-on a {
 	width: 70px;
 	z-index: 5;
 
-	&:after{
+	&:after {
 		color: @white;
 		content: "\f077";
 		font: normal 40px/60px FontAwesome;

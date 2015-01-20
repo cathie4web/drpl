@@ -5,6 +5,9 @@
  */
 $themeDir = 'sites/all/themes/zentropy';
 
+$resetInput = $themeDir . '/less/reset.less';
+$resetOutput = $themeDir . '/css/reset.css';
+
 $styleInput = $themeDir . '/less/style.less';
 $styleOutput = $themeDir . '/css/style.css';
 
@@ -49,6 +52,8 @@ function auto_less_compile( $inputFile, $outputFile ) {
 		echo "lessphp fatal error: " . $ex->getMessage();
 	}
 }
+
+auto_less_compile( $resetInput, $resetOutput );
 auto_less_compile( $styleInput, $styleOutput );
 auto_less_compile( $styleMobileInput, $styleMobileOutput );
 //auto_less_compile( $styleAdminInput, $styleAdminOutput ); ?>

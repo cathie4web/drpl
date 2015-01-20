@@ -1,0 +1,573 @@
+@import url('mixins.less');
+
+
+/*==========================================================================
+0. TABLE OF CONTENTS
+===========================================================================*/
+
+/*  1. Layout
+	2. Typography
+	3. Elements */
+
+
+/*==========================================================================
+1. LAYOUT
+===========================================================================*/
+
+html, body, div, span, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+abbr, address, cite, code,
+del, dfn, em, img, ins, kbd, q, samp,
+small, strong, sub, sup, var,
+b, i,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section, summary,
+time, mark, audio, video {
+	background: transparent;
+	border: 0;
+	margin: 0;
+	outline: 0;
+	padding: 0;
+	vertical-align: baseline;
+}
+
+
+article {
+	display: block;
+}
+
+aside {
+	display: block;
+}
+
+body {
+	background: @generalBg;
+	color: @baseTxtColor;
+	font-family: @baseFontFamily;
+	font-size: @baseFontSize;
+	line-height: @baseLineHeight;
+	min-width: 1250px;
+	position: relative;
+	-webkit-text-size-adjust: none;
+}
+
+div {}
+
+footer {
+	display: block;
+}
+
+header {
+	display: block;
+}
+
+html {}
+
+nav {
+	display: block;
+}
+	nav ul {
+		list-style: none;
+	}
+
+section {
+	display: block;
+}
+
+
+
+/*==========================================================================
+2. TYPOGRAPHY
+===========================================================================*/
+
+a {
+	color: @linkColor;
+	outline: none;
+	text-decoration: none;
+
+	&:hover {
+		text-decoration: underline;
+	}
+
+	&:hover,
+	&:active {
+		outline: none;
+	}
+}
+
+abbr {
+	&[title] {
+		border-bottom: 1px dotted;
+		cursor: help;
+	}
+}
+
+address {}
+
+b {}
+
+bdo {}
+
+blockquote {
+	quotes: none;
+
+	&:before,
+	&:after {
+		content: '';
+		content: none;
+	}
+}
+
+cite {}
+
+code {
+	font-family: @monospaseFontFamily;
+}
+
+del {
+	text-decoration: line-through;
+}
+
+dfn {
+	&[title] {
+		border-bottom: 1px dotted;
+		cursor: help;
+	}
+}
+
+em {
+	font-style: italic;
+}
+
+h1 {
+	color: @titleColor;
+	font: 700 30px/36px @titleFontFamily;
+	margin-bottom: 20px;
+}
+
+h2 {
+	color: @titleColor;
+	font: 700 27px/33px @titleFontFamily;
+	margin-bottom: 20px;
+}
+
+h3 {
+	color: @titleColor;
+	font: 700 23px/28px @titleFontFamily;
+	margin-bottom: 15px;
+}
+
+h4 {
+	color: @titleColor;
+	font: 700 20px/24px @titleFontFamily;
+	margin-bottom: 15px;
+}
+
+h5 {
+	color: @titleColor;
+	font: 700 16px/21px @titleFontFamily;
+	margin-bottom: 10px;
+}
+
+h6 {
+	color: @titleColor;
+	font: bold 13px/21px @baseFontFamily;
+	margin-bottom: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	a {
+		color: inherit;
+		text-decoration: none;
+
+		&:hover {
+			color: @linkColor;
+			text-decoration: none;
+		}
+	}
+}
+
+i {
+	font-style: italic;
+}
+
+ins {
+	text-decoration: none;
+}
+
+kbd {
+	font-family: @monospaseFontFamily;
+}
+
+mark {
+	font-style: italic;
+	font-weight: bold;
+}
+
+p {
+	margin: 0 0 @baseLineHeight;
+}
+
+pre {
+	font-family: @monospaseFontFamily;
+	padding: 15px;
+	white-space: pre; /* CSS2 */
+	white-space: pre-wrap; /* CSS 2.1 */
+	white-space: pre-line; /* CSS 3 (and 2.1 as well, actually) */
+	word-wrap: break-word; /* IE */
+}
+
+q {
+	quotes: none;
+
+	&:before,
+	&:after {
+		content: '';
+		content: none;
+	}
+}
+
+s {}
+
+samp {
+	font-family: @monospaseFontFamily;
+}
+
+small {
+	font-size: 85%;
+}
+
+span {}
+
+strong {
+	font-weight: bold;
+}
+
+sub {
+	font-size: smaller;
+	vertical-align: sub;
+}
+
+sup {
+	font-size: smaller;
+	vertical-align: super;
+}
+
+time {}
+
+var {}
+
+
+
+/*==========================================================================
+3. ELEMENTS
+===========================================================================*/
+
+/* Lists
+===========================================================================*/
+
+dl {
+	margin: 0;
+
+	dt {
+		font-weight: bold;
+	}
+
+	dd {
+		margin-left: @baseLineHeight;
+	}
+}
+
+ul {
+	margin: 0 0 @baseLineHeight;
+	padding-left: 0;
+
+	li {
+		list-style: none;
+		margin: 10px 0 0;
+		padding: 0 0 0 16px;
+		position: relative;
+
+		&:first-child {
+			margin-top: 0;
+		}
+		
+		&:before {
+			color: @linkColor;
+			content: '\f105';
+			display: inline-block;
+			font-family: FontAwesome;
+			left: 0;
+			position: absolute;
+			top: 0;
+		}
+
+		a {
+			color: inherit;
+			text-decoration: none;
+
+			&:hover {
+				color: @linkColor;
+				text-decoration: none;
+			}
+		}
+
+		ul {
+			padding-top: 10px;
+		}
+	}
+}
+
+ol {
+	list-style-type: decimal;
+	margin: 0 0 @baseLineHeight;
+	padding-left: 0;
+
+	li {}
+}
+
+li {
+	ul,
+	ol {
+		margin: 10px 0 0;
+	}
+}
+
+
+/* Table
+===========================================================================*/
+
+table {
+	border: 1px solid @borderColor;
+	border-collapse: collapse;
+	border-spacing: 0;
+	margin-bottom:0 ;
+	width: 100%;
+}
+
+	caption {}
+
+	colgroup {}
+
+	thead {}
+
+	tbody {}
+
+	tfoot {}
+
+	tr {
+		padding: 0;
+		vertical-align: top;
+	}
+
+	th {
+		background: @altBg;
+		border: 1px solid @borderColor;
+		color: @linkColor;
+		font-size: 14px;
+		font-weight: bold;
+		padding: 5px 10px;
+		vertical-align: top;
+		
+		a {
+			color: inherit;
+			display: block;
+			position: relative;
+			
+			&:hover {
+				color: @linkColor;
+				text-decoration: none;
+			}
+			
+			img {
+				position: absolute;
+				right: 3px;
+				top: 3px;
+			}
+		}
+	}
+
+	td {
+		padding: 5px 10px;
+		vertical-align: middle;
+	}
+
+
+/* Form
+===========================================================================*/
+
+form {
+	margin: 0;
+}
+
+	fieldset {
+		border: 1px solid @borderColor;
+		margin: 10px 0;
+		padding: 20px;
+	}
+
+		legend {
+			color: @titeColor;
+			font-family: @titleFontFamily;
+			font-weight: 700;
+			padding: 0 10px;
+			text-transform: uppercase;
+		}
+
+	label {
+		cursor: pointer;
+		display: inline-block;
+	}
+
+	input[type="text"],
+	input[type="color"],
+	input[type="date"],
+	input[type="datetime"],
+	input[type="datetime-local"],
+	input[type="email"],
+	input[type="number"],
+	input[type="month"],
+	input[type="password"],
+	input[type="search"],
+	input[type="tel"],
+	input[type="time"],
+	input[type="url"],
+	input[type="week"],
+	textarea,
+	select {
+		background: @white;
+		border: 1px solid @borderColor;
+		.box-sizing(border-box);
+		color: @baseTxtColor !important;
+		font-family: @baseFontFamily;
+		font-size: @baseFontSize;
+		line-height: @baseLineHeight;
+		max-width: 100%;
+		margin: 0;
+		padding: 5px 10px;
+		vertical-align: baseline;
+		
+		&:focus {
+			outline: none;
+		}
+	}
+
+	input {
+		&[type="checkbox"] {
+			padding: 0;
+			vertical-align: middle;
+		}
+		
+		&::-moz-focus-inner {
+			border: 0;
+			padding: 0;
+		}
+		
+		&[type="radio"] {
+			padding: 0;
+			vertical-align: text-bottom;
+		}
+		
+		&input[type="search"] {
+			-webkit-appearance: textfield;
+			
+			&::-webkit-search-decoration {
+				-webkit-appearance: none;
+			}
+		}
+	}
+
+	select {}
+		optgroup {}
+		option {}
+
+	textarea {
+		overflow: auto;
+		resize: none;
+	}
+
+	button,
+	input[type="button"],
+	input[type="reset"],
+	input [type="submit"] {
+		cursor: pointer;
+		font-size: 100%;
+		line-height: normal;
+		margin: 0;
+		vertical-align: baseline;
+		-webkit-appearance: button;
+		
+		&::-moz-focus-inner {
+			border: 0;
+			padding: 0;
+		}
+	}
+
+
+/* Media
+===========================================================================*/
+
+figure {
+	display: block;
+}
+
+	img {
+		.box-sizing(border-box);
+		height: auto;
+		font-size: 0;
+		line-height: 0;
+		max-width: 100%;
+		vertical-align: top;
+		-ms-interpolation-mode: bicubic;
+	}
+
+	figcaption {
+		display: block;
+	}
+
+audio {
+	display: inline-block;
+	
+	&:not([controls]) {
+		display: none;
+	}
+}
+
+canvas {
+	display: inline-block;
+}
+
+iframe {}
+
+svg:not(:root) {
+	overflow: hidden;
+}
+
+video {
+	display: inline-block;
+}
+
+
+/* Line
+===========================================================================*/
+
+hr {
+	border: 0;
+	display: block;
+	height: 1px;
+	margin: 1em 0;
+	padding: 0;
+}
+
+
+[hidden] {
+	display: none;
+}
