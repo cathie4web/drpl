@@ -6,7 +6,7 @@
 */
 
 function add_func_shortcodes_init() {
-	$inline_script = '<script src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false"></script>';
+	$inline_script = '<script src="https://maps.googleapis.com/maps/api/js?v=3.exp&amp;sensor=false"></script>';
 	$element = array(
 		'#type' => 'markup',
 		'#markup' => $inline_script,

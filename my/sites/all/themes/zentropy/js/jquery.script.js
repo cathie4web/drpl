@@ -1,30 +1,44 @@
-jQuery(window).bind('load', function() {
-	jQuery('.foreground').toggle('slow');
-});
-
-jQuery(function() {
-	jQuery('.isotope-element .views-field-field-portfolio-image a').hover(function() {
-		jQuery(this).find('img').stop().animate({opacity:'.4'})
-	},
-
-	function() {
-		jQuery(this).find('img').stop().animate({opacity:'1'})
-	})
-	
-	if (jQuery('html').hasClass('desktop')) {
-		jQuery.srSmoothscroll({
-			step: 150,
-			speed: 800
-		});
-	}
-});
-
 (function($) {
-	jQuery(document).ready(function($) {
-		/*if (jQuery(".portfolio-grid").length) {
-			var $container = jQuery('#isotope-container'),
+	$(window).load(function() {
+		$('.foreground').toggle('slow');
+		
+		// Back to Top Button
+		$().UItoTop({
+			easingType: 'easeOutQuart',
+			containerID: 'backtotop'
+		});
+	});
+	
+	$(function() {
+		// Smoothscroll
+		if ($('html').hasClass('desktop')) {
+			$.srSmoothscroll({
+				step: 150,
+				speed: 800
+			});
+		}
+		
+		// Mobile menu
+		$('#superfish-1').mobileMenu();
+		
+		// Portfolio img hover
+		$('.isotope-element .views-field-field-portfolio-image a')
+			.mouseover(function() {
+					$(this).find('img').stop().animate({opacity:'.4'})
+			})
+			.mouseout(function() {
+				$(this).find('img').stop().animate({opacity:'1'})
+			});
+	});
+
+	$(document).ready(function($) {
+		// Portfolio
+		$("#isotope-options .option-set li a[data-option-value='.all']").addClass("selected");
+
+		if ($(".isotope-grid").length) {
+			var $container = $('#isotope-container'),
 				filters = {},
-				items_count = jQuery(".isotope-element").size();
+				items_count = $(".isotope-element").size();
 
 			$container.imagesLoaded( function() {
 				setColumnWidth();
@@ -37,51 +51,46 @@ jQuery(function() {
 			});
 
 			function getNumColumns() {
-				var $folioWrapper = jQuery('#isotope-container').data('cols');
+				var $folioWrapper = $('.isotope-grid'),
+					containerWidth = $("#isotope-container").width(),
+					column = 3;
 
-				if ($folioWrapper == '1col') {
-					var winWidth = jQuery("#isotope-container").width(),
-						column = 1;
+				if ($folioWrapper.hasClass('1-col')) {
+					column = 1;
 					return column;
 				}
-
-				else if ($folioWrapper == '2cols') {
-					var winWidth = jQuery("#isotope-container").width(),
-						column = 2;
-					if (winWidth < 380) {
+				else if ($folioWrapper.hasClass('2-col')) {
+					column = 2;
+					if (containerWidth < 380) {
 						column = 1;
 					}
 					return column;
 				}
-
-				else if ($folioWrapper == '3cols') {
-					var winWidth = jQuery("#isotope-container").width(),
-						column = 3;
-					if (winWidth < 380) {
+				else if ($folioWrapper.hasClass('3-col')) {
+					column = 3;
+					if (containerWidth < 380) {
 						column = 1;
 					}
-					else if ((winWidth >= 380) && (winWidth < 788)) {
+					else if ((containerWidth >= 380) && (containerWidth < 788)) {
 						column = 2;
 					}
-					else if (winWidth >= 788) {
+					else if (containerWidth >= 788) {
 						column = 3;
 					}
 					return column;
 				}
-
-				else if ($folioWrapper == '4cols') {
-					var winWidth = jQuery("#isotope-container").width(),
-						column = 4;
-					if (winWidth < 380) {
+				else if ($folioWrapper.hasClass('4-col')) {
+					column = 4;
+					if (containerWidth < 380) {
 						column = 1;
 					}
-					else if ((winWidth >= 380) && (winWidth < 788)) {
+					else if ((containerWidth >= 380) && (containerWidth < 788)) {
 						column = 2;
 					}
-					else if ((winWidth >= 788) && (winWidth < 940)) {
+					else if ((containerWidth >= 788) && (containerWidth < 940)) {
 						column = 3;
 					}
-					else if (winWidth >= 940) {
+					else if (containerWidth >= 940) {
 						column = 4;
 					}
 					return column;
@@ -90,26 +99,31 @@ jQuery(function() {
 
 			function setColumnWidth() {
 				var columns = getNumColumns(),
-					containerWidth = jQuery("#isotope-container").width(),
+					containerWidth = $("#isotope-container").width(),
 					postWidth;
 
-				if (columns == 1) {
-					postWidth = containerWidth - 20;
-				}
-				if (columns == 2) {
-					postWidth = (containerWidth - 40)/columns;
-				}
-				if (columns == 3) {
-					postWidth = (containerWidth - 60)/columns;
-				}
-				if (columns == 4) {
-					postWidth = (containerWidth - 80)/columns;
+				switch (columns) {
+					case 1:
+						postWidth = containerWidth - 30;
+						break;
+					case 2:
+						postWidth = (containerWidth - 60)/columns;
+						break;
+					case 3:
+						postWidth = (containerWidth - 90)/columns;
+						break;
+					case 4:
+						postWidth = (containerWidth - 120)/columns;
+						break;
+					default:
+						postWidth = (containerWidth - 90)/columns;
+						break;
 				}
 
 				postWidth = Math.floor(postWidth);
 
-				jQuery(".isotope-element").each(function(index) {
-					jQuery(this).css({"width" : postWidth + "px"});
+				$(".isotope-element").each(function(index) {
+					$(this).css({"width" : postWidth + "px"});
 				});
 			}
 
@@ -118,10 +132,10 @@ jQuery(function() {
 				$container.isotope('reLayout');
 			}
 
-			jQuery(window).on("debouncedresize", function(event) {
+			$(window).on("debouncedresize", function(event) {
 				arrange();
 			});
-		};*/
+		};
 
 		if ($.cookie('the_cookie') == 0) {
 			styleSwitch(0)
@@ -146,86 +160,43 @@ jQuery(function() {
 			location.reload();
 		});
 	});
-})(jQuery);
-
-jQuery(document).ready(function () {
-	jQuery("#isotope-options .option-set li a[data-option-value='.all']").addClass("selected");
 	
-	// Sticky menu
-	if ((jQuery(window).width() > 995) && (jQuery('#header .stickup').length)) {
-		jQuery('#header .stickup').tmStickUp({});
-	}
-	
-	// Portfolio image size
-	jQuery('.tm-masonry-item img').each(function() {
-		var width = jQuery(this).parents('.tm-masonry-item').width(),
-			height = jQuery(this).parents('.tm-masonry-item').height(),
-			h = height/width;
-		
-		if (h > 0.5194) {
-			jQuery(this).css({height: height, maxWidth: 'inherit'});
-		} else {
-			jQuery(this).css({height: 'auto', maxWidth: '100%'});
+	$(document).ready(function () {
+		// Sticky menu
+		if (($(window).width() > 995) && ($('#header .stickup').length)) {
+			$('#header .stickup').tmStickUp({});
 		}
-	})
-	
-	// Contact form validation
-	var my_form_id = new tFormer('contact-site-form', {
-		fields: {
-			name: {
-				rules: "*"
-			},
-			mail: {
-				rules: "* @"
-			},
-			subject: {
-				rules: "*"
-			},
-			message: {
-				rules: "*"
+		
+		// Contact form validation
+		var my_form_id = new tFormer('contact-site-form', {
+			fields: {
+				name: {
+					rules: "*"
+				},
+				mail: {
+					rules: "* @"
+				},
+				subject: {
+					rules: "*"
+				},
+				message: {
+					rules: "*"
+				}
 			}
-		}
-	});
-	
-	// Contact form tooltips
-	jQuery(".contact-form label[for='edit-name']").attr('data-title', 'Enter your name here');
-	jQuery(".contact-form label[for='edit-mail']").attr('data-title', 'Enter your contact Email here');
-	jQuery(".contact-form label[for='edit-subject']").attr('data-title', 'Enter the subject of your message here');
-	jQuery(".contact-form label[for='edit-message']").attr('data-title', 'Enter your message here');
-	jQuery(".contact-form label[for='edit-copy']").attr('data-title', 'Check to send coty to yourself');
-	jQuery(".contact-form .form-item-name").append('<div class="messages error">This field is required!</div>');
-	jQuery(".contact-form .form-item-mail").append('<div class="messages error">This field is required!<br>Please enter a valid email address!</div>');
-	jQuery(".contact-form .form-item-subject").append('<div class="messages error">This field is required!</div>');
-	jQuery(".contact-form .form-item-message .form-textarea-wrapper").append('<div class="messages error">This field is required!</div>');
-	
-	// Bg video
-	jQuery(".video_bg").mb_YTPlayer();
-});
-
-// Tiled gallery
-jQuery(window).bind('resize', function() {
-	jQuery('.tm-masonry-item img').each(function() {
-		var width = jQuery(this).parents('.tm-masonry-item').width(),
-			height = jQuery(this).parents('.tm-masonry-item').height(),
-			h = height/width;
+		});
 		
-		if (h > 0.5194) {
-			jQuery(this).css({height: height, maxWidth: 'inherit'});
-		} else {
-			jQuery(this).css({height: 'auto', maxWidth: '100%'});
-		}
-	})
-})
-
-// Back to Top Button
-jQuery(window).load(function() {
-	jQuery().UItoTop({
-		easingType: 'easeOutQuart',
-		containerID: 'backtotop'
+		// Contact form tooltips
+		$(".contact-form label[for='edit-name']").attr('data-title', 'Enter your name here');
+		$(".contact-form label[for='edit-mail']").attr('data-title', 'Enter your contact Email here');
+		$(".contact-form label[for='edit-subject']").attr('data-title', 'Enter the subject of your message here');
+		$(".contact-form label[for='edit-message']").attr('data-title', 'Enter your message here');
+		$(".contact-form label[for='edit-copy']").attr('data-title', 'Check to send coty to yourself');
+		$(".contact-form .form-item-name").append('<div class="messages error">This field is required!</div>');
+		$(".contact-form .form-item-mail").append('<div class="messages error">This field is required!<br>Please enter a valid email address!</div>');
+		$(".contact-form .form-item-subject").append('<div class="messages error">This field is required!</div>');
+		$(".contact-form .form-item-message .form-textarea-wrapper").append('<div class="messages error">This field is required!</div>');
+		
+		// Bg video
+		$(".video_bg").mb_YTPlayer();
 	});
-})
-
-// Mobile menu
-jQuery(function() {
-	jQuery('#superfish-1').mobileMenu();
-})
+})(jQuery);

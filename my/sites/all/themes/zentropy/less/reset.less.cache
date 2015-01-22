@@ -1,4 +1,4 @@
-a:4:{s:4:"root";s:41:"sites/all/themes/zentropy/less/reset.less";s:8:"compiled";s:6393:"html, body, div, span, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, abbr, address, cite, code, del, dfn, em, img, ins, kbd, q, samp, small, strong, sub, sup, var, b, i, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, figcaption, figure, footer, header, hgroup, menu, nav, section, summary, time, mark, audio, video {
+a:4:{s:4:"root";s:41:"sites/all/themes/zentropy/less/reset.less";s:8:"compiled";s:6415:"html, body, div, span, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, abbr, address, cite, code, del, dfn, em, img, ins, kbd, q, samp, small, strong, sub, sup, var, b, i, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, figcaption, figure, footer, header, hgroup, menu, nav, section, summary, time, mark, audio, video {
 	background:transparent;
 	border:0;
 	margin:0;
@@ -20,6 +20,7 @@ body {
 }
 footer { display:block; }
 header { display:block; }
+html { height:100%; }
 nav { display:block; }
 nav ul { list-style:none; }
 section { display:block; }
@@ -281,4 +282,4 @@ hr {
 	padding:0;
 }
 [hidden] { display:none; }
-";s:5:"files";a:2:{s:58:"D:\wamp\www\tmp3\sites\all\themes\zentropy\less\reset.less";i:1421750526;s:59:"D:\wamp\www\tmp3\sites\all\themes\zentropy\less\mixins.less";i:1421747217;}s:7:"updated";i:1421750613;}
+";s:5:"files";a:2:{s:58:"D:\wamp\www\tmp3\sites\all\themes\zentropy\less\reset.less";i:1421918233;s:59:"D:\wamp\www\tmp3\sites\all\themes\zentropy\less\mixins.less";i:1421747217;}s:7:"updated";i:1421918394;}

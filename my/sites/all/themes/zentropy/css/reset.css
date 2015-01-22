@@ -20,6 +20,7 @@ body {
 }
 footer { display:block; }
 header { display:block; }
+html { height:100%; }
 nav { display:block; }
 nav ul { list-style:none; }
 section { display:block; }
