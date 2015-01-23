@@ -911,138 +911,6 @@ div.messages {
 }
 
 
-/* Tiled gallery
-===========================================================================*/
-
-
-.portfolio-filters {
-	margin-bottom: 40px;
-}
-
-.tm-masonry-filter {
-	margin: 0;
-	padding: 0;
-	text-align: center;
-
-	li {
-		background: none;
-		display: inline-block;
-		padding: 0;
-		
-		&:before {
-			background-color: @linkColor;
-			bottom: 3px;
-			content: "";
-			display: inline-block;
-			height: 5px;
-			margin: 0 10px;
-			position: relative;
-			width: 5px;
-		}
-		
-		&:firts-child:before {
-			display: none;
-		}
-	
-		a {
-			color: @baseTxtColor;
-			text-decoration: none;
-
-			&.active,
-			&:hover {
-				color: @linkColor;
-			}
-		}
-	}
-}
-
-.tm-masonry-item {
-	position: relative;
-
-	.field-type-image {
-		float: none !important;
-		max-width: 100% !important;
-		text-align: center;
-		width: 100% !important;
-	}
-	
-	.node-header {
-		left: 0;
-		position: absolute;
-		right: 0;
-		text-align: center;
-		top: -100%;
-		z-index: 999;
-		.transition(0.6s ease);
-	}
-	
-	.node-title {
-		font-weight: 400;
-		margin: 0;
-		position: relative;
-	}
-	
-	a.colorbox {
-		background: @white;
-		text-align: center;
-
-		&:after {
-			background: none;
-			color: @black;
-			content: "\f00e";
-			font: 30px/30px FontAwesome;
-			left: 51%;
-			margin: -15px 0 0 0;
-			position: absolute;
-			top: -100%;
-			z-index: 999;
-			.transition(0.6s ease);
-		}
-		
-		&:hover {
-			img {
-				.opacity(50);
-			}
-		}
-	}
-	
-	.node-footer {
-		margin: -15px 0 0 0;
-		padding: 0;
-		position: absolute;
-		right: 51%;
-		top: -100%;
-		z-index: 999;
-		.transition(0.6s ease);
-
-		.node-readmore a {
-			background: none;
-			color: transparent;
-			font-size: 0;
-			line-height: 0;
-			padding: 0;
-
-			&:after {
-				color: @black;
-				content: "\f0c1";
-				font: 30px/30px FontAwesome;
-			}
-		}
-	}
-	
-	&:hover {
-		.node-footer,
-		a.colorbox:after {
-			top: 40%;
-		}
-		
-		.node-header {
-			top: 60%;
-		}
-	}
-}
-
-
 /* Blocks
 ===========================================================================*/
 
@@ -1065,16 +933,16 @@ div.messages {
 /* Portfolio
 ===========================================================================*/
 
-#isotope-container {
-	margin-left: -10px;
-	margin-right: -10px;
+.isotope-grid #isotope-container {
+	margin-left: -15px;
+	margin-right: -15px;
 }
 
 .isotope-element {
 	background: none;
 	.box-sizing(border-box);
 	color: inherit;
-	margin: 0 10px 30px;
+	margin: 0 15px 30px;
 	height: auto;
 	overflow: visible;
 	padding: 0;
@@ -1116,6 +984,15 @@ div.messages {
 
 	.views-field-body {
 		margin-bottom: 25px;
+	}
+	
+	.isotope-masonry & {
+		margin: 0;
+		width: 390px;
+	
+		.views-field-field-portfolio-image {
+			margin-bottom:0;
+		}
 	}
 }
 

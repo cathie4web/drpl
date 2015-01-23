@@ -34,11 +34,23 @@
 	$(document).ready(function($) {
 		// Portfolio
 		$("#isotope-options .option-set li a[data-option-value='.all']").addClass("selected");
+		
+		if ($(".isotope-masonry").length) {
+			var $container = $('#isotope-container');
 
+			$container.imagesLoaded( function() {
+				$container.isotope({
+					itemSelector		: '.isotope-element',
+					resizable			: false,
+					transformsEnabled	: true,
+					layoutMode			: 'masonry',
+				});
+			});
+
+		}
+		
 		if ($(".isotope-grid").length) {
-			var $container = $('#isotope-container'),
-				filters = {},
-				items_count = $(".isotope-element").size();
+			var $container = $('#isotope-container');
 
 			$container.imagesLoaded( function() {
 				setColumnWidth();
