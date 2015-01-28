@@ -407,7 +407,6 @@ function add_func_shortcodes_gmap_tips( $format, $long ) {
 }
 
 
-
 /*============================================================================================*/
 /* Grids
 /*============================================================================================*/
@@ -513,6 +512,9 @@ function add_func_shortcodes_piegraph_tips( $format, $long ) {
 
 function add_func_shortcodes_progressbar( $attrs, $content = null ) {
 	extract( shortcode_attrs( array(
+		'barcolor'			=> '#119fe1',
+		'linewidth' 		=> '3',
+		'trackcolor'		=> '#cccccc',
 		'percent'			=> '',
 		'class'				=> '',
 	), $attrs ) );
@@ -534,7 +536,7 @@ function add_func_shortcodes_progressbar( $attrs, $content = null ) {
 	$output .= '<div class="progressbar-percent">' . $percent . '%</div>';
 	
 	if ( $percent ) :
-		$output .= '<div class="progressbar-wrap"><div class="progressbar-background" style="width: 0"></div></div>';
+		$output .= '<div class="progressbar-wrap" style="background: ' . $trackcolor . '; height: ' . $linewidth . 'px;"><div class="progressbar-background" style="width: 0; background: ' . $barcolor . '; height: ' . $linewidth . 'px;"></div></div>';
 	endif;
 	
 	$output .= '</div>';
@@ -543,7 +545,7 @@ function add_func_shortcodes_progressbar( $attrs, $content = null ) {
 }
 
 function add_func_shortcodes_progressbar_tips( $format, $long ) {
-	$output = '[progressbar percent="0|1|..|100" class="custom-class"]Title[/progressbar]';
+	$output = '[progressbar percent="0|1|..|100" linewidth="3"  barcolor="#21c2f8" trackcolor="#cccccc" class="custom-class"]Title[/progressbar]';
 	return $output;
 }
 
@@ -1424,3 +1426,15 @@ function add_func_shortcodes_icon_list_tips( $format, $long ) {
 	$output = '[icon-list type=sc-arrow|sc-buoy||sc-calendar|sc-clock|sc-pin|sc-arrow|sc-play|sc-skip|sc-thumb|sc-tick|sc-tick-grey|sc-warning]your list here[/icon-list]';
 	return $output;
 }*/
+
+
+
+/*
+Dropcap
+Message boxes
+Video
+Tabs
+Accordion
+Toggle
+Pricing tables
+*/

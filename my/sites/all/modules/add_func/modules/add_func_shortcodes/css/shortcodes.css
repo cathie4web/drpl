@@ -106,13 +106,8 @@ a.align-center {
 	width: 20%;
 }
 .progressbar .progressbar-wrap {
-	background: #ccc;
 	clear: both;
 	margin-bottom: 15px;
-}
-.progressbar .progressbar-background {
-	background: #119fe1;
-	height: 3px;
 }
 
 

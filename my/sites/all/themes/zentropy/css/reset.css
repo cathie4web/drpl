@@ -86,11 +86,13 @@ h1 a:hover, h2 a:hover, h3 a:hover, h4 a:hover, h5 a:hover, h6 a:hover {
 	text-decoration:none;
 }
 i { font-style:italic; }
-ins { text-decoration:none; }
+ins { text-decoration:underline; }
 kbd { font-family:monospace, sans-serif; }
 mark {
-	font-style:italic;
-	font-weight:bold;
+	background:#119fe1;
+	color:#ffffff;
+	font-style:normal;
+	font-weight:normal;
 }
 p { margin:0 0 19px; }
 pre {

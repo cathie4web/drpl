@@ -48,7 +48,7 @@
 /* Nested Column Classes
 ===========================================================================*/
 
-.container-12 .alpha {margin-left: 0;}
+.container-12 .alpha {margin-left: 0; clear: left;}
 .container-12 .omega {margin-right: 0;}
 
 .container-12 .grid-1 {width: 70px;}

@@ -44,6 +44,8 @@ scripts[]				= js/parallax.js
 ; some are special hidden regions: page_top, page_bottom, and help
 
 ; these are the stock regions
+regions[page_top]		= Page Top
+
 regions[header_top]		= Header Top
 regions[menu]			= Menu
 regions[header]			= Header
@@ -61,6 +63,8 @@ regions[sidebar_second]	= Sidebar Right
 
 regions[footer_top]		= Footer Top
 regions[footer]			= Footer
+
+regions[page_bottom]	= Page Bottom
 
 
 ; Options --------------------------------------------------------------------

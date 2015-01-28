@@ -1,4 +1,4 @@
-a:4:{s:4:"root";s:41:"sites/all/themes/zentropy/less/reset.less";s:8:"compiled";s:6415:"html, body, div, span, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, abbr, address, cite, code, del, dfn, em, img, ins, kbd, q, samp, small, strong, sub, sup, var, b, i, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, figcaption, figure, footer, header, hgroup, menu, nav, section, summary, time, mark, audio, video {
+a:4:{s:4:"root";s:41:"sites/all/themes/zentropy/less/reset.less";s:8:"compiled";s:6459:"html, body, div, span, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, abbr, address, cite, code, del, dfn, em, img, ins, kbd, q, samp, small, strong, sub, sup, var, b, i, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, figcaption, figure, footer, header, hgroup, menu, nav, section, summary, time, mark, audio, video {
 	background:transparent;
 	border:0;
 	margin:0;
@@ -86,11 +86,13 @@ h1 a:hover, h2 a:hover, h3 a:hover, h4 a:hover, h5 a:hover, h6 a:hover {
 	text-decoration:none;
 }
 i { font-style:italic; }
-ins { text-decoration:none; }
+ins { text-decoration:underline; }
 kbd { font-family:monospace, sans-serif; }
 mark {
-	font-style:italic;
-	font-weight:bold;
+	background:#119fe1;
+	color:#ffffff;
+	font-style:normal;
+	font-weight:normal;
 }
 p { margin:0 0 19px; }
 pre {
@@ -282,4 +284,4 @@ hr {
 	padding:0;
 }
 [hidden] { display:none; }
-";s:5:"files";a:2:{s:58:"D:\wamp\www\tmp3\sites\all\themes\zentropy\less\reset.less";i:1421918233;s:59:"D:\wamp\www\tmp3\sites\all\themes\zentropy\less\mixins.less";i:1421747217;}s:7:"updated";i:1421918394;}
+";s:5:"files";a:2:{s:58:"D:\wamp\www\tmp3\sites\all\themes\zentropy\less\reset.less";i:1422189642;s:59:"D:\wamp\www\tmp3\sites\all\themes\zentropy\less\mixins.less";i:1421969962;}s:7:"updated";i:1422431495;}

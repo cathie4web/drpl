@@ -1,0 +1,20 @@
+
+name = "Views Tabs Style Plugin"
+description = "Provides views results displayed in jQuery UI tabs"
+package = "Views"
+php = "5.2.4"
+core = "7.x"
+
+dependencies[] = "views"
+
+files[] = views_ui_tabs.module
+files[] = theme/views_ui_tabs.theme.inc
+files[] = views_ui_tabs.views.inc
+files[] = views_ui_tabs_plugin_style_tabs.inc
+
+; Information added by drupal.org packaging script on 2013-10-19
+version = "7.x-1.x-dev"
+core = "7.x"
+project = "views_ui_tabs"
+datestamp = "1382165255"
+

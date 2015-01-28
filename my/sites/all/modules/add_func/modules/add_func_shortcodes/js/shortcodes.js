@@ -7,13 +7,12 @@ jQuery(document).ready(function(jQuery) {
 	
 	jQuery('.piegraph').easyPieChart({
 		easing: 'easeOutBounce',
-		size: 200,
-		animate: 2000,
+		animate: 5000,
 		lineCap: 'square',
 		barColor: false,
 		scaleColor: false,
-		onStep: function(a,b,c) {
-			jQuery(this.el).find('span.piegraph-percent').text(Math.round(a) + '%');
+		onStep: function(from, to, percent) {
+			this.el.children[0].innerHTML = Math.round(percent);
 		}
 	});
 	
