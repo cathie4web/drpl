@@ -45,6 +45,13 @@ function add_func_shortcodes_shortcode_info() {
 		'tips callback' => 'add_func_shortcodes_counter_tips',
 	);
 	
+	$shortcodes['dropcap'] = array(
+		'title' => t( 'Dropcap' ),
+		'description' => t( 'Dropcap shortcode' ),
+		'process callback' => 'add_func_shortcodes_dropcap',
+		'tips callback' => 'add_func_shortcodes_dropcap_tips',
+	);
+	
 	$shortcodes['gmap'] = array(
 		'title' => t('Google map'),
 		'description' => t('Creates Google map'),
@@ -59,11 +66,25 @@ function add_func_shortcodes_shortcode_info() {
 		'tips callback' => 'add_func_shortcodes_grids_tips',
 	);
 	
+	$shortcodes['highlight'] = array(
+		'title' => t( 'Highlight' ),
+		'description' => t( 'Highlight an inline text' ),
+		'process callback' => 'add_func_shortcodes_highlight',
+		'tips callback' => 'add_func_shortcodes_highlight_tips',
+	);
+	
 	$shortcodes['icon'] = array(
 		'title' => t('Icon'),
 		'description' => t('Creates Font Awesome Icon shortcode'),
 		'process callback' => 'add_func_shortcodes_icon',
 		'tips callback' => 'add_func_shortcodes_icon_tips',
+	);
+	
+	$shortcodes['message'] = array(
+		'title' => t( 'Message Box' ),
+		'description' => t( 'Creates message boxes' ),
+		'process callback' => 'add_func_shortcodes_message',
+		'tips callback' => 'add_func_shortcodes_message_tips',
 	);
 	
 	$shortcodes['piegraph'] = array(
@@ -102,15 +123,6 @@ function add_func_shortcodes_shortcode_info() {
 		'attributes callback' => 'add_func_shortcodes_box_attributes',
 	);
 
-	$shortcodes['highlight'] = array(
-		'title' => t( 'highlight' ),
-		'description' => t( 'highlight an inline text' ),
-		'process callback' => 'add_func_shortcodes_highlight',
-		'tips callback' => 'add_func_shortcodes_highlight_tips',
-		'default settings' => array(),
-		'attributes callback' => 'add_func_shortcodes_highlight_attributes',
-	);
-
 	$shortcodes['divider'] = array(
 		'title' => t( 'divider' ),
 		'description' => t( 'divider' ),
@@ -118,14 +130,6 @@ function add_func_shortcodes_shortcode_info() {
 		'tips callback' => 'add_func_shortcodes_divider_tips',
 		'default settings' => array(),
 		'attributes callback' => 'add_func_shortcodes_divider_attributes',
-	);
-
-	$shortcodes['dropcap'] = array(
-		'title' => t( 'dropcap' ),
-		'description' => t( 'dropcap shortcode' ),
-		'process callback' => 'add_func_shortcodes_dropcap',
-		'tips callback' => 'add_func_shortcodes_dropcap_tips',
-		'default settings' => array(),
 	);
 
 	$shortcodes['dropshadow'] = array(
@@ -347,6 +351,26 @@ function add_func_shortcodes_counter_tips( $format, $long ) {
 
 
 /*============================================================================================*/
+/* Dropcap
+/*============================================================================================*/
+
+function add_func_shortcodes_dropcap( $attrs, $content = null ) {
+	extract( shortcode_attrs( array(
+		'class'				=> ''
+	), $attrs ) );
+
+	$classes = !empty( $class ) ? ' ' . $class : '';
+	$output = '<span class="dropcap' . $classes . '">' . check_plain( $content ) . '</span>';
+	return $output;
+}
+
+function add_func_shortcodes_dropcap_tips( $format, $long ) {
+	$output = '[dropcap]Y[/dropcap]our content...';
+	return $output;
+}
+
+
+/*============================================================================================*/
 /* Google map
 /*============================================================================================*/
 
@@ -410,6 +434,7 @@ function add_func_shortcodes_gmap_tips( $format, $long ) {
 /*============================================================================================*/
 /* Grids
 /*============================================================================================*/
+
 function add_func_shortcodes_grids( $attrs, $content = null ) {
 	extract( shortcode_attrs( array(
 		'width'			=> '',
@@ -437,6 +462,40 @@ function add_func_shortcodes_grids( $attrs, $content = null ) {
 
 function add_func_shortcodes_grids_tips( $format, $long ) {
 	$output = '[grid width="1|2|...|12" clear="clear-both|clear-left|clear-right" class="custom-class"]your content[/grid]';
+	return $output;
+}
+
+
+/*============================================================================================*/
+/* Highlighted
+/*============================================================================================*/
+
+function add_func_shortcodes_highlight( $attrs, $content = null ) {
+	extract( shortcode_attrs( array(
+		'background'	=> '',
+		'color'			=> '',
+		'class'			=> '',
+	), $attrs ) );
+
+	$style = '';
+	if ( $background ) {
+		$style .= "background-color: $background;";
+	}
+	if ( $color ) {
+		$style .= "color: $color;";
+	}
+	if ( $style ) {
+		$style = ' style="' . $style . '"';
+	}
+
+	$classes = 'highlight';
+	$classes .= !empty( $class ) ? ' ' . $class : '';
+
+	return '<span class="' . $classes . '"' . $style . '>' . $content . '</span>';
+}
+
+function add_func_shortcodes_highlight_tips( $format, $long ) {
+	$output = '[highlight background="yellow" color="black"]your text here[/highlight]';
 	return $output;
 }
 
@@ -471,6 +530,49 @@ function add_func_shortcodes_icon_tips( $format, $long ) {
 
 
 /*============================================================================================*/
+/* Message
+/*============================================================================================*/
+
+function add_func_shortcodes_message( $attrs, $content = null ) {
+	extract( shortcode_attrs( array(
+		'type'			 => '',
+		'class'			=> '',
+	), $attrs ) );
+
+	$classes = 'messages';
+	switch ( $type ) {
+		case 'warning':
+			$classes .= ' warning';
+			break;
+		case 'error':
+			$classes .= ' error';
+			break;
+		case 'success':
+			$classes .= ' status';
+			break;
+		case 'notice':
+			$classes .= ' notice';
+			break;
+		case 'question':
+			$classes .= ' question';
+			break;
+		case 'advice':
+			$classes .= ' advice';
+			break;
+	};
+
+	$classes .= !empty( $class ) ? ' ' . $class  : '';
+
+	return '<div class=' . $classes . '">' . $content . "</div>";
+}
+
+function add_func_shortcodes_message_tips( $format, $long ) {
+	$output = '[message type="warning|error|success|notice|question|advice"]your content here[/message]';
+	return $output;
+}
+
+
+/*============================================================================================*/
 /* Piegraphs
 /*============================================================================================*/
 
@@ -484,7 +586,7 @@ function add_func_shortcodes_piegraph( $attrs, $content = null ) {
 		'class'				=> '',
 	), $attrs ) );
 	
-	$element_id = drupal_html_id("add_func_piegraph" . REQUEST_TIME);
+	$element_id = drupal_html_id( "add_func_piegraph" . REQUEST_TIME );
 	
 	$classes = 'piegraph-wrap';
 	
@@ -884,22 +986,6 @@ function add_func_shortcodes_divider_attributes( $form, $form_state ) {
 	return $form;
 } */
 
-
-/*============================================================================================*/
-/* Dropcaps Shortcodes
-/*============================================================================================*/
-/* function add_func_shortcodes_dropcap( $attrs, $content = null ) {
-	$class = !empty( $class ) ? ' '.$class : '';
-	return '<span class="dropcap">' . check_plain( $content )	. '</span>';
-}
-
-
-
-function add_func_shortcodes_dropcap_tips( $format, $long ) {
-	$output = '[dropcap]Y[/dropcap]our content...';
-	return $output;
-} */
-
 /*============================================================================================*/
 /* Teaser Shortcodes
 /*============================================================================================*/
@@ -1197,77 +1283,6 @@ function add_func_shortcodes_box_attributes( $form, $form_state ) {
 	return $form;
 } */
 
-/*============================================================================================*/
-/* highlight Shortcode
-/*============================================================================================*/
-/* function add_func_shortcodes_highlight( $attrs, $content = null ) {
-	extract( shortcode_attrs( array(
-	'type'			=> '',
-	'background'			=> '',
-	'text'			=> '',
-	'class'			=> '',
-	), $attrs ) );
-
-	$style = '';
-	if ( $background ) $style .= "background-color: $background;";
-	if ( $text ) $style .= "color: $text;";
-
-	if ( $style ) $style = ' style="' . $style . '"';
-
-	$classes = array();
-	$classes[] = ( $type == 2 ) ?	'highlight2' : 'highlight';
-	$classes[] = !empty( $class ) ?	explode( ' ', $class ) : null;
-	$classes = trim( implode( ' ', $classes ) );
-
-	return '<span class="' . $classes . '"' . $style . '>' . $content . '</span>';
-}
-
-function add_func_shortcodes_highlight_tips( $format, $long ) {
-	$output = '[highlight type=2 background="yellow" text="black"]your text here[/highlight]';
-	return $output;
-}
-
-function add_func_shortcodes_highlight_attributes( $form, $form_state ) {
-	$form['type'] = array(
-		'#type' => 'select',
-		'#title' => t( 'Highlight style' ),
-		'#options' => array(
-			'' => t( 'Normal highlight' ),
-			2 => t( 'Rounded highlight' ),
-		),
-		'#states' => array(
-			'visible' => array(
-				':input[name="shortcode"]' => array( 'value' => 'highlight' ),
-			),
-		),
-	);
-	$form['background'] = array(
-		'#type' => 'textfield',
-		'#title' => t( 'Optionally choose a custom background color' ),
-		'#description' => t( 'Must be a valid CSS color. <a href="http://css-tricks.com/snippets/css/named-colors-and-hex-equivalents/">List of named colors</a>.' ),
-		'#size' => 30,
-		'#maxlength' => 30,
-		'#states' => array(
-			'visible' => array(
-				':input[name="shortcode"]' => array( 'value' => 'highlight' ),
-			),
-		),
-	);
-	$form['text'] = array(
-		'#type' => 'textfield',
-		'#title' => t( 'Optionally choose a custom text color' ),
-		'#description' => t( 'Must be a valid CSS color.' ),
-		'#size' => 30,
-		'#maxlength' => 30,
-		'#states' => array(
-			'visible' => array(
-				':input[name="shortcode"]' => array( 'value' => 'highlight' ),
-			),
-		),
-	);
-	return $form;
-} */
-
 
 /*============================================================================================*/
 /* Jquery toggle content Shortcode
@@ -1430,7 +1445,8 @@ function add_func_shortcodes_icon_list_tips( $format, $long ) {
 
 
 /*
-Dropcap
++ Dropcap
++ Highlight
 Message boxes
 Video
 Tabs
