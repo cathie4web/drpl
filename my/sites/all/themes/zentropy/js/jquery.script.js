@@ -20,15 +20,6 @@
 		
 		// Mobile menu
 		$('#superfish-1').mobileMenu();
-		
-		// Portfolio img hover
-		$('.isotope-element .views-field-field-portfolio-image a')
-			.mouseover(function() {
-					$(this).find('img').stop().animate({opacity:'.4'})
-			})
-			.mouseout(function() {
-				$(this).find('img').stop().animate({opacity:'1'})
-			});
 	});
 
 	$(document).ready(function($) {
@@ -46,7 +37,6 @@
 					layoutMode			: 'masonry',
 				});
 			});
-
 		}
 		
 		if ($(".isotope-grid").length) {

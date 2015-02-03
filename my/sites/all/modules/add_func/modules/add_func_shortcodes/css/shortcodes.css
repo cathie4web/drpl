@@ -72,8 +72,28 @@ a.align-center {
 	margin-right: 0;
 }
 
+
+
 /*==========================================================================
-3. GOOGLE MAP
+3. COUNTER
+===========================================================================*/
+
+[id^="add-func-counter"] .num {
+	font-size: 5em;
+	font-weight: bold;
+	line-height: 1em;
+	text-align: center;
+}
+
+[id^="add-func-counter"] .title {
+	font-weight: bold;
+	text-align: center;
+}
+
+
+
+/*==========================================================================
+4. GOOGLE MAP
 ===========================================================================*/
 
 .google-map-api {
@@ -92,27 +112,70 @@ a.align-center {
 }
 
 
+
 /*==========================================================================
-4. PROGRESSBARS
+5. MESSAGE BOXES
 ===========================================================================*/
 
-.progressbar .progressbar-title {
-	float: left;
-	width: 75%;
+.messages {
+	background-image: none !important;
+	margin: 0 0 30px !important;
+	min-height: 24px;
+	padding: 10px 30px 10px 50px !important;
+	position: relative;
 }
-.progressbar .progressbar-percent {
-	float: right;
-	text-align: right;
-	width: 20%;
+
+.messages:before {
+	font: 24px/24px FontAwesome;
+	left: 10px;
+	position: absolute;
+	top: 10px;
 }
-.progressbar .progressbar-wrap {
-	clear: both;
-	margin-bottom: 15px;
+
+.messages.question {
+	background: #faf1fe;
+	border-color: #a61ded;
+	color: #630b8c;
 }
+
+.messages.notice {
+	background: #f1f1fe;
+	border-color: #1d44ed;
+	color: #0b148c;
+}
+
+.messages.advice {
+	background: #fefaf1;
+	border-color: #ed9c1d;/*#eee000;*/
+	color: #8c510b;
+}
+
+.messages .dismiss {
+	text-shadow: none;
+}
+
+.messages.status .dismiss,
+.messages.warning .dismiss {
+	color: #fff;
+	text-shadow: none;
+}
+
+.messages.question .dismiss {
+	background: #b01ded;
+}
+
+.messages.notice .dismiss {
+	background: #1d1ded;
+}
+
+.messages.advice .dismiss {
+	background: #edb51d;
+}
+
 
 
 /*==========================================================================
-5. PIEGRAPH
+6. PIEGRAPH
 ===========================================================================*/
 
 .piegraph-wrap {
@@ -141,21 +204,32 @@ a.align-center {
 }
 
 
+
 /*==========================================================================
-6. COUNTER
+7. PROGRESSBARS
 ===========================================================================*/
 
-[id^="add-func-counter"] .num {
-	font-size: 5em;
-	font-weight: bold;
-	line-height: 1em;
-	text-align: center;
+.progressbar .progressbar-title {
+	float: left;
+	width: 75%;
+}
+.progressbar .progressbar-percent {
+	float: right;
+	text-align: right;
+	width: 20%;
+}
+.progressbar .progressbar-wrap {
+	clear: both;
+	margin-bottom: 15px;
 }
 
-[id^="add-func-counter"] .title {
-	font-weight: bold;
-	text-align: center;
-}
+
+
+
+
+
+
+
 
 
 

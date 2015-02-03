@@ -31,13 +31,6 @@ function add_func_shortcodes_shortcode_info() {
 		'tips callback' => 'add_func_shortcodes_columns_tips',
 	);
 	
-	$shortcodes['container'] = array(
-		'title' => t( 'Grid container' ),
-		'description' => t( 'Grids wrapper' ),
-		'process callback' => 'add_func_shortcodes_container',
-		'tips callback' => 'add_func_shortcodes_grids_container',
-	);
-	
 	$shortcodes['counter'] = array(
 		'title' => t('Counter'),
 		'description' => t('Creates JS numeric counter'),
@@ -57,6 +50,13 @@ function add_func_shortcodes_shortcode_info() {
 		'description' => t('Creates Google map'),
 		'process callback' => 'add_func_shortcodes_gmap',
 		'tips callback' => 'add_func_shortcodes_gmap_tips',
+	);
+	
+	$shortcodes['container'] = array(
+		'title' => t( 'Grid container' ),
+		'description' => t( 'Grids wrapper' ),
+		'process callback' => 'add_func_shortcodes_container',
+		'tips callback' => 'add_func_shortcodes_container_tips',
 	);
 	
 	$shortcodes['grid'] = array(
@@ -240,7 +240,7 @@ function add_func_shortcodes_clear( $attrs, $content = null ) {
 }
 
 function add_func_shortcodes_clear_tips( $format, $long ) {
-	$output = '[clear class="custom-class" type="div|span"]Content[/clear]';
+	$output = '[clear class="custom-class" type="div | span"]Content[/clear]';
 	return $output;
 }
 
@@ -284,37 +284,10 @@ function add_func_shortcodes_columns( $attrs, $content = null ) {
 }
 
 function add_func_shortcodes_columns_tips( $format, $long ) {
-	$output = '[col width="1-2|1-3|2-3|1-4|3-4|1-5|2-5|3-5|4-5|1-6|5-6" align="right|center" clear="clear-both|clear-left|clear-right" last="1" class="custom-class"]your content[/col]';
+	$output = '[col width="1-2 | 1-3 | 2-3 | 1-4 | 3-4 | 1-5 | 2-5 | 3-5 | 4-5 | 1-6 | 5-6" align="right | center" clear="clear-both | clear-left | clear-right" last="1" class="custom-class"]your content[/col]';
 	return $output;
 }
 
-
-/*============================================================================================*/
-/* Container
-/*============================================================================================*/
-
-function add_func_shortcodes_container( $attrs, $content = null ) {
-	extract( shortcode_attrs( array(
-		'class' => '',
-	), $attrs ) );
-	
-	$classes[] = 'container-12';
-	
-	if ( $class ) {
-		$classes[] = $class;
-	}
-	
-	$classes = trim( implode( ' ', $classes ) );
-
-	$output = '<div class="' . $classes . '">' . $content . '</div>';
-
-	return $output;
-}
-
-function add_func_shortcodes_container_tips( $format, $long ) {
-	$output = '[container class="custom-class"]Grids[/container]';
-	return $output;
-}
 
 /*============================================================================================*/
 /* Counters
@@ -345,7 +318,7 @@ function add_func_shortcodes_counter( $attrs, $content = null ) {
 }
 
 function add_func_shortcodes_counter_tips( $format, $long ) {
-	$output = '[counter number="1|2|.." timer="" class="custom-class"]Title[/counter]';
+	$output = '[counter number="1 | 2 | .." timer="200" class="custom-class"]Title[/counter]';
 	return $output;
 }
 
@@ -426,7 +399,35 @@ function add_func_shortcodes_gmap( $attrs, $content = null ) {
 }
 
 function add_func_shortcodes_gmap_tips( $format, $long ) {
-	$output = '[gmap lat_coord="41.850033" lng_coord="-87.6500523" zoom_value="15" zoom_wheel="no" hue="#ffffff" saturation ="-100|..|0|..|100" gamma="0.01|..|1.0|..|10" marker="http://example.com/img.png" class="custom-class"][/gmap]';
+	$output = '[gmap lat_coord="41.850033" lng_coord="-87.6500523" zoom_value="15" zoom_wheel="no" hue="#ffffff" saturation ="-100 | .. | 0 | .. | 100" gamma="0.01 | .. | 1.0 | .. | 10" marker="http://example.com/img.png" class="custom-class"][/gmap]';
+	return $output;
+}
+
+
+/*============================================================================================*/
+/* Grid Container
+/*============================================================================================*/
+
+function add_func_shortcodes_container( $attrs, $content = null ) {
+	extract( shortcode_attrs( array(
+		'class' => '',
+	), $attrs ) );
+	
+	$classes[] = 'container-12';
+	
+	if ( $class ) {
+		$classes[] = $class;
+	}
+	
+	$classes = trim( implode( ' ', $classes ) );
+
+	$output = '<div class="' . $classes . '">' . $content . '</div>';
+
+	return $output;
+}
+
+function add_func_shortcodes_container_tips( $format, $long ) {
+	$output = '[container class="custom-class"]Grids[/container]';
 	return $output;
 }
 
@@ -461,7 +462,7 @@ function add_func_shortcodes_grids( $attrs, $content = null ) {
 }
 
 function add_func_shortcodes_grids_tips( $format, $long ) {
-	$output = '[grid width="1|2|...|12" clear="clear-both|clear-left|clear-right" class="custom-class"]your content[/grid]';
+	$output = '[grid width="1 | 2 | ... | 12" clear="clear-both | clear-left | clear-right" class="custom-class"]your content[/grid]';
 	return $output;
 }
 
@@ -524,7 +525,7 @@ function add_func_shortcodes_icon( $attrs, $content = null ) {
 }
 
 function add_func_shortcodes_icon_tips( $format, $long ) {
-	$output = '[icon class="fa-star|..|.." link="http://drupal.org"]Some text here[/icon]';
+	$output = '[icon class="fa-star" link="http://drupal.org"]Some text here[/icon]';
 	return $output;
 }
 
@@ -539,35 +540,38 @@ function add_func_shortcodes_message( $attrs, $content = null ) {
 		'class'			=> '',
 	), $attrs ) );
 
-	$classes = 'messages';
+	$classes = "messages";
+
 	switch ( $type ) {
 		case 'warning':
-			$classes .= ' warning';
+			$classes .= " warning fa-warning";
 			break;
 		case 'error':
-			$classes .= ' error';
+			$classes .= ' error fa-times-circle';
 			break;
 		case 'success':
-			$classes .= ' status';
+			$classes .= " status fa-check-circle";
 			break;
 		case 'notice':
-			$classes .= ' notice';
+			$classes .= " notice fa-pencil";
 			break;
 		case 'question':
-			$classes .= ' question';
+			$classes .= " question fa-question-circle";
 			break;
 		case 'advice':
-			$classes .= ' advice';
+			$classes .= " advice fa-info-circle";
 			break;
 	};
 
-	$classes .= !empty( $class ) ? ' ' . $class  : '';
+	$classes .= !empty( $class ) ? ' ' . $class : '';
 
-	return '<div class=' . $classes . '">' . $content . "</div>";
+	$output = '<div class="' . $classes . '">' . $content . "</div>";
+	
+	return $output;
 }
 
 function add_func_shortcodes_message_tips( $format, $long ) {
-	$output = '[message type="warning|error|success|notice|question|advice"]your content here[/message]';
+	$output = '[message type="warning | error | success | notice | question | advice"]your content here[/message]';
 	return $output;
 }
 
@@ -603,7 +607,7 @@ function add_func_shortcodes_piegraph( $attrs, $content = null ) {
 }
 
 function add_func_shortcodes_piegraph_tips( $format, $long ) {
-	$output = '[piegraph percent="0|1|..|100" width="1|...|200|..." barcolor="#21c2f8" trackcolor="#cccccc" linewidth="3" class="custom-class"]Title[/piegraph]';
+	$output = '[piegraph percent="0 | 1 | .. | 100" width="1 | ... | 200 | ..." barcolor="#21c2f8" trackcolor="#cccccc" linewidth="3" class="custom-class"]Title[/piegraph]';
 	return $output;
 }
 
@@ -647,7 +651,7 @@ function add_func_shortcodes_progressbar( $attrs, $content = null ) {
 }
 
 function add_func_shortcodes_progressbar_tips( $format, $long ) {
-	$output = '[progressbar percent="0|1|..|100" linewidth="3"  barcolor="#21c2f8" trackcolor="#cccccc" class="custom-class"]Title[/progressbar]';
+	$output = '[progressbar percent="0 | 1 | .. | 100" linewidth="3" barcolor="#21c2f8" trackcolor="#cccccc" class="custom-class"]Title[/progressbar]';
 	return $output;
 }
 
@@ -1447,7 +1451,7 @@ function add_func_shortcodes_icon_list_tips( $format, $long ) {
 /*
 + Dropcap
 + Highlight
-Message boxes
++ Message boxes
 Video
 Tabs
 Accordion
