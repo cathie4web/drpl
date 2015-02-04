@@ -132,6 +132,30 @@ a.align-center {
 	top: 10px;
 }
 
+.messages.error:before {
+	content: "\f057";
+}
+
+.messages.warning:before {
+	content: "\f071";
+}
+
+.messages.status:before {
+	content: "\f058";
+}
+
+.messages.notice:before {
+	content: "\f040";
+}
+
+.messages.question:before {
+	content: "\f059";
+}
+
+.messages.advice:before {
+	content: "\f05a";
+}
+
 .messages.question {
 	background: #faf1fe;
 	border-color: #a61ded;

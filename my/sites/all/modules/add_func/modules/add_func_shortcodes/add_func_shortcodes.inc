@@ -544,22 +544,22 @@ function add_func_shortcodes_message( $attrs, $content = null ) {
 
 	switch ( $type ) {
 		case 'warning':
-			$classes .= " warning fa-warning";
+			$classes .= " warning";
 			break;
 		case 'error':
-			$classes .= ' error fa-times-circle';
+			$classes .= ' error';
 			break;
 		case 'success':
-			$classes .= " status fa-check-circle";
+			$classes .= " status";
 			break;
 		case 'notice':
-			$classes .= " notice fa-pencil";
+			$classes .= " notice";
 			break;
 		case 'question':
-			$classes .= " question fa-question-circle";
+			$classes .= " question";
 			break;
 		case 'advice':
-			$classes .= " advice fa-info-circle";
+			$classes .= " advice";
 			break;
 	};
 

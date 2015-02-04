@@ -88,7 +88,7 @@ settings[default_logo]								= 1
 settings[zentropy_sticky_menu]						= 0
 
 ; Breadcrumb settings
-settings[zentropy_breadcrumb_show]					= 0
+settings[zentropy_breadcrumb_show]					= 1
 settings[zentropy_breadcrumb_hideonlyfront]			= 1
 settings[zentropy_breadcrumb_showtitle]				= 1
 settings[zentropy_breadcrumb_separator]				= " &#187; "

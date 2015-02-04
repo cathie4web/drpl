@@ -9,4 +9,4 @@ dependencies[] = votingapi
 
 files[] = add_func_likebtn.php
 
-configure = admin/add_func/likebuttons
+configure = admin/add_func/likebtn
