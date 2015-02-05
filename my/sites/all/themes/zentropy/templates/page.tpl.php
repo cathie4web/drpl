@@ -97,7 +97,7 @@ endif; ?>
 
 			<div class="<?php if ( theme_get_setting( 'zentropy_sticky_menu' ) ) { echo 'stickup '; } ?>header-section-1"> <!-- Sticky menu wrapper -->
 				<div class="container-12">
-					<div class="grid-6">
+					<div class="grid-4">
 						<!-- Logo -->
 						<?php if ( $logo || $site_name || $site_slogan ) :?>
 							<div id="logo" class="logo">
@@ -122,7 +122,7 @@ endif; ?>
 						<?php endif; ?>
 					</div>
 
-					<div class="grid-6">
+					<div class="grid-8">
 						<!-- Region Menu -->
 						<?php if ( $page['menu'] ) :
 							print render( $page['menu'] );

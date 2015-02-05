@@ -7,7 +7,7 @@
 define( 'ADD_FUNC_LIKEBTN_LAST_SUCCESSFULL_SYNC_TIME_OFFSET', 57600 );
 define( 'ADD_FUNC_LIKEBTN_LOCALES_SYNC_INTERVAL', 57600 );
 define( 'ADD_FUNC_LIKEBTN_STYLES_SYNC_INTERVAL', 57600 );
-define( 'ADD_FUNC_LIKEBTN_API_URL', 'http://api.likebtn.com/api/' );
+//define( 'ADD_FUNC_LIKEBTN_API_URL', 'http://api.likebtn.com/api/' );
 
 class Add_Func_Likebtn {
 	protected static $synchronized = FALSE;
@@ -97,22 +97,22 @@ class Add_Func_Likebtn {
 		}
 
 		// Retrieve first page.
-		$response = $this->apiRequest( 'stat', $url );
+		/*$response = $this->apiRequest( 'stat', $url );
 		if ( !$this->updateVotes( $response ) ) {
 			$sync_result = FALSE;
-		}
+		}*/
 
 		// Retrieve all pages.
 		if ( isset( $response['response']['total'] ) && isset( $response['response']['page_size'] ) ) {
 			$total_pages = ceil( (int) $response['response']['total'] / (int) $response['response']['page_size'] );
 
-			for ( $page = 2; $page <= $total_pages; $page++ ) {
+			/*for ( $page = 2; $page <= $total_pages; $page++ ) {
 				$response = $this->apiRequest( 'stat', $url . '&page=' . $page );
 
 				if ( !$this->updateVotes( $response ) ) {
 					$sync_result = FALSE;
 				}
-			}
+			}*/
 		}
 
 		if ( $sync_result ) {
@@ -123,14 +123,14 @@ class Add_Func_Likebtn {
 	/**
 	 * Test synchronization.
 	 */
-	public function testSync( $email, $api_key ) {
+	/*public function testSync( $email, $api_key ) {
 		$email = trim( $email );
 		$api_key = trim( $api_key );
 
 		$response = $this->apiRequest( 'stat', 'output=json&page_size=1', $email, $api_key );
 
 		return $response;
-	}
+	}*/
 
 	/**
 	 * Decode JSON.
@@ -320,20 +320,20 @@ class Add_Func_Likebtn {
 	/**
 	 * Run locales synchronization.
 	 */
-	public function runSyncLocales() {
+	/*public function runSyncLocales() {
 		if ( $this->timeToSync( ADD_FUNC_LIKEBTN_LOCALES_SYNC_INTERVAL, 'add_func_likebtn_last_locale_sync_time' ) && function_exists( 'curl_init' ) ) {
 			$this->syncLocales();
 		}
-	}
+	}*/
 
 	/**
 	 * Run styles synchronization.
 	 */
-	public function runSyncStyles() {
+	/* public function runSyncStyles() {
 		if ( $this->timeToSync( ADD_FUNC_LIKEBTN_STYLES_SYNC_INTERVAL, 'add_func_likebtn_last_style_sync_time' ) && function_exists( 'curl_init' ) ) {
 			$this->syncStyles();
 		}
-	}
+	} */
 
 	/**
 	 * Check if it is time to sync locales.
@@ -358,7 +358,7 @@ class Add_Func_Likebtn {
 	/**
 	 * Locales sync function.
 	 */
-	public function syncLocales() {
+	/*public function syncLocales() {
 		$url = ADD_FUNC_LIKEBTN_API_URL . "?action=locale";
 
 		$response_string = $this->curl( $url );
@@ -367,12 +367,12 @@ class Add_Func_Likebtn {
 		if ( isset( $response['result'] ) && $response['result'] == 'success' && isset( $response['response'] ) && count( $response['response'] ) ) {
 			variable_set( 'add_func_likebtn_locales', $response['response'] );
 		}
-	}
+	}*/
 
 	/**
 	 * Styles sync function.
 	 */
-	public function syncStyles() {
+	/*public function syncStyles() {
 		$url = ADD_FUNC_LIKEBTN_API_URL . "?action=style";
 
 		$response_string = $this->curl( $url );
@@ -381,12 +381,12 @@ class Add_Func_Likebtn {
 		if ( isset( $response['result'] ) && $response['result'] == 'success' && isset( $response['response'] ) && count( $response['response'] ) ) {
 			variable_set( 'add_func_likebtn_styles', $response['response'] );
 		}
-	}
+	}*/
 
 	/**
 	 * Request to API.
 	 */
-	public function apiRequest( $action, $request, $email = '', $api_key = '' ) {
+	/*public function apiRequest( $action, $request, $email = '', $api_key = '' ) {
 		if ( !self::$apiurl ) {
 			if ( !$email ) {
 				$email	= trim( variable_get( 'add_func_likebtn_account_data_email' ) );
@@ -412,5 +412,5 @@ class Add_Func_Likebtn {
 		$response = $this->jsonDecode( $response_string );
 
 		return $response;
-	}
+	}*/
 }

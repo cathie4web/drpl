@@ -11,7 +11,7 @@
 function add_func_likebtn_general_settings() {
 	$public_url = _add_func_likebtn_public_url();
 
-	drupal_add_js( drupal_get_path( 'module', 'add_func_likebtn' ) . "/assets/js/admin.js", 'file' );
+	drupal_add_js( drupal_get_path( 'module', 'add_func_likebtn' ) . "/js/admin.js", 'file' );
 
 	$form = array();
 

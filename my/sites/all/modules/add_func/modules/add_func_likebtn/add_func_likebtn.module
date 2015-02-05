@@ -71,13 +71,14 @@ define( 'ADD_FUNC_LIKEBTN_LANGS', serialize( array(
 	"en" => "en - English",
 	"ru" => "ru - Русский (Russian)",
 	"de" => "de - Deutsch (German)",
-	"ja" => "ja - 日本語 (Japanese)",
-	"uk" => "uk - Українська мова (Ukrainian)",
-	"kk" => "kk - Қазақ тілі (Kazakh)",
-	"nl" => "nl - Nederlands (Dutch)",
-	"hu" => "hu - Magyar (Hungarian)",
-	"sv" => "sv - Svenska (Swedish)",
-	"tr" => "tr - Türkçe (Turkish)",
+	"fr" => "fr - Français (French)",
+	//"ja" => "ja - 日本語 (Japanese)",
+	//"uk" => "uk - Українська мова (Ukrainian)",
+	//"kk" => "kk - Қазақ тілі (Kazakh)",
+	//"nl" => "nl - Nederlands (Dutch)",
+	//"hu" => "hu - Magyar (Hungarian)",
+	//"sv" => "sv - Svenska (Swedish)",
+	//"tr" => "tr - Türkçe (Turkish)",
 	"es" => "es - Español (Spanish)" ) ) );
 
 define( 'ADD_FUNC_LIKEBTN_STYLES', serialize( array(
@@ -369,7 +370,7 @@ function _add_func_likebtn_get_markup( $element_name, $element_id, $values = NUL
 		}
 	}
 
-	drupal_add_js( drupal_get_path( 'module', 'add_func_likebtn' ) . "/assets/js/widget.js", 'file' );
+	drupal_add_js( drupal_get_path( 'module', 'add_func_likebtn' ) . "/js/widget.js", 'file' );
 
 	$public_url = _add_func_likebtn_public_url();
 
@@ -498,8 +499,8 @@ function _add_func_likebtn_settings_form( $default_values = NULL ) {
 	
 	// Run locales sunchronization.
 	$add_func_likebtn = new Add_Func_LikeBtn();
-	$add_func_likebtn->runSyncLocales();
-	$add_func_likebtn->runSyncStyles();
+	//$add_func_likebtn->runSyncLocales();
+	//$add_func_likebtn->runSyncStyles();
 
 	// Get languages.
 	$add_func_likebtn_locales = variable_get( 'add_func_likebtn_locales', array() );
@@ -1398,13 +1399,13 @@ function add_func_likebtn_test_sync() {
 	// Run test.
 	$add_func_likebtn = new Add_Func_Likebtn();
 
-	$test_response = $add_func_likebtn->testSync( $add_func_likebtn_account_email, $add_func_likebtn_account_api_key );
+	//$test_response = $add_func_likebtn->testSync( $add_func_likebtn_account_email, $add_func_likebtn_account_api_key );
 
-	if ( $test_response['result'] == 'success' ) {
+	//if ( $test_response['result'] == 'success' ) {
 		$result_text = t( 'OK' );
-	} else {
+	/*} else {
 		$result_text = t( 'Error' );
-	}
+	}*/
 
 	$response = array(
 		'result' => $test_response['result'],
