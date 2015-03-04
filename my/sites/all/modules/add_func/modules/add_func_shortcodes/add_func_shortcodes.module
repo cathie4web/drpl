@@ -307,9 +307,11 @@ function _add_func_shortcodes_postprocess_text( $text, $filter ) {
 		'!<p>(&nbsp;|\s)*(<div)!is',
 		'!(<\/div.*?>)\s*</p>!is',
 		'!(<div.*?>)\s*</p>!is',
+		'!(<\/div.*?>)\s*<br \/>!is',
+		'!(<div.*?>)\s*<br \/>!is',
 	);
 
-	$replacements = array( '', '\\2', '\\2', '\\1', '\\1' );
+	$replacements = array( '', '\\2', '\\2', '\\1', '\\1', '\\1', '\\1' );
 	return preg_replace( $patterns, $replacements, $text );
 }
 

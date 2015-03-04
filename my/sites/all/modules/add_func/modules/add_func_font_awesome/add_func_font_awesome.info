@@ -1,5 +1,5 @@
-name = Font Awesome Icons
-description = "Provides iconic font designed for use with Twitter Bootstrap. Font Awesome v. 4.2.0"
+name = Font Icons
+description = "Provides iconic font designed for use with Twitter Bootstrap. Font Awesome v. 4.2.0. SL Zodiac Icons"
 core = 7.x
 package = Additional Functionality
 version = "7.x-1.0"

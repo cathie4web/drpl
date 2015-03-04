@@ -29,29 +29,15 @@
 		if ($(".isotope-masonry").length) {
 			var $container = $('#isotope-container');
 
-			$container.imagesLoaded( function() {
-				$container.isotope({
-					itemSelector		: '.isotope-element',
-					resizable			: false,
-					transformsEnabled	: true,
-					layoutMode			: 'masonry',
-				});
+			$container.isotope({
+				itemSelector		: '.isotope-element',
+				layoutMode			: 'masonry',
 			});
 		}
 		
 		if ($(".isotope-grid").length) {
 			var $container = $('#isotope-container');
-
-			$container.imagesLoaded( function() {
-				setColumnWidth();
-				$container.isotope({
-					itemSelector		: '.isotope-element',
-					resizable			: false,
-					transformsEnabled	: true,
-					layoutMode			: 'fitRows',
-				});
-			});
-
+			
 			function getNumColumns() {
 				var $folioWrapper = $('.isotope-grid'),
 					containerWidth = $("#isotope-container").width(),
@@ -129,13 +115,15 @@
 				});
 			}
 
-			function arrange() {
-				setColumnWidth();
-				$container.isotope('reLayout');
-			}
+			setColumnWidth();
+			$container.isotope({
+				itemSelector		: '.isotope-element',
+				layoutMode			: 'fitRows',
+			});
 
 			$(window).on("debouncedresize", function(event) {
-				arrange();
+				setColumnWidth();
+				$container.isotope('reLayout');
 			});
 		};
 

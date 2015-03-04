@@ -353,9 +353,6 @@ function add_func_shortcodes_gmap( $attrs, $content = null ) {
 		'lng_coord'			=> '-4.251604',
 		'zoom_value'		=> '15',
 		'zoom_wheel'		=> 'no',
-		'hue'				=> '',
-		'saturation'		=> 0,
-		'gamma'				=> 1,
 		'marker'			=> '',
 		'class'				=> ''
 	), $attrs ) );
@@ -365,6 +362,7 @@ function add_func_shortcodes_gmap( $attrs, $content = null ) {
 	$lng_coord	= floatval( $lng_coord );
 	$zoom_value	= intval( $zoom_value );
 	$zoom_wheel	= $zoom_wheel=='yes' ? 'true' : 'false';
+	$styles = $content ? 'styles: ' . $content . ',' : '';
 
 	$output = '<div class="google-map-api ' . $class . '">';
 		$output .= '<div id="map-canvas-' . $random_id . '" class="gmap"></div>';
@@ -379,9 +377,9 @@ function add_func_shortcodes_gmap( $attrs, $content = null ) {
 				function initialize() {
 					var mapOptions = {
 						center: coordData,
-						scrollwheel: ' . $zoom_wheel . ',
-						styles: [ { "stylers": [ { "hue": "' . $hue . '" }, { "saturation": ' . $saturation . ' }, { "gamma": ' . $gamma . ' } ] } ],
-						zoom: ' . $zoom_value . '
+						scrollwheel: ' . $zoom_wheel . ',' .
+						$styles .
+						'zoom: ' . $zoom_value . '
 					}
 					var map = new google.maps.Map(document.getElementById("map-canvas-' . $random_id . '"), mapOptions);
 					marker = new google.maps.Marker({
@@ -399,7 +397,7 @@ function add_func_shortcodes_gmap( $attrs, $content = null ) {
 }
 
 function add_func_shortcodes_gmap_tips( $format, $long ) {
-	$output = '[gmap lat_coord="41.850033" lng_coord="-87.6500523" zoom_value="15" zoom_wheel="no" hue="#ffffff" saturation ="-100 | .. | 0 | .. | 100" gamma="0.01 | .. | 1.0 | .. | 10" marker="http://example.com/img.png" class="custom-class"][/gmap]';
+	$output = '[gmap lat_coord="41.850033" lng_coord="-87.6500523" zoom_value="15" zoom_wheel="no" marker="http://example.com/img.png" class="custom-class"]Insert style code from snazzymaps.com[/gmap]';
 	return $output;
 }
 

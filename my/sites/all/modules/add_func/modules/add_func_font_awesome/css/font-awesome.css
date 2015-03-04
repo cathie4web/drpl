@@ -11,7 +11,18 @@
 	font-weight: normal;
 	font-style: normal;
 }
-.fa {
+
+@font-face {
+	font-family: 'Zodiac';
+	src: url('../fonts/zodiac.eot');
+	src: url('../fonts/zodiac.eot#iefix') format('embedded-opentype'), url('../fonts/zodiac.woff') format('woff'), url('../fonts/zodiac.ttf') format('truetype'), url('../fonts/zodiac.svg') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+.fa,
+[class^="icon-"]:before,
+[class*=" icon-"]:before {
 	display: inline-block;
 	font: normal normal normal 14px/1 FontAwesome;
 	font-size: inherit;
@@ -1669,4 +1680,52 @@
 }
 .fa-meanpath:before {
 	content: "\f20c";
+}
+
+.horo,
+[class^="horo-"]:before,
+[class*=" horo-"]:before {
+	display: inline-block;
+	font: normal normal normal 14px/1 Zodiac;
+	font-size: inherit;
+	text-rendering: auto;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+.horo-aries:before {
+	content: "a";
+}
+.horo-taurus:before {
+	content: "b";
+}
+.horo-gemini:before {
+	content: "c";
+}
+.horo-cancer:before {
+	content: "d";
+}
+.horo-leo:before {
+	content: "e";
+}
+.horo-virgo:before {
+	content: "f";
+}
+.horo-libra:before {
+	content: "g";
+}
+.horo-scorpio:before {
+	content: "h";
+}
+.horo-sagittarius:before {
+	content: "i";
+}
+.horo-capricorn:before {
+	content: "j";
+}
+.horo-aquarius:before {
+	content: "k";
+}
+.horo-pisces:before {
+	content: "l";
 }

@@ -19,13 +19,7 @@
 /* @group Forms */
 
 .views-ui-dialog fieldset {
-  clear: both;
   padding-top: 2.5em;
-}
-
-.views-ui-dialog fieldset#edit-style-options-list,
-.views-ui-dialog fieldset#edit-style-options-group{
-	padding-bottom: 13px;
 }
 
 fieldset fieldset {
