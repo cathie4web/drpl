@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html lang="en-us" class="ie"> <![endif]-->
+<!--[if !(IE)]><!-->
+<html lang="en-us">
+<!--<![endif]-->
+<head>
+	<meta charset="utf-8">
+	<title>Formatting</title>
+	<meta name="viewport" content="width=device-width; initial-scale=1.0">
+	<link rel="stylesheet/less" type="text/css" href="less/style.less">
+	<link rel="icon" href="images/favicon.ico" type="image/x-icon">
+	<link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
+	<script src="js/jquery.min.js"></script>
+	<script src="js/hoverIntent.js"></script>
+	<script src="js/superfish.js"></script>
+	<script src="js/jquery.easing.1.3.js"></script>
+	<script src="js/jquery.flexslider.js"></script>
+	<script src="js/effects.js"></script>
+	<script src="js/script.js"></script>
+	<script src="js/less.js"></script>
+	<!--[if lt IE 9]>
+		<div style='clear: both; text-align:center; position: relative;'>
+			<a href="http://windows.microsoft.com/en-US/internet-explorer/products/ie/home?ocid=ie6_countdown_bannercode">
+				<img src="http://storage.ie6countdown.com/assets/100/images/banners/warning_bar_0000_us.jpg" border="0" height="42" width="820" alt="You are using an outdated browser. For a faster, safer browsing experience, upgrade for free today.">
+			</a>
+		</div>
+		<script src="js/html5.js"></script>
+	<![endif]-->
+</head>
+<body>
+	<div class="main">
+		<!--== HEADER ===============================================================================-->
+		<header id="header" >
+			<div class="container-12 clearfix">
+				<!--~~ Logo ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+				<div class="grid-2">
+					<div id="logo">
+						<a href="index.html">Theme.</a>
+					</div>
+				</div>
+				<!--~~ Menu ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+				<nav id="header-nav" class="grid-7">
+					<ul class="sf-menu" id="header-menu">
+						<li>
+							<a href="index.html">Home</a>
+							<ul>
+								<li><a href="home-with-carousel.html">Home v2 (with carousel)</a></li>
+								<li><a href="home-with-gallery.html">Home v3 (with gallery)</a></li>
+								<li><a href="home-with-large-headpicture.html">Home v4 (with large headpicture)</a></li>
+								<li><a href="home-with-small-headpicture.html">Home v5 (with small headpicture)</a></li>
+								<li><a href="home-without-headpicture.html">Home v6 (without headpicture)</a></li>
+							</ul>
+						</li>
+						<li>
+							<a href="about.html">About</a>
+							<ul>
+								<li><a href="faqs.html">FAQs</a></li>
+								<li><a href="testimonials.html">Testimonials</a></li>
+								<li><a href="team.html">Our Team</a></li>
+								<li><a href="services.html">Services</a></li>
+							</ul>
+						</li>
+						<li>
+							<a href="gallery.html">Gallery</a>
+							<ul>
+								<li><a href="gallery-1col.html">Gallery v2 (1 col)</a></li>
+								<li><a href="gallery-1col-with-sidebar.html">Gallery v3 (1 col with sidebar)</a></li>
+								<li><a href="gallery-2col.html">Gallery v4 (2 col)</a></li>
+								<li><a href="gallery-2col-with-sidebar.html">Gallery v5 (2 col width sidebar)</a></li>
+								<li><a href="gallery-4col.html">Gallery v6 (4 col)</a></li>
+							</ul>
+						</li>
+						<li>
+							<a href="blog.html">Blog</a>
+							<ul>
+								<li><a href="blog-fullwidth.html">Blog v2 (fullwidth)</a></li>
+								<li><a href="blog-grid.html">Blog v3 (grid)</a></li>
+								<li><a href="archives.html">Archives</a></li>
+								<li><a href="blog-category.html">Category Page</a></li>
+							</ul>
+						</li>
+						<li>
+							<a href="contects.html">Contacts</a>
+						</li>
+						<li>
+							<a href="features.html">Features</a>
+							<ul>
+								<li><a href="features-grids.html">Columns</a></li>
+								<li class="current"><a href="features-formatting.html">Formatting</a></li>
+								<li><a href="features-elements.html">Elements</a></li>
+								<li><a href="features-scripts.html">Scripts</a></li>
+								<li><a href="features-blocks.html">Blocks</a></li>
+								<li><a href="features-icons.html">Font Icons</a></li>
+								<li>
+									<a>Pages</a>
+									<ul>
+										<li><a href="page-fullwidth.html">Fullwidth Page</a></li>
+										<li><a href="page-with-sidebar.html">Page with sidebar</a></li>
+										<li><a href="login.html">Login Page</a></li>
+										<li><a href="registration.html">Registration Page</a></li>
+										<li><a href="search.html">Search Page</a></li>
+										<li><a href="sitemap.html">Sitemap</a></li>
+										<li><a href="404.html">404 Error Page</a></li>
+										<li><a href="403.html">403 Access denied</a></li>
+									</ul>
+								</li>
+							</ul>
+						</li>
+					</ul>
+				</nav>
+				<!--~~ Search Form ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+				<div class="grid-3 hide-ml">
+					<form id="header-search-form">
+						<fieldset>
+							<input type="text" placeholder="Site Search">
+							<a onClick="document.getElementById('header-search-form').submit()" class="submit icon-search"></a>
+						</fieldset>
+					</form>
+				</div>
+			</div>
+		</header>
+		<!--== CONTENT =============================================================================-->
+		<div id="content">
+			<div class="container-12 clearfix">
+				<div class="grid-12">
+					<ul class="breadcrumbs">
+						<li><a href="index.html">Home</a></li>
+						<li><a href="features.html">Features</a></li>
+						<li>Formatting</li>
+					</ul>
+				</div>
+			</div>
+			<div class="container-12 clearfix" id="typography">
+				<div class="grid-12">
+					<h3>Titles</h3>
+					<div class="clearfix">
+						<div class="grid-2 alpha">
+							<h1>H1 title</h1>
+							<h2>H2 title</h2>
+							<h3>H3 title</h3>
+							<h4>H4 title</h4>
+							<h5>H5 title</h5>
+							<h6>H6 title</h6>
+						</div>
+						<div class="grid-3">
+							<h1><a href="#">H1 title with link</a></h1>
+							<h2><a href="#">H2 title with link</a></h2>
+							<h3><a href="#">H3 title with link</a></h3>
+							<h4><a href="#">H4 title with link</a></h4>
+							<h5><a href="#">H5 title with link</a></h5>
+							<h6><a href="#">H6 title with link</a></h6>
+						</div>
+						<div class="grid-4">
+							<h1><strong>Bold</strong> <em>Italic</em> <strong><em>Bold Italic</em></strong> H1 title</h1>
+							<h2><strong>Bold</strong> <em>Italic</em> <strong><em>Bold Italic</em></strong> H2 title</h2>
+							<h3><strong>Bold</strong> <em>Italic</em> <strong><em>Bold Italic</em></strong> H3 title</h3>
+							<h4><strong>Bold</strong> <em>Italic</em> <strong><em>Bold Italic</em></strong> H4 title</h4>
+							<h5><strong>Bold</strong> <em>Italic</em> <strong><em>Bold Italic</em></strong> H5 title</h5>
+							<h6><strong>Bold</strong> <em>Italic</em> <strong><em>Bold Italic</em></strong> H6 title</h6>
+						</div>
+						<div class="grid-3 omega">
+							<h1><span class="icon-pencil"></span>H1 title with icon</h1>
+							<h2><span class="icon-pencil"></span>H2 title with icon</h2>
+							<h3><span class="icon-pencil"></span>H3 title with icon</h3>
+							<h4><span class="icon-pencil"></span>H4 title with icon</h4>
+							<h5><span class="icon-pencil"></span>H5 title with icon</h5>
+							<h6><span class="icon-pencil"></span>H6 title with icon</h6>
+						</div>
+					</div>
+					<hr>
+					<h3>Simple text</h3>
+					<h6>Text align left</h6>
+					<p class="textalign-left">Aliquam tortor eros, rutrum ut eleifend non, consectetur eu nisi. Donec ac lectus neque. In condimentum arcu sit amet mauris ullamcorper, quis tempor odio tempus. Quisque at porta tellus. Vestibulum eget ipsum non tortor lobortis auctor vitae quis enim. Cras lacinia, dui sit amet imperdiet commodo, magna magna lobortis lectus, in tincidunt leo felis ut nisl. Nulla facilisi. Curabitur vulputate bibendum dignissim. Mauris eget ornare tellus. Aliquam eget nisl imperdiet, accumsan libero quis, tristique mauris. Integer vitae mauris porttitor, vulputate libero eu, aliquam odio. Vivamus porta sapien id tellus vulputate, in iaculis mi tincidunt. Morbi sollicitudin sodales diam sit amet iaculis. Morbi at lorem vel turpis feugiat vulputate eu quis nunc. Fusce auctor nulla a sem lobortis pharetra. Quisque eu ullamcorper magna. In ac augue quis diam dapibus mattis sit amet at ante. Vivamus vitae tempor magna. Ut nec dui massa. Vestibulum sit amet nibh pharetra nibh faucibus commodo nec id nunc. Sed leo lectus, convallis ut malesuada in>, accumsan eget lectus. Proin mauris sapien, auctor scelerisque vehicula vitae, congue vitae justo. Donec vitae mi lobortis, eleifend neque a, sagittis tortor. Cras nec tempus orci. Sed vel est sit amet odio placerat pulvinar dapibus eu massa. Quisque ut molestie turpis. </p>
+					<h6>Text align right</h6>
+					<p class="textalign-right">Aliquam tortor eros, rutrum ut eleifend non, consectetur eu nisi. Donec ac lectus neque. In condimentum arcu sit amet mauris ullamcorper, quis tempor odio tempus. Quisque at porta tellus. Vestibulum eget ipsum non tortor lobortis auctor vitae quis enim. Cras lacinia, dui sit amet imperdiet commodo, magna magna lobortis lectus, in tincidunt leo felis ut nisl. Nulla facilisi. Curabitur vulputate bibendum dignissim. Mauris eget ornare tellus. Aliquam eget nisl imperdiet, accumsan libero quis, tristique mauris. Integer vitae mauris porttitor, vulputate libero eu, aliquam odio. Vivamus porta sapien id tellus vulputate, in iaculis mi tincidunt. Morbi sollicitudin sodales diam sit amet iaculis. Morbi at lorem vel turpis feugiat vulputate eu quis nunc. Fusce auctor nulla a sem lobortis pharetra. Quisque eu ullamcorper magna. In ac augue quis diam dapibus mattis sit amet at ante. Vivamus vitae tempor magna. Ut nec dui massa. Vestibulum sit amet nibh pharetra nibh faucibus commodo nec id nunc. Sed leo lectus, convallis ut malesuada in>, accumsan eget lectus. Proin mauris sapien, auctor scelerisque vehicula vitae, congue vitae justo. Donec vitae mi lobortis, eleifend neque a, sagittis tortor. Cras nec tempus orci. Sed vel est sit amet odio placerat pulvinar dapibus eu massa. Quisque ut molestie turpis. </p>
+					<h6>Text align center</h6>
+					<p class="textalign-center">Aliquam tortor eros, rutrum ut eleifend non, consectetur eu nisi. Donec ac lectus neque. In condimentum arcu sit amet mauris ullamcorper, quis tempor odio tempus. Quisque at porta tellus. Vestibulum eget ipsum non tortor lobortis auctor vitae quis enim. Cras lacinia, dui sit amet imperdiet commodo, magna magna lobortis lectus, in tincidunt leo felis ut nisl. Nulla facilisi. Curabitur vulputate bibendum dignissim. Mauris eget ornare tellus. Aliquam eget nisl imperdiet, accumsan libero quis, tristique mauris. Integer vitae mauris porttitor, vulputate libero eu, aliquam odio. Vivamus porta sapien id tellus vulputate, in iaculis mi tincidunt. Morbi sollicitudin sodales diam sit amet iaculis. Morbi at lorem vel turpis feugiat vulputate eu quis nunc. Fusce auctor nulla a sem lobortis pharetra. Quisque eu ullamcorper magna. In ac augue quis diam dapibus mattis sit amet at ante. Vivamus vitae tempor magna. Ut nec dui massa. Vestibulum sit amet nibh pharetra nibh faucibus commodo nec id nunc. Sed leo lectus, convallis ut malesuada in>, accumsan eget lectus. Proin mauris sapien, auctor scelerisque vehicula vitae, congue vitae justo. Donec vitae mi lobortis, eleifend neque a, sagittis tortor. Cras nec tempus orci. Sed vel est sit amet odio placerat pulvinar dapibus eu massa. Quisque ut molestie turpis. </p>
+					<h6>Text align left</h6>
+					<p class="textalign-justify">Aliquam tortor eros, rutrum ut eleifend non, consectetur eu nisi. Donec ac lectus neque. In condimentum arcu sit amet mauris ullamcorper, quis tempor odio tempus. Quisque at porta tellus. Vestibulum eget ipsum non tortor lobortis auctor vitae quis enim. Cras lacinia, dui sit amet imperdiet commodo, magna magna lobortis lectus, in tincidunt leo felis ut nisl. Nulla facilisi. Curabitur vulputate bibendum dignissim. Mauris eget ornare tellus. Aliquam eget nisl imperdiet, accumsan libero quis, tristique mauris. Integer vitae mauris porttitor, vulputate libero eu, aliquam odio. Vivamus porta sapien id tellus vulputate, in iaculis mi tincidunt. Morbi sollicitudin sodales diam sit amet iaculis. Morbi at lorem vel turpis feugiat vulputate eu quis nunc. Fusce auctor nulla a sem lobortis pharetra. Quisque eu ullamcorper magna. In ac augue quis diam dapibus mattis sit amet at ante. Vivamus vitae tempor magna. Ut nec dui massa. Vestibulum sit amet nibh pharetra nibh faucibus commodo nec id nunc. Sed leo lectus, convallis ut malesuada in>, accumsan eget lectus. Proin mauris sapien, auctor scelerisque vehicula vitae, congue vitae justo. Donec vitae mi lobortis, eleifend neque a, sagittis tortor. Cras nec tempus orci. Sed vel est sit amet odio placerat pulvinar dapibus eu massa. Quisque ut molestie turpis. </p>
+					<hr>
+					<h3>Blockquote</h3>
+					<blockquote>
+						<p>Quisque lacinia, dui vitae vulputate auctor, mi felis consequat est, feugiat venenatis nunc ante vitae quam. Etiam hendrerit mauris mi, eleifend commodo justo gravida et. Nulla lacus elit, aliquet ut dui ac, pretium condimentum elit. Praesent dignissim magna dui, vel tincidunt sapien interdum et. </p>
+						<cite>Quote Author</cite>
+					</blockquote>
+					<hr>
+					<h3>Tables</h3>
+					<table>
+						<caption>Table Caption</caption>
+						<thead>
+							<tr>
+								<th>Title&nbsp;1</th>
+								<th>Title&nbsp;2</th>
+								<th>Title&nbsp;3</th>
+							</tr>
+						</thead>
+						<tfoot>
+							<tr>
+								<th>Total</th>
+								<td colspan="2">1301</td>
+							</tr>
+						</tfoot>
+						<tbody>
+							<tr>
+								<th>Subtitle 1.1</th>
+								<td>1</td>
+								<td>Suspendisse elementum luctus lacus a aliquam</td>
+							</tr>
+							<tr>
+								<th>Subtitle 1.2</th>
+								<td>100</td>
+								<td>Quisque lacinia, dui vitae vulputate</td>
+							</tr>
+							<tr>
+								<th>Subtitle 1.3</th>
+								<td>200</td>
+								<td>Donec erat velit, commodo vitae pretium ac, ultricies </td>
+							</tr>
+							<tr>
+								<th>Subtitle 1.4</th>
+								<td>1000</td>
+								<td>Vestibulum tempus lacus non est auctor</td>
+							</tr>
+						</tbody>
+					</table>
+					<hr>
+					<h3>Lists</h3>
+					<div class="clearfix">
+						<div class="grid-4 alpha">
+							<h6>Definition Lists</h6>
+							<dl>
+								<dt>Definition List Title</dt>
+								<dd>Duis hendrerit non diam eget egestas. Vestibulum luctus mattis nisl ut vulputate. Suspendisse ac leo vestibulum, porta sem a, feugiat libero. Duis laoreet libero mauris, id iaculis nunc faucibus.</dd>
+								<dt>Definition List Title</dt>
+								<dd>Sed quam ipsum, posuere nec turpis ac, viverra posuere mi. Aliquam erat volutpat.</dd>
+								<dt>Definition List Title</dt>
+								<dd>Quisque venenatis vel erat a lacinia. Cras hendrerit massa iaculis tellus pretium, eu ultricies elit venenatis. Sed gravida felis velit, sodales iaculis sapien congue ut.</dd>
+								<dt>Definition List Title</dt>
+								<dd>Morbi tempor lacus vitae justo elementum vestibulum. Integer ornare, est a tincidunt lobortis, ligula nunc adipiscing risus, faucibus faucibus est metus fermentum mi.</dd>
+							</dl>
+						</div>
+						<div class="grid-4">
+							<h6>Unordered Lists</h6>
+							<ul>
+								<li>
+									List item one
+									<ul>
+										<li>
+											List item one
+											<ul>
+												<li>List item one</li>
+												<li>List item two</li>
+												<li>List item three</li>
+												<li>List item four</li>
+											</ul>
+										</li>
+										<li>List item two</li>
+										<li>List item three</li>
+										<li>List item four</li>
+									</ul>
+								</li>
+								<li>List item two</li>
+								<li>List item three</li>
+								<li>List item four</li>
+							</ul>
+						</div>
+						<div class="grid-4 omega">
+							<h6>Ordered List</h6>
+							<ol>
+								<li>
+									List item one
+									<ol>
+										<li>
+											List item one
+											<ol>
+												<li>List item one</li>
+												<li>List item two</li>
+												<li>List item three</li>
+												<li>List item four</li>
+											</ol>
+										</li>
+										<li>List item two</li>
+										<li>List item three</li>
+										<li>List item four</li>
+									</ol>
+								</li>
+								<li>List item two</li>
+								<li>List item three</li>
+								<li>List item four</li>
+							</ol>
+						</div>
+					</div>
+					<hr>
+					<h3>HTML Tags</h3>
+					<h6>Address Tag</h6>
+					<address>1 Infinite Loop
+					Cupertino, CA 95014
+					United States</address><br>
+					<h6>Anchor Tag (aka. Link)</h6>
+					<p>This is an example of a <a title="Apple" href="http://apple.com">link</a>.</p>
+					<h6>Abbreviation Tag</h6>
+					<p>The abbreviation <abbr title="Seriously">srsly</abbr> stands for "seriously".</p>
+					<h6>Acronym Tag (<em>deprecated in HTML5</em>)</h6>
+					<p>The acronym <acronym title="For The Win">ftw</acronym> stands for "for the win".</p>
+					<h6>Big Tag (<em>deprecated in HTML5</em>)</h6>
+					<p>These tests are a <big>big</big> deal, but this tag is no longer supported in HTML5.</p>
+					<h6>Cite Tag</h6>
+					<p>"Code is poetry." - <cite>Automattic</cite></p>
+					<h6>Code Tag</h6>
+					<p>You will learn later on in these tests that <code>word-wrap: break-word;</code> will be your best friend.</p>
+					<h6>Delete Tag</h6>
+					<p>This tag will let you <del>strikeout text</del>, but this tag is no longer supported in HTML5 (use the <code>&lt;strike&gt;</code> instead).</p>
+					<h6>Emphasize Tag</h6>
+					<p>The emphasize tag should <em>italicize</em> text.</p>
+					<h6>Insert Tag</h6>
+					<p>This tag should denote <ins>inserted</ins> text.</p>
+					<h6>Keyboard Tag</h6>
+					<p>This scarsly known tag emulates <kbd>keyboard text</kbd>, which is usually styled like the <code>&lt;code&gt;</code> tag.</p>
+					<h6>Preformatted Tag</h6>
+					This tag styles large blocks of code.
+<pre>.post-title {
+	margin: 0 0 5px;
+	font-weight: bold;
+	font-size: 38px;
+	line-height: 1.2;
+	and here's a line of some really, really, really, really long text, just to see how the PRE tag handles it and to find out how it overflows;
+}</pre><br>
+					<h6>Quote Tag</h6>
+					<p><q>Developers, developers, developers...</q> --Steve Ballmer</p>
+					<h6>Strong Tag</h6>
+					<p>This tag shows <strong>bold</strong> text.</p>
+					<h6>Subscript Tag</h6>
+					<p>Getting our science styling on with H<sub>2</sub>O, which should push the "2" down.</p>
+					<h6>Superscript Tag</h6>
+					<p>Still sticking with science and Isaac Newton's E = MC<sup>2</sup>, which should lift the 2 up.</p>
+					<h6>Teletype Tag (<em>deprecated in HTML5</em>)</h6>
+					<p>This rarely used tag emulates <tt>teletype text</tt>, which is usually styled like the <code>&lt;code&gt;</code> tag.</p>
+					<h6>Variable Tag</h6>
+					This allows you to denote <var>variables</var>.
+				</div>
+			</div>
+		</div>
+		<!--== FOOTER SIDEBAR ======================================================================-->
+		<aside id="footer-sidebar">
+			<div class="container-12 clearfix">
+				<div class="grid-3">
+					<h5 class="logo-small">Theme.</h5>
+					It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English.
+				</div>
+				<div class="grid-3">
+					<h5>Categories</h5>
+					<ul>
+						<li><a href="blog-category.html">Cum sociis natoque penatibus</a></li>
+						<li><a href="blog-category.html">Magnis dis parturient montes</a></li>
+						<li><a href="blog-category.html">Nascetur ridiculus mus</a></li>
+						<li><a href="blog-category.html">Integer non orci eros</a></li>
+						<li><a href="blog-category.html">Aliquam erat volutpat</a></li>
+						<li><a href="blog-category.html">Quisque lobortis massa a augue</a></li>
+					</ul>
+				</div>
+				<div class="grid-3">
+					<h5>Our Team</h5>
+					<ul class="thumb-grid">
+						<li><a href="employee-page.html"><img src="images/team-thumbnail-small.jpg" alt=""></a></li>
+						<li><a href="employee-page.html"><img src="images/team-thumbnail-small.jpg" alt=""></a></li>
+						<li><a href="employee-page.html"><img src="images/team-thumbnail-small.jpg" alt=""></a></li>
+						<li><a href="employee-page.html"><img src="images/team-thumbnail-small.jpg" alt=""></a></li>
+						<li><a href="employee-page.html"><img src="images/team-thumbnail-small.jpg" alt=""></a></li>
+						<li><a href="employee-page.html"><img src="images/team-thumbnail-small.jpg" alt=""></a></li>
+					</ul>
+				</div>
+				<div class="grid-3">
+					<h5>Subcribe to Newsletters</h5>
+					<p>Nulla sit amet quam felis. Donec ultrices posuere orci, nec fermentum augue aliquet id. Quisque semper eros ut felis gravida aliquet. Phasellus eu sem eget</p>
+					<form id="subscribe-form">
+						<input type="text" placeholder="Your email address">
+						<input type="submit" value="Submit">
+					</form>
+				</div>
+			</div>
+		</aside>
+		<!--== FOOTER ==============================================================================-->
+		<footer id="footer">
+			<div class="container-12 clearfix">
+				<div class="grid-6">
+					<!--~~ Copyright ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+					<div class="copyright">
+						© Copyright 2013 by <a href="home.html" id="footer-logo">Theme</a>
+					</div>
+				</div>
+				<div class="grid-6">
+					<!--~~ Social Networks ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+					<ul class="social-nets clearfix">
+						<li><a href="http://facebook.com" class="icon-facebook"></a></li>
+						<li><a href="http://twitter.com" class="icon-twitter"></a></li>
+						<li><a href="http://dribbble.com" class="icon-dribbble"></a></li>
+						<li><a href="http://linkedin.com" class="icon-linkedin"></a></li>
+						<li><a href="http://pinterest.com" class="icon-pinterest"></a></li>
+						<li><a href="#" class="icon-chevron-up" id="back-top"></a></li>
+					</ul>
+				</div>
+			</div>
+		</footer>
+	</div>
+</body>
+</html>
